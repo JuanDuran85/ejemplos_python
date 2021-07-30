@@ -1,0 +1,14 @@
+Este es un ejemplo de escritura
+Este es otro ejemplo de escritura
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
