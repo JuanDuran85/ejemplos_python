@@ -24,3 +24,15 @@ if n1 > 0 :
   print("El numero ingresado: ", n1 ,"  es positivo")
 else :
   print("El numero ingresado: ", n1 ,"  es negativo")
+
+  # cadenas de texto
+
+  textoUno = "Resultados del produco {0}. y del producto {1}.";
+  print(textoUno.format(n1,n2))
+
+# realizar un programa que permita calcular el area de un triangulo mediante una funcion.
+
+def area_triangulo(base,altura):
+  return (base * altura)/2
+  
+print(f"El área del triangulo es: {area_triangulo(2,3)}")
