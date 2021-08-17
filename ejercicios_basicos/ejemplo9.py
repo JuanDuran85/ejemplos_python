@@ -19,3 +19,12 @@ boleano = False
 print(type(cadena))
 print(type (x))
 print(type(boleano))
+
+# Area de un rectangulo
+
+alto = int(input("Ingrese el alto: "))
+ancho = int(input("Ingrese el ancho: "))
+area = alto * ancho
+print("El area del rectangulo es: ", area)
+perimetro = 2 * (alto + ancho)
+print("El perimetro del rectangulo es: ", perimetro)
