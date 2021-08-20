@@ -42,4 +42,10 @@ elif numero_dos > numero_uno:
 else:
     print("Los numeros ingresados son iguales")
 
-    
+
+# Para imprimir por pantalla en varias lineas se usa la triple ' 
+
+print(f'''
+Numero uno mingresado: {numero_uno}.
+Numero dos ingresado: {numero_dos}.
+''')
