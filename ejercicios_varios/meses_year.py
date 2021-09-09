@@ -1,5 +1,6 @@
-# meses del año
-mes = int(input("Introduce un mes (1-12): "))
+# meses del año con solo if-else
+mensaje = "Introduce un mes (1-12): ";
+mes = int(input(mensaje))
 
 if mes == 1:
     print("El mes es Enero")
@@ -29,7 +30,7 @@ else:
     print("Mes no válido")
 
 
-# el mismo ejercicio pero con diccionarios
+# -----------------------  el mismo ejercicio pero con diccionarios -----------------------
 print("Ejercicio usando diccionario")
 
 meses = {
@@ -47,6 +48,18 @@ meses = {
     12: "Diciembre"
 }
 
+mes = int(input(mensaje))
+
+try:
+    if meses[mes]: 
+        print(f"El mes es {meses[mes]}")
+except IndexError as error:
+    print("Error en el mes")
+    print(error)
+
+# --------------------- el mismo ejercicio pero con tuplas ------------------------------
+print("Ejercicio usando tuplas")
+
 meses_tupla = (
     "Enero",
     "Febrero",
@@ -62,11 +75,11 @@ meses_tupla = (
     "Diciembre"
 )
 
-mes = int(input("Introduce un mes (1-12): "))
+mes = int(input(mensaje))
 
 try:
-    if meses_tupla[mes]: 
-        print(f"El mes es {meses[mes]}")
+    if meses_tupla[mes-1]: 
+        print(f"El mes es {meses_tupla[mes-1]}")
 except IndexError as error:
     print("Error en el mes")
     print(error)
