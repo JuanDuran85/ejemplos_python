@@ -60,3 +60,26 @@ try:
         print(nombres)
 except NameError as error:
     print(f"El error es: {error}")
+    
+
+# Iterar un rango de 0 a 10 e imprimir números divisibles entre 3
+for i in range(0, 10):
+    if i % 3 == 0:
+        print(i)
+
+# trabajando con tuplas
+frutas = ('Naranja','Pera', 'Uva')
+
+# saber el largo de una tupla
+print(len(frutas))
+
+# acceder a un elemento de la tupla
+print(frutas[1])
+
+# navegacion inversa en una tupla
+print(frutas[-1])
+
+# acceder a un rango de una tupla
+print(frutas[1:3]) # no incluiyendo el indice 3 o ultimo elemento
+
+
