@@ -82,4 +82,16 @@ print(frutas[-1])
 # acceder a un rango de una tupla
 print(frutas[1:3]) # no incluiyendo el indice 3 o ultimo elemento
 
+# recorrer elementos de una tupla
+for fruta in frutas:
+    print(fruta, end=' ')
 
+# convertir una tupla en una lista
+lista_frutas = list(frutas)
+lista_frutas.append('Manzana')
+lista_frutas[0] = 'Sandia'
+print('\n',lista_frutas)
+
+# convertir una lista en una tupla
+tupla_frutas = tuple(lista_frutas)
+print(tupla_frutas)
