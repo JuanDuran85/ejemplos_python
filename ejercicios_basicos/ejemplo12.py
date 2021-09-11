@@ -95,3 +95,50 @@ print('\n',lista_frutas)
 # convertir una lista en una tupla
 tupla_frutas = tuple(lista_frutas)
 print(tupla_frutas)
+
+
+# Dada la siguiente tupla, crear una lista que sólo incluya los números menor que 5 utilizando un ciclo for: tupla = (13, 1, 8, 3, 2, 5, 8)
+
+tupla = (13, 1, 8, 3, 2, 5, 8)
+lista = []
+
+for i in tupla:
+    if i < 5:
+        lista.append(i)
+
+print(lista)
+        
+# colecciones del tipo set (sin orden y sin indice)
+
+planetas = {'Mercurio', 'Venus', 'Tierra', 'Marte', 'Jupiter'}
+print(planetas)
+
+# largo de un set
+print(len(planetas))
+
+# revisar si un elemento esta presente en un set
+print('Tierra' in planetas)
+print('Pluton' in planetas)
+
+# agregar elementos a un set
+planetas.add('Pluton')
+print(planetas)
+
+# no se pueden agregar elementos duplicados
+planetas.add('Pluton')
+print(planetas)
+
+# eliminar elementos de un set
+planetas.remove('Pluton') # si el elemento no se encuentra genera un error
+print(planetas)
+
+# eliminar un elemento de un set sin generar un error
+planetas.discard('Saturno')
+print(planetas)
+
+# eliminar todos los elementos de un set
+planetas.clear()
+print(planetas)
+
+# eliminar por completo un set
+del planetas
