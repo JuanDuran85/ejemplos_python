@@ -142,3 +142,54 @@ print(planetas)
 
 # eliminar por completo un set
 del planetas
+
+
+# trabaja con diccionarios
+diccionario = {'nombre': 'Juan', 'apellido': 'Perez', 'edad': 23}
+
+# acceder a un elemento de un diccionario
+print(diccionario['nombre'])
+
+# agregar un elemento a un diccionario
+diccionario['direccion'] = 'Av. Siempre Viva'
+diccionario['telefono'] = '123456789'
+print(diccionario)
+
+# eliminar un elemento de un diccionario
+del diccionario['direccion']
+print(diccionario)
+diccionario.pop('telefono')
+print(diccionario)
+
+# verificar si un elemento esta presente en un diccionario
+print('direccion' in diccionario)
+
+# verificar si un elemento no esta presente en un diccionario
+print('direccion' not in diccionario)
+
+# recorrer elementos de un diccionario
+for clave in diccionario:
+    print(clave, diccionario[clave])
+
+for clave, valor in diccionario.items():
+    print(f"{clave} = {valor}")
+
+# recuepear las claves de un diccionario
+print(diccionario.keys())
+for llave in diccionario.keys():
+    print(llave)
+
+# recuperar los valores de un diccionario
+print(diccionario.values())
+for valor in diccionario.values():
+    print(valor)
+
+# verificar si un diccionario esta vacio
+print(diccionario)
+print(len(diccionario))
+
+# recuperar un elemento a un diccionario
+print(diccionario.get('nombre'))
+
+# limpiar un diccionario
+diccionario.clear()
