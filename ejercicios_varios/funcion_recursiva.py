@@ -6,3 +6,27 @@ def mostrar_numeros(numero):
         mostrar_numeros(numero - 1)
 
 mostrar_numeros(3)
+
+
+# Crear una función para calcular el total de un pago incluyendo un impuesto aplicado.
+# La función debe recibir una cantidad de dinero y un porcentaje de impuesto como parámetros.
+# La función debe retornar el total del pago, incluyendo el impuesto.
+
+def calcular_impuesto(dinero, porcentaje):
+    impuesto = dinero * (porcentaje/100)
+    return dinero + impuesto
+
+sub_total = float(input("Ingrese su sub total a pagar: "))
+impuesto = float(input("Ingrese el porcentaje de impuesto a aplicar: "))
+print(calcular_impuesto(sub_total, impuesto))
+
+total = 0
+def calcula_impuesto(*dineros,impuesto):
+    sub_total = 0
+    for i in dineros:
+        sub_total += i
+    total = sub_total + (sub_total * impuesto)
+    return total
+
+total = calcula_impuesto(1,1,1,1,1, impuesto=0.16)
+print(total)
