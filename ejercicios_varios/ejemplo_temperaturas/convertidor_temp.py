@@ -44,11 +44,11 @@ except:
 # otra opción
 
 def celsius_fahrenheit(celsius):
-    fahrenheit = celsius * 9/5 + 32
+    fahrenheit = (celsius * (9/5)) + 32
     return fahrenheit
 
 def fahrenheit_celsius(fahrenheit):
-    celsius = (fahrenheit-32) * 5/9
+    celsius = (fahrenheit-32) * (5/9)
     return celsius
 
 try:
