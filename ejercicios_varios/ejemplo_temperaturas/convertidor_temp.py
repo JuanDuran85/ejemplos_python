@@ -16,25 +16,29 @@ Función 2. Recibir un parámetro llamado fahrenheit y regresar el valor equival
 Los valores los debe proporcionar el usuario, utilizando la función input y convirtiendolo a tipo float.
 '''
 
+
 def celsius_fahrenheit(celsius):
     fahrenheit = celsius * 9/5 + 32
     return fahrenheit
 
+
 def fahrenheit_celsius(fahrenheit):
     celsius = (fahrenheit-32) * 5/9
     return celsius
+
 
 try:
     valor = float(input("Ingrese el valor a convertir: "))
     grados = input("Ingrese la escala a convertir: ")
 
     funcion_grados = {
-    "F": celsius_fahrenheit,
-    "C": fahrenheit_celsius,
+        "F": celsius_fahrenheit,
+        "C": fahrenheit_celsius,
     }
 
     if grados.upper() in funcion_grados:
-        print(f"{valor} grados son {funcion_grados[grados.upper()](valor)} grados")
+        print(
+            f"{valor} grados son {funcion_grados[grados.upper()](valor)} grados")
     else:
         print("No se puede convertir")
 except:
@@ -44,12 +48,12 @@ except:
 # otra opción
 
 def celsius_fahrenheit(celsius):
-    fahrenheit = (celsius * (9/5)) + 32
-    return fahrenheit
+    return (celsius * (9/5)) + 32
+
 
 def fahrenheit_celsius(fahrenheit):
-    celsius = (fahrenheit-32) * (5/9)
-    return celsius
+    return (fahrenheit-32) * (5/9)
+
 
 try:
     funcion_conver = {
@@ -63,10 +67,11 @@ try:
     }
 
     valor = float(input("Ingrese el valor a convertir: "))
-    grados = input("Ingrese la escala a convertir: ")
+    grados = input("Ingrese la escala a convertir (F-C): ")
 
     if funcion_conver[grados.upper()]:
-        print(f"{valor} grados {'Celsius' if grados.upper() == 'F' else 'Fahrenheit'} son {funcion_conver[grados.upper()](valor)} grados {unidades[grados.upper()]}")
+        print(
+            f"{valor} grados {'Celsius' if grados.upper() == 'F' else 'Fahrenheit'} son {funcion_conver[grados.upper()](valor)} grados {unidades[grados.upper()]}")
     else:
         print("La escala ingresada no es válida")
 
