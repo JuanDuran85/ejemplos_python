@@ -1,6 +1,5 @@
 # trabajando con funciones
 
-
 def suma(a, b):
     return a + b
 
@@ -73,3 +72,44 @@ def factorial(n):
 
 resultado = factorial(5)
 print(f"El factorial de 5 es: {resultado}")
+
+# funciones de primer orden
+maximum = max
+print(f"El maximo de los numeros 10, 20, 30 es: {maximum(10, 20, 30)}")
+
+num_list = [10, 20, 30, 34, 45, 56, 67, 78, 89, 90]
+print(f"El maximo de los numeros en la lista es: {maximum(num_list)}")
+
+# funciones como ciudadanos de primera clase
+
+def calcule_gst(price, type_of_item):
+    if type_of_item == "Product":
+        return price * 1.05
+    elif type_of_item == "Service":
+        return price * 1.18
+    
+    return price * 1.35
+
+def calcule_vat(price, type_of_item):    
+    return price * 1.2
+# las funciones como ciudadanos de primera clase se pueden asignar a variables
+type_of_tax = calcule_gst
+print(f"El precio con GST es: {type_of_tax(1000, 'Product')}")
+print(f"El precio con GST es: {type_of_tax(1000, 'Service')}")
+
+# se puede retornar una funcion de otra funcion porque son ciudadanos de primera clase
+
+def find_tax_calculator(type_of_tax):
+    if type_of_tax == "GTS":
+        return calcule_gst
+    elif type_of_tax == "VAT":
+        return calcule_vat
+    return 'No existe la calculadora para ese impuesto'
+
+gst_fn = find_tax_calculator("GTS")
+print(f"El precio con GST es: {gst_fn(1000, 'Product')}")
+print(f"El precio con GST es: {gst_fn(1000, 'Service')}")
+
+vat_fn = find_tax_calculator("VAT")
+print(f"El precio con VAT es: {vat_fn(1000, 'Product')}")
+print(f"El precio con VAT es: {vat_fn(1000, 'Service')}")
