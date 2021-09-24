@@ -36,10 +36,17 @@ class Persona:
     def mostrar_detalles(self):
         print(f"El nombre es: {self.nombre}, el apellido es: {self.apellido} y la edad: {self.edad}")
 
-persona1 = Persona("Omer", "Dach", 23)
-persona1.mostrar_detalles()
-print(persona1.nombre)
-persona1.nombre = "Pedro"
-print(persona1.nombre)
-persona1.edad = 50
-persona1.mostrar_detalles()
+    # para eliminar objetos de la memoria se utiliza el metodo __del__
+    def __del__(self):
+        print(f"Se esta eliminando el objeto con los datos: {self.nombre} y {self.apellido}")
+
+if __name__ == "__main__":
+    persona = Persona("Juan", "Perez", -10)
+    persona.mostrar_detalles()
+    persona1 = Persona("Omer", "Dach", 23)
+    persona1.mostrar_detalles()
+    print(persona1.nombre)
+    persona1.nombre = "Pedro"
+    print(persona1.nombre)
+    persona1.edad = 50
+    persona1.mostrar_detalles()
