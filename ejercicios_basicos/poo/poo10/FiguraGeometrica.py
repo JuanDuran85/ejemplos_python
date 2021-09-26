@@ -18,3 +18,6 @@ class FiguraGeometrica:
     @alto.setter
     def alto(self, alto):
         self.__alto = alto
+    
+    def __str__(self):
+        return "Ancho: {}, Alto: {}".format(self.__ancho, self.__alto)

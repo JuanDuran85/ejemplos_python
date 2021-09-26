@@ -8,4 +8,7 @@ class Cuadrado(FiguraGeometrica, Color):
         Color.__init__(self, color)
 
     def area(self):
-        return self.lado * self.lado
+        return self.alto * self.ancho
+
+    def __str__(self):
+        return "Cuadrado de lado {} de color {}, tiene un área de: {}".format(self.alto, self.color, self.area())

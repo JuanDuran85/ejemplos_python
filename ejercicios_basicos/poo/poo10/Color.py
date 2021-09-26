@@ -9,3 +9,6 @@ class Color:
     @color.setter
     def color(self,color):
         self.__color = color
+
+    def __str__(self):
+        return "Color: {}".format(self.__color)
