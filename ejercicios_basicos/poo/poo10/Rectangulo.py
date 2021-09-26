@@ -7,7 +7,7 @@ class Rectangulo(FiguraGeometrica, Color):
         Color.__init__(self, color)
 
     def area(self):
-        return self.ancho * self.alto
+        return "El área del Rectangulo es: {}".format(self.ancho * self.alto)
 
     def __str__(self):
         return "Rectangulo de base {}, altura {} y color {}, con un area de: {}".format(self.ancho, self.alto, self.color, self.area())

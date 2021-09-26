@@ -15,7 +15,7 @@ print(Cuadrado.__mro__)
 print(Cuadrado.mro())
 
 print("Creacion Objeto Rectangulo".center(50, "-"))
-reactangulo1 = Rectangulo(base=-10, altura=20,color='verde')
+reactangulo1 = Rectangulo(base=10, altura=20,color='verde')
 print(reactangulo1)
 print(reactangulo1.color)
 print(reactangulo1.ancho)
