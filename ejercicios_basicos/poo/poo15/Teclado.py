@@ -9,9 +9,9 @@ class Teclado(Dispositivo_Entrada):
         cls.contador_teclado += 1
         return cls.contador_teclado
 
-    def __init__(self, tipo_entrada, marca):
+    def __init__(self, marca, tipo_entrada):
         self.__id_teclado = Teclado.contar()
-        super().__init__(tipo_entrada, marca)
+        super().__init__(marca, tipo_entrada)
 
     @property
     def id_teclado(self):

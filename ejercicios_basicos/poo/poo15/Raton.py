@@ -9,9 +9,9 @@ class Raton(Dispositivo_Entrada):
         cls.contador_ratones += 1
         return cls.contador_ratones
 
-    def __init__(self, tipo_entrada, marca):
+    def __init__(self, marca, tipo_entrada):
         self.__id_ratones = Raton.contador()
-        super().__init__(tipo_entrada, marca)
+        super().__init__(marca, tipo_entrada)
 
     @property
     def id_ratones(self):
