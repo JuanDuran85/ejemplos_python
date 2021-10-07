@@ -1,6 +1,7 @@
 # trabajando con archivos - lectura
 try:
-    archivo = open('archivos.txt', 'r', encoding='utf8')
+    # en windows se debe utilizar \\ para separar carpetas
+    archivo = open('C:\\Users\\BC\\Documents\\ejemplos\\ejercicios_python\\archivos.txt', 'r', encoding='utf8')
     # leer algunos caracteres
     print(archivo.read(5))
 
