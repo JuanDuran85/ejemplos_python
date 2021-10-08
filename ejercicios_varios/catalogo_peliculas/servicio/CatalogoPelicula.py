@@ -1,8 +1,8 @@
 import os
-
 class CatalogoPelicula:
 
     ruta_archivo = 'catalogo_peliculas.txt'
+    encontrado = ''
 
     def __init__(self, pelicula):
         self.pelicula = pelicula
@@ -21,12 +21,12 @@ class CatalogoPelicula:
 
     @classmethod
     def buscar_pelicula(cls, titulo):
-        with open(cls.ruta_archivo, 'r', encoding='utf8') as archivo:
+        with open(cls.ruta_archivo, 'r', encoding='utf8') as archivo: 
             for linea in archivo:
                 if linea.startswith(titulo):
-                    print("pelicula encontrada: {}".format(linea))
-                else:
-                    print("pelicula no encontrada")
+                    cls.encontrado = linea
+                    break
+        return cls.encontrado
     
     @classmethod
     def eliminar_pelicula(cls):
