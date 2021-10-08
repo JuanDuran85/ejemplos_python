@@ -2,7 +2,6 @@ import psycopg2
 
 conexion = psycopg2.connect(user='postgres', password='1234',
                             host='127.0.0.1', port='5432', database='test_db')
-
 try:
     # crear un cursos para ejecutar sentencias sql en postgres
     cursor = conexion.cursor()
