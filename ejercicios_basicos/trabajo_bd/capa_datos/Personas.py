@@ -1,10 +1,10 @@
 from logger_base import log
 
 class Persona:
-    def __init__(self,id_persona=None, nombre=None, apellidos=None, email=None):
+    def __init__(self,id_persona=None, nombre=None, apellido=None, email=None):
         self.__id_persona = id_persona
         self.__nombre = nombre
-        self.__apellidos = apellidos
+        self.__apellido = apellido
         self.__email = email
 
     @property
@@ -24,12 +24,12 @@ class Persona:
         self.__nombre = nombre
 
     @property
-    def apellidos(self):
-        return self.__apellidos
+    def apellido(self):
+        return self.__apellido
 
-    @apellidos.setter
-    def apellidos(self, apellidos):
-        self.__apellidos = apellidos
+    @apellido.setter
+    def apellido(self, apellido):
+        self.__apellido = apellido
         
     @property
     def email(self):
@@ -40,7 +40,7 @@ class Persona:
         self.__email = email
 
     def __str__(self):
-        return "Id: {}. Nombre: {}, Apellidos: {}, Email: {}".format(self.id_persona,self.nombre, self.apellidos, self.email)
+        return "Id: {}. Nombre: {}, Apellido: {}, Email: {}".format(self.id_persona,self.nombre, self.apellido, self.email)
 
 if __name__ == "__main__":
     persona = Persona(1, "Juan", "Pérez", "jp@email.com")

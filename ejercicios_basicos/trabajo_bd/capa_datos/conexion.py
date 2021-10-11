@@ -26,7 +26,7 @@ class Conexion:
                     host=cls.__HOST,
                     port=cls.__PORT
                 )
-                log.debug("Conexión establecida: {}".format(cls.__conexion))
+                log.debug("Conexión establecida")
                 return cls.__conexion
             
             except Exception as e:
@@ -37,9 +37,9 @@ class Conexion:
 
     @classmethod
     def obtener_cursor(cls):
-        if cls.__cursor is None:
+        if cls.__cursor is None or cls.__conexion:
             try:
-                cls.__cursor = cls.__conexion.cursor()
+                cls.__cursor = cls.obtener_conexion().cursor()
                 log.debug("Cursor establecido: {}".format(cls.__cursor))
                 return cls.__cursor
             
