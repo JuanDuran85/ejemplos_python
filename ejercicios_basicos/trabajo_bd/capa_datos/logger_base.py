@@ -7,7 +7,7 @@ log.basicConfig(
         '%(asctime)s - %(levelname)s [%(filename)s]:%(lineno)s - %(message)s'),
          datefmt='%d/%m/%Y %I:%M:%S %p', 
     handlers=[
-        log.FileHandler('log.txt', 'a', 'utf-8'),
+        log.FileHandler('pip-log.txt', 'a', 'utf-8'),
         log.StreamHandler()
     ]
 )
