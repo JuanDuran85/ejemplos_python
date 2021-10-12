@@ -29,7 +29,7 @@ class Conexion:
                     host=cls.__HOST,
                     port=cls.__PORT
                 )
-                log.debug("Conexión establecida con éxito: {}".format(cls.__POOL))
+                log.debug("Conexión establecida con éxito")
                 return cls.__POOL
             except Exception as e:
                 log.error("Ocurrio un error en la conexion: {}".format(e))
@@ -40,7 +40,7 @@ class Conexion:
     @classmethod
     def obtener_conexion(cls):
         conexion = cls.obtener_pool().getconn()
-        log.debug("Conexión obtenida con éxito: {}".format(conexion))
+        log.debug("Conexión obtenida con éxito")
         return conexion
 
     @classmethod
