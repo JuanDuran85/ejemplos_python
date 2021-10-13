@@ -59,3 +59,20 @@ meses = {
 
 mes = input("Ingresa el nombre del mes a buscar: ");
 print("El mes ingresado: " + mes.lower() + ", tiene " + str(meses[mes]) + " dias");
+
+result = {
+    "cafe": 2.45,
+    "pan": 5.43,
+    "leche": 3.45,
+    "azucar": 1.45,
+    "mantequilla": 2.45,
+    "aceite": 3.45,
+    "harina": 4.45,
+}
+
+i=0
+for key,value in result.items():
+    i+=1
+    print("{}. {}: {}".format(i,key, value))
+
+print("Total Productos: {}. Total precio: {}".format(len(result), sum(result.values())))
