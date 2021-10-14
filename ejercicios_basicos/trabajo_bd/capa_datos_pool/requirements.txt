@@ -1,5 +1,2 @@
-sys
-logging
-os
-dotenv
+python-dotenv
 psycopg2
