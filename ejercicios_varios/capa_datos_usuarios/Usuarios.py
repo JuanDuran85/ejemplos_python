@@ -1,6 +1,6 @@
 import bcrypt
 class Usuario:
-    def __init__(self, id_usuario=None,username=None, password=None):
+    def __init__(self, id_usuario=None, username=None, password=None):
         self.__id_usuario = id_usuario
         self.__username = username
         self.__password = password
