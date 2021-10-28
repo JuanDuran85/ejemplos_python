@@ -76,3 +76,56 @@ for key,value in result.items():
     print("{}. {}: {}".format(i,key, value))
 
 print("Total Productos: {}. Total precio: {}".format(len(result), sum(result.values())))
+
+''' ------------------------------------------------------------------ '''
+
+# desempaquetado de tuplas
+numeros = (1,2,3,4);
+print("Desempaquetado de tuplas");  
+print("numeros: ", numeros);
+uno, dos, tres, cuatro = numeros;
+print("uno: ", uno);
+print("dos: ", dos);
+print("tres: ", tres);
+print("cuatro: ", cuatro);
+
+# el * se utiliza para desempaquetar tuplas y crea una lista
+numeros = (1,2,3,4,5,6,7,8,9,10);
+print("Desempaquetado de tuplas");
+uno, dos, *resto = numeros;
+print("uno: ", uno);
+print("dos: ", dos);
+print("resto: ", resto);
+
+# el *_ se utiliza para ignorar los elementos restantes de la tupla
+numeros = (1,2,3,4,5,6,7,8,9,10);
+print("Desempaquetado de tuplas");
+uno, dos, *_ = numeros;
+print("uno: ", uno);
+print("dos: ", dos);
+
+# el *_ se utiliza para ignorar los elementos restantes de la tupla
+numeros = (1,2,3,4,5,6,7,8,9,10);
+print("Desempaquetado de tuplas");
+uno, dos, *_, nueve, diez = numeros;
+print("uno: ", uno);
+print("dos: ", dos);
+print("nueve: ", nueve);
+print("diez: ", diez);
+
+# el *_ se utiliza para ignorar los elementos restantes de la tupla y el _ para omitir un valor en especifico
+numeros = (1,2,3,4,5,6,7,8,9,10);
+print("Desempaquetado de tuplas");
+uno, _, tres, *resto, nueve, diez = numeros;
+print("uno: ", uno);
+print("tres: ", tres);
+print("resto: ", resto);
+print("nueve: ", nueve);
+print("diez: ", diez);
+
+# utilizando la funcion zip
+lista = [1,2,3,4,5,6,7,8,9,10];
+tupla_n = (10,20,30,40,50,60,70,80,90,100);
+
+resultado = zip(lista, tupla_n);
+print(tuple(resultado));

@@ -193,3 +193,16 @@ print(diccionario.get('nombre'))
 
 # limpiar un diccionario
 diccionario.clear()
+
+
+listas= [1,2,3,4,5,6,7,8,9,10]
+print(listas[-3:])
+print("texto alineado a la derecha".rjust(20))
+
+
+d2 = {True: True, False: False}
+print(d2)
+d3 = {10: 1, 2: 10}
+print(d3)
+d4 = {'a': 1, 2: 10}
+print(d4)
