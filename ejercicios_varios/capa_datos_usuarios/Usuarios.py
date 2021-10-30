@@ -36,6 +36,7 @@ class Usuario:
         if len(password) > 6:
             self.__password = password
         else:
+            print("La contraseña debe tener al menos 6 caracteres")
             raise ValueError("La contraseña debe tener al menos 6 caracteres")
 
     def __str__(self):
