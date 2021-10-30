@@ -41,10 +41,10 @@ class UsuarioDAO:
             return registros
 
     @classmethod
-    def eliminar(cls, usuario):
+    def eliminar(cls, id):
         with CursorPool() as cursor:
-            log.debug(f"Eliminando el usuario: {usuario}")
-            cursor.execute(cls.__ELIMINAR, (usuario.id_usuario,))
+            log.debug(f"Eliminando el usuario: {id}")
+            cursor.execute(cls.__ELIMINAR, (id,))
             registros = cursor.rowcount
             log.debug(f"Numero de registros eliminados: {registros}")
             return registros

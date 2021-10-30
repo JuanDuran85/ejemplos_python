@@ -11,8 +11,9 @@ def crear_usuario():
     username = input("Ingrese el nombre del usuario a crear: ")
     password = input("Ingrese la contraseña del usuario: ")
     usuario = Usuario(id_usuario=None, username=username, password=password)
+    usuario.password = password;
     usuario_creado = UsuarioDAO().insertar(usuario)
-    log.debug(f"Usuario creado: {usuario_creado}")
+    log.info(f"Usuario creado: {usuario_creado}")
 
 def mostrar_usuario():
     """
@@ -31,9 +32,10 @@ def actualizar_usuario():
     id_usuario = int(input("Ingrese el id del usuario a actualizar: "))
     username = input("Ingrese el nombre del usuario a actualizar: ")
     password = input("Ingrese la contraseña del usuario a actualizar: ")
-    usuario = Usuario(id_usuario, username, password)
+    usuario = Usuario(id_usuario=id_usuario, username=username, password=password)
+    usuario.password = password;
     usuario_actualizado = UsuarioDAO().actualizar(usuario)
-    log.debug(f"Usuario actualizado: {usuario_actualizado}")
+    log.info(f"Usuario actualizado: {usuario_actualizado}")
 
 def eliminar_usuario():
     """
@@ -41,10 +43,8 @@ def eliminar_usuario():
     """
     log.debug("Eliminando usuario")
     id_usuario = int(input("Ingrese el id del usuario a eliminar: "))
-    username = input("Ingrese el nombre del usuario a eliminar: ")
-    usuario = Usuario(id_usuario, username)
-    usuario_eliminado = UsuarioDAO().eliminar(usuario)
-    log.debug(f"Usuario eliminado: {usuario_eliminado}")
+    usuario_eliminado = UsuarioDAO().eliminar(id_usuario)
+    log.info(f"Usuario eliminado: {usuario_eliminado}")
 
 def salida():
     print("Saliendo del programa".center(50, "-"))
