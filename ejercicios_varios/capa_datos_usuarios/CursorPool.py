@@ -1,4 +1,3 @@
-
 from logger_base import log
 from Conexion import Conexion
 

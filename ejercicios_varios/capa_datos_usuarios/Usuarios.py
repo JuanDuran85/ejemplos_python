@@ -33,7 +33,10 @@ class Usuario:
     
     @password.setter
     def password(self, password):
-        self.__password = password
+        if len(password) > 6:
+            self.__password = password
+        else:
+            raise ValueError("La contraseña debe tener al menos 6 caracteres")
 
     def __str__(self):
         return f"{self.id_usuario} {self.username} {self.password}"
