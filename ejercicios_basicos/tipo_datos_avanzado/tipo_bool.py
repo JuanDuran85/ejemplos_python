@@ -13,6 +13,9 @@ print(f"Bool para el valor(cadena vacia): {valor} es {resultado}")
 valor = []
 resultado = bool(valor)
 print(f"Bool para el valor: {valor} es {resultado}")
+valor = ()
+resultado = bool(valor)
+print(f"Bool para el valor: {valor} es {resultado}")
 valor = {}
 resultado = bool(valor)
 print(f"Bool para el valor: {valor} es {resultado}")
