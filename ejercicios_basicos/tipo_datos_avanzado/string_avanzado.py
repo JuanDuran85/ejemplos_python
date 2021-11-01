@@ -139,3 +139,19 @@ print("Notacion extendida para \\U00000041: \U00000041")
 print("Notacion simplificada en hexadecimal para \\x41: \x41")
 print("Notacion simplificada para Smiling Face with Sunglasses Emoji: \U0001f60E")
 print("Notacion simplificada para corazon: \u2665")
+
+# caracteres ascii con chr
+
+varibale = chr(65)
+print(f"Resultado de chr(65): {varibale}")
+variable = chr(38)
+print(f"Resultado de chr(38): {variable}")
+
+# caracteres del tipo byte
+variable = b'\x41'
+print(f"Resultado de b'\\x41': {variable}")
+mensaje = b'Python'
+print(f"Resultado de b'Python': {mensaje}")
+print(mensaje[0])
+print(chr(mensaje[0]))
+
