@@ -3,9 +3,9 @@
 # concatenacion automatica de string
 
 varibale = 'Adios'
-mensaje = 'Nuevo' 'Mensaje' + varibale
-mensaje += 'Segundo mensaje' 'desde string'
-print(mensaje)
+# mensaje = 'Nuevo' 'Mensaje' + varibale
+# mensaje += 'Segundo mensaje' 'desde string'
+# print(mensaje)
 
 # para solicitar ayuda a la clase str
 # help(str)
@@ -99,3 +99,4 @@ edad = 28
 sueldo = 3423.3454
 mensaje_con_formato = f"Mi nombre es {nombre} y mi edad es {edad} y mi sueldo es {sueldo:.2f}"
 print(mensaje_con_formato)
+print(nombre, edad, sueldo, sep=', ')
