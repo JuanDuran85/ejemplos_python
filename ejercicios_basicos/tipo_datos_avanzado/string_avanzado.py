@@ -100,3 +100,42 @@ sueldo = 3423.3454
 mensaje_con_formato = f"Mi nombre es {nombre} y mi edad es {edad} y mi sueldo es {sueldo:.2f}"
 print(mensaje_con_formato)
 print(nombre, edad, sueldo, sep=', ')
+
+# multiplicar cadenas
+cadena = 4*"Hola"
+print(f'Resultado: {cadena}')
+
+# multiplicacion de tuplas
+cadena = 5*("Python","Programacion")
+print(f'Resultado: {cadena}')
+
+# multiplicacion de listas
+lista = 10*[0]
+print(f'Resultado: {lista}. Largo: {len(lista)}')
+
+# caracteres de escape
+resultado = 'Caracgter \' especial '
+print(resultado)
+
+# al utilizar el \b backspace se elimina el ultimo caracter
+resultado = 'Se va a eliminar el ultimo punto.\b '
+print(f"Resultado: {resultado}")
+print("--------------------")
+
+# escapando \
+direccion = 'c:\\nuevo_directorio\\python'
+print(f"Resultado: {direccion}")
+
+# row string
+resultado = r'Cadena sin procesar el salto de linea \n que lleva el cursor a la sigueinte linea'
+print(resultado)
+direccion = r'c:\nuevo_directorio\python'
+print(f"Resultado: {direccion}")
+
+# caracteres unicode
+print('Hola\u0020Mundo')
+print("Notacion simple para \\u0041 : \u0041")
+print("Notacion extendida para \\U00000041: \U00000041")
+print("Notacion simplificada en hexadecimal para \\x41: \x41")
+print("Notacion simplificada para Smiling Face with Sunglasses Emoji: \U0001f60E")
+print("Notacion simplificada para corazon: \u2665")
