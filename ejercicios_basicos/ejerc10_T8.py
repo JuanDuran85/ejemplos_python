@@ -11,11 +11,9 @@ for i in s:
         set1.add(i)
 print('El conjunto conformado por las palabras palíndromas es: \n')
 print(set1)
+
+
 print('------------------------------------------------------------------')
-
-
-
-
 
 
 
