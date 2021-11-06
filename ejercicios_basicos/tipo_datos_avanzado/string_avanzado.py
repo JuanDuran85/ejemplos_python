@@ -155,3 +155,15 @@ print(f"Resultado de b'Python': {mensaje}")
 print(mensaje[0])
 print(chr(mensaje[0]))
 
+# convertir string a bytes
+
+string_var = "Programación con Python"
+print(f"String original: {string_var}")
+bytes_var = string_var.encode('utf-8')
+print(f"Bytes convertido: {bytes_var}")
+
+# convertir bytes a string
+string_var_2 = bytes_var.decode('utf-8')
+print(f"String convertido: {string_var_2}")
+
+print(f"Son los mismos string: {string_var == string_var_2}")
