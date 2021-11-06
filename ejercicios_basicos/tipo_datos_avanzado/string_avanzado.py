@@ -167,3 +167,23 @@ string_var_2 = bytes_var.decode('utf-8')
 print(f"String convertido: {string_var_2}")
 
 print(f"Son los mismos string: {string_var == string_var_2}")
+
+# ocho formas de generar un bool False en python [1]
+
+"""[1]
+1. Comilla simple o doble ''/"" (cadena vacia)
+2. Lista vacia []
+3. Tupla vacia ()
+4. Diccionario vacio {}
+5. Entero 0
+6. Flotante 0.0
+7. None
+8. bool del tipo False
+"""
+# ejemplo
+variable = None
+
+if variable:
+    print("La variable es verdadera")
+else:
+    print("La variable es falsa")
