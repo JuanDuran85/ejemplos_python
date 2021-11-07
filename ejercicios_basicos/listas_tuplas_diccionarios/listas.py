@@ -54,3 +54,29 @@ print(f"Matriz original: {matriz}")
 print(f"Elemento de la matriz[1][2]: {matriz[1][2]}")
 print(f"Elemento de la matriz[0][1]: {matriz[0][1]}")
 print(f"Elemento de la matriz[2][0]: {matriz[2][0]}")
+# modificando elementos en una matriz
+matriz[0][1] = -5
+print(f"Matriz modificada: {matriz}")
+
+# ordenando una matriz en python
+matriz2 = [[3,2,6,24,67,-3],[4,-5,0,16],[8,-8,-6]]
+print(f"Matriz original: {matriz2}")
+matriz2.sort(key=len)
+print(f"Matriz ordenada: {matriz2}")
+
+# ordenando matrices con built-in que ya son parte de python "sorted()"
+matriz3 = ["Juan","Yecelis","Mariana","Elio","Yecenia","Ali"]
+print(f"Matriz original: {matriz3}")
+matriz3 = sorted(matriz3)
+print(f"Matriz ordenada: {matriz3}")
+matriz3 = sorted(matriz3, reverse=True)
+print(f"Matriz ordenada: {matriz3}")
+# ordenando por la cantidad de caracterese de cada elemento
+matriz3 = sorted(matriz3, key=len)
+print(f"Matriz ordenada: {matriz3}")
+
+# build-in reverse(), permite trabajar con cualquier iterable
+matriz4 = ["Juan","Yecelis","Mariana","Elio","Yecenia","Ali"]
+print(f"Matriz original: {matriz4}")
+matriz4 = reversed(matriz4)
+print(f"Matriz invertida: {list(matriz4)}")
