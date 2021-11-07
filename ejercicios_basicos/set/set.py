@@ -29,4 +29,17 @@ print(conjunto_copia)
 # verificar el contenido
 print(f"El contenido es igual: {conjunto == conjunto_copia}")
 # verificar la referencia de los elementos
-print(f"Es la misma referencia: {conjunto is conjunto_copia}")          
+print(f"Es la misma referencia: {conjunto is conjunto_copia}")
+
+# operaciones de conjuntos utilizando set
+# personas con distintas caracteristicas
+pelo_negro = {"Juan","Jose","Maria"}
+pelo_amarillo = {"Karla", "Mariana", "Desiree"}
+ojos_cafe = {"Jose", "Mariana"}
+menores_30 = {"Mariana","Juan","Jose"}
+
+# todos con ojos cafe y pelo rubio (union) (no se repiten los elementos)
+print(f"Personas con ojos cafe y pelo rubio: {ojos_cafe.union(pelo_amarillo)}")
+
+# Invertir el orden con el mismo resultado (conmutativa)
+print(ojos_cafe.union(pelo_amarillo))
