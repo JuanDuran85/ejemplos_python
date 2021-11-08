@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 
 entorno-virtual
+entorno_virtual
 
 # C extensions
 *.so
