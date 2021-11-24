@@ -33,8 +33,8 @@ print(f"Es la misma referencia: {conjunto is conjunto_copia}")
 
 # operaciones de conjuntos utilizando set
 # personas con distintas caracteristicas
-pelo_negro = {"Juan","Jose","Maria"}
-pelo_amarillo = {"Karla", "Mariana", "Desiree"}
+pelo_negro = {"Juan","Jose","Maria", "Mariana"}
+pelo_amarillo = {"Karla", "Petra", "Desiree"}
 ojos_cafe = {"Jose", "Mariana"}
 menores_30 = {"Mariana","Juan","Jose"}
 
@@ -42,4 +42,27 @@ menores_30 = {"Mariana","Juan","Jose"}
 print(f"Personas con ojos cafe y pelo rubio: {ojos_cafe.union(pelo_amarillo)}")
 
 # Invertir el orden con el mismo resultado (conmutativa)
-print(ojos_cafe.union(pelo_amarillo))
+print(pelo_amarillo.union(ojos_cafe))
+
+# (interseccion) (no se repiten los elementos) solo las personas con ojos cafe y pelos rubio. Es una operacion conmutativa
+print(f"Personas con ojos cafe y pelo rubio: {ojos_cafe.intersection(pelo_amarillo)}")
+
+# (diferencia) Pelo negro pero sin ojos cafe - operacion no conmutativa
+# personas que se encuentran en el primer set pero no en segundo
+print(pelo_negro.difference(ojos_cafe))
+
+# diferencia simetrica - Personas con pelo negro u ojos cafe pero no ambos. Operacion conmitativa
+print(pelo_negro.symmetric_difference(ojos_cafe))
+
+# preguntas con set
+# preguntar si un set esta contenido en otro (subset)
+# revisamos si los elementos del primer set estan contenidos en el segundo set
+print(menores_30.issubset(pelo_negro))
+
+
+# preguntar si un set contiene a otro set
+# Revisar si los elementos del primer set estan contenidos en el segundo set
+print(menores_30.issuperset(pelo_negro))
+
+# pregunta si los de pelo negro no tienen pelo rubio (distjoin)
+print(pelo_negro.isdisjoint(pelo_amarillo))
