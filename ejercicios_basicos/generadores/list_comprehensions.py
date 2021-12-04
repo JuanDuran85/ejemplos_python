@@ -16,11 +16,7 @@ sintaxis de list comprehensions:
     [<expresion> for <elemento> in <lista> if <condicion>]
 la condicion if es opcional
 '''
-numeros_listas_nueva = range(10)
-print(numeros_listas_nueva)
-lista_pares_nueva = []
-lista_pares_nueva = [
-    numero*numero for numero in numeros_listas_nueva if numero % 2 == 0]
+lista_pares_nueva = [numero for numero in range(10) if numero % 2 == 0]
 print(lista_pares_nueva)
 
 # se puede trabajar cuando existe dos condicion
@@ -57,6 +53,5 @@ print(pares)
 
 # ahora el ejemplo anterior usando list comprehensions
 matriz3_3 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-pares = [valor for sublista in matriz3_3 for valor in sublista if valor%2 == 0]
+pares = [valor for sublista in matriz3_3 for valor in sublista if valor % 2 == 0]
 print(pares)
-
