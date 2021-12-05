@@ -87,5 +87,10 @@ print(lista_enteros_ordenada)
 
 # saber las clases padres y su orden de herencia. 
 print(ListaEnterosOrdenada.__bases__)
+
+''' MRO - Method Resolution Order '''
 # MRO (method resolution order)
 print(ListaEnterosOrdenada.__mro__)
+
+# usando el metodo isinstance para saber si un objeto es de una clase
+print('Es una lista de enteros ordenadas \'lista simple\'?: ', isinstance(lista_simple, ListaEnterosOrdenada))
