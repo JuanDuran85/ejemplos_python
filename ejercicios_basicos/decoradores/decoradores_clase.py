@@ -39,6 +39,28 @@ def decorador_repr(cls):
             print('No existe el atributo: ', parametro)
             raise TypeError("No existe el atributo: ", parametro)
         
+    #crear el metodo repr
+    def metodo_repr(self):
+        #obtenemos el nombre de la clase dinamicamente
+        nombre_clase = self.__class__.__name__
+        print("nombre_clase: ", nombre_clase)
+        # obetenemos los nombres de las propiedades y sus valores dinamicamente
+        # expresion generadora para crear la siguiente cadena con la forma del nombre del atributo
+        generador_argumentos = (f'{nombre}={getattr(self, nombre)!r}' for nombre in parametros_init)
+        print("generador_argumentos: ", generador_argumentos)
+        # crear lista de argumentos
+        lista_argumentos = list(generador_argumentos)
+        print("lista_argumentos: ", lista_argumentos)
+        # creamosla cadena a partir de la lista de argumentos
+        argumentos = ', '.join(lista_argumentos)
+        print("argumentos: ", argumentos)
+        # creamos la forma del metodo repr sin su nombre
+        resultado_metodo_repr = f'{nombre_clase}({argumentos})'
+        return resultado_metodo_repr
+    
+    #agregamos dinamicamente el metodo repr a nuestra clase
+    setattr(cls, '__repr__', metodo_repr)
+        
     # retornamos la clase
     return cls
 
@@ -69,3 +91,9 @@ class Persona:
 
 # creando instancia de la clase
 persona1 = Persona("Juan", 25)
+print(persona1)
+# tiene los metodos de la propiedad
+print(dir(persona1))
+# tiene el metodo repr sobre escrito
+codigo_repr = inspect.getsource(persona1.__repr__)
+print(codigo_repr)
