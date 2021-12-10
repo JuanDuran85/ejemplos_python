@@ -33,3 +33,13 @@ Ejemplos de programacion con Python
     ```
         pip freeze > requirements.txt
     ```
+
+# Usando servidor local para json
+- Instalacion de json-server
+  ```
+    npm install -g json-server
+  ```
+- Levanando el servidor local. Crear archivo json con el nombre db
+  ```
+    json-server db.json
+  ```
