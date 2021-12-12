@@ -16,8 +16,16 @@ ventana.title("Mi primera ventana")
 # cambiar el icono de la ventana
 ventana.tk.call('wm', 'iconphoto', ventana._w, tk.PhotoImage(file='gui_tkinder/ejemplo1/equalizer_balance_settings_icon.png'))
 
+# definiendo eventos para el boton
+def evento_boton_1():
+    print("Entro al evento del boton 1")
+    boton1.config(text="Nuevo texto")
+    # crear un nuevo componente
+    boton2 = ttk.Button(ventana, text="Nuevo boton2")
+    boton2.pack()
+
 # creando un boton como componente de la ventana o widget
-boton1 = ttk.Button(ventana, text="Boton 1")
+boton1 = ttk.Button(ventana, text="Boton 1", command=evento_boton_1)
 
 # utilizar el pack layout manager para organizar los widgets y desplegar
 boton1.pack()
