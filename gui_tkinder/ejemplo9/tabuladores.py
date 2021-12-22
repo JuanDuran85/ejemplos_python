@@ -26,6 +26,21 @@ def crear_componentes_tabulador_dos(tabulador_dos):
     # mostramos el componente scroll
     scroll.grid(row=0, column=0, padx=5, pady=5)
 
+def crear_componentes_tabulador_tres(tabulador_tres):
+    # creamos una lista usando data list comprehensions
+    datos = [x+1 for x in range(10)]
+    combo_box = ttk.Combobox(tabulador_tres, width=15 , values=datos)
+    combo_box.grid(row=0, column=0, padx=5, pady=5)
+    # seleccionamos un elemento por defecto a mostrar
+    combo_box.current(0)
+    # agregar un boton para saber cual fue la opcion seleccionada
+    boton_dos = ttk.Button(tabulador_tres, text="Boton 2", command=lambda: messagebox.showinfo("Mensaje", "Seleccionaste: " + combo_box.get()))
+    boton_dos.grid(row=1, column=0, padx=5, pady=5)
+    
+def crear_componentes_tabulador_cuatro(tabulador_cuatro):
+    imagen = tk.PhotoImage(file="gui_tkinder/ejemplo9/python.png")
+    boton_imagen = ttk.Button(tabulador_cuatro, image=imagen,command=lambda: messagebox.showinfo("Mas info de la imagen", f"Nombre de la imagen: {imagen.name}\nAncho: {imagen.width()}\nAlto: {imagen.height()}"))
+    boton_imagen.grid(row=0, column=0, padx=5, pady=5)
 
 def crear_tab():
     # creamos un tab control, para ellos usamos la clase Notebook
@@ -42,6 +57,18 @@ def crear_tab():
     tabulador_dos = ttk.LabelFrame(control_tabulador, text="Contenido")
     control_tabulador.add(tabulador_dos, text="Tab 2")
     crear_componentes_tabulador_dos(tabulador_dos)
+    
+    # creamos un trcer tabulador
+    tabulador_tres = ttk.Frame(control_tabulador)
+    control_tabulador.add(tabulador_tres, text="Tab 3")
+    # cremos los coponentes del tercer tabulador
+    crear_componentes_tabulador_tres(tabulador_tres)
+    
+    # creando un cuarto tabulador
+    tabulador_cuatro = ttk.LabelFrame(control_tabulador, text="Imagen")
+    control_tabulador.add(tabulador_cuatro, text="Tab 4")
+    # creamos los componentes del cuarto tabulador
+    crear_componentes_tabulador_cuatro(tabulador_cuatro)
     
     
 crear_tab()

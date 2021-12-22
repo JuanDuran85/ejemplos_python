@@ -27,7 +27,7 @@ def get_product(product_name):
     if len(product_found) > 0:
         return jsonify({"Info Products": product_found})
     else:
-        return jsonify({"Info Product": "Not Foud"})
+        return jsonify({"Info Product": "Not Foud Product"})
 
 
 @app.route("/products", methods=["POST"])
