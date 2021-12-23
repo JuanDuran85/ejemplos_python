@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, messagebox, scrolledtext
+from time import sleep
 
 window = tk.Tk()
 window.title("Tabuladores")
@@ -38,9 +39,39 @@ def crear_componentes_tabulador_tres(tabulador_tres):
     boton_dos.grid(row=1, column=0, padx=5, pady=5)
     
 def crear_componentes_tabulador_cuatro(tabulador_cuatro):
+    # trabajando con imagenes en tkinder
     imagen = tk.PhotoImage(file="gui_tkinder/ejemplo9/python.png")
     boton_imagen = ttk.Button(tabulador_cuatro, image=imagen,command=lambda: messagebox.showinfo("Mas info de la imagen", f"Nombre de la imagen: {imagen.name}\nAncho: {imagen.width()}\nAlto: {imagen.height()}"))
     boton_imagen.grid(row=0, column=0, padx=5, pady=5)
+    
+def crear_componentes_tabulador_cinco(tabulador_cinco):
+    # trabajando con barra de progreso
+    # creamos el componente de barra de progreso
+    barra_progreso = ttk.Progressbar(tabulador_cinco, orient='horizontal',length=350, mode='determinate')
+    barra_progreso.grid(row=0, column=0, padx=5, pady=5, columnspan=4)
+    def ejecutar_barra():
+        barra_progreso['maximum'] = 100
+        for valor in range(101):
+            # se activa un tiempo muerto de espera
+            sleep(0.05)
+            # incremetamos nuestra barra de progreso
+            barra_progreso['value'] = valor
+            # actualizamos la barra de progreso
+            barra_progreso.update()
+        barra_progreso['value'] = 0
+            
+    # botones para controlar los eventos de la barra de progreso
+    boton_ejecutar = ttk.Button(tabulador_cinco, text="Ejecutar", command=ejecutar_barra)
+    boton_ejecutar.grid(row=3, column=0, padx=5, pady=5)
+    boton_inicio = ttk.Button(tabulador_cinco, text="Inicio de Progreso", command=lambda: barra_progreso.start())
+    boton_inicio.grid(row=1, column=0, padx=5, pady=5)
+    boton_ciclo = ttk.Button(tabulador_cinco, text="Ciclo de Progreso", command=lambda: barra_progreso.step())
+    boton_ciclo.grid(row=1, column=1, padx=5, pady=5)
+    boton_fin_reinicio = ttk.Button(tabulador_cinco, text="Fin de Progreso", command=lambda: barra_progreso.stop())
+    boton_fin_reinicio.grid(row=1, column=2, padx=5, pady=5)
+    # detener la barra despues de ciertos minutos
+    boton_detener_despues = ttk.Button(tabulador_cinco, text="Detener despues de 5 segundos", command=lambda: barra_progreso.after(5000, barra_progreso.stop))
+    boton_detener_despues.grid(row=2, column=0, padx=5, pady=5, columnspan=2)
 
 def crear_tab():
     # creamos un tab control, para ellos usamos la clase Notebook
@@ -58,7 +89,7 @@ def crear_tab():
     control_tabulador.add(tabulador_dos, text="Tab 2")
     crear_componentes_tabulador_dos(tabulador_dos)
     
-    # creamos un trcer tabulador
+    # creamos un tercer tabulador
     tabulador_tres = ttk.Frame(control_tabulador)
     control_tabulador.add(tabulador_tres, text="Tab 3")
     # cremos los coponentes del tercer tabulador
@@ -70,6 +101,11 @@ def crear_tab():
     # creamos los componentes del cuarto tabulador
     crear_componentes_tabulador_cuatro(tabulador_cuatro)
     
+    # creando un quinto tabulador
+    tabulador_quinto = ttk.LabelFrame(control_tabulador, text="Progress Bar")
+    control_tabulador.add(tabulador_quinto, text="Tab 5")
+    # creamos los componentes del quinto tabulador
+    crear_componentes_tabulador_cinco(tabulador_quinto)
     
 crear_tab()
 
