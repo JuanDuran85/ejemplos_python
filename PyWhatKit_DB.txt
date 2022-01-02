@@ -1,0 +1,45 @@
+Date: 2/1/2022
+Time: 13:50
+Phone Number: +56940758654
+Message: Hola que tal
+--------------------
+Date: 2/1/2022
+Time: 14:0
+Phone Number: +56940758654
+Message: Hola que tal
+--------------------
+Date: 2/1/2022
+Time: 14:58
+Phone Number: +34645885123
+Message: Pajuo
+--------------------
+Date: 2/1/2022
+Time: 15:2
+Phone Number: +34645885123
+Message: Pajuo
+--------------------
+Date: 2/1/2022
+Time: 15:5
+Phone Number: +34645885123
+Message: Pajuo
+--------------------
+Date: 2/1/2022
+Time: 15:7
+Phone Number: +584245504420
+Message: Mensaje enviado automaticamente con Python mediante PyWhatkit
+--------------------
+Date: 2/1/2022
+Time: 15:8
+Phone Number: +584245504420
+Message: Mensaje enviado automaticamente con Python mediante PyWhatkit
+--------------------
+Date: 2/1/2022
+Time: 15:9
+Phone Number: +584245504420
+Message: Mensaje enviado automaticamente con Python mediante PyWhatkit
+--------------------
+Date: 2/1/2022
+Time: 15:10
+Phone Number: +584245504420
+Message: Mensaje enviado automaticamente con Python mediante PyWhatkit
+--------------------

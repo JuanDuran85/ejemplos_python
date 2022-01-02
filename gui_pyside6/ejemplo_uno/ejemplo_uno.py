@@ -6,7 +6,11 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget, Q
 app = QApplication()
 
 # crear un objeto ventana
+# cualuier componente puede ser una ventana en pyside
 ventana = QWidget()
+# otras formas de crear ventanas
+# ventana = QPushButton("Botón 1")
+# ventana = QMainWindow()
 # modificando el titulo de la aplicacion
 ventana.setWindowTitle("Ejemplo 1")
 # modificamos el tamaño de la ventana
