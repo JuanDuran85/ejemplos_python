@@ -13,6 +13,8 @@ class VentanaPrincipal(QMainWindow):
         # conectamos el evento chequedado, por defecto esta en False
         # asociamos la señal de click al slot evento_click
         self.boton.clicked.connect(self._evento_click)
+        # conectar a la señal de cambio de titutlo
+        self.windowTitleChanged.connect(self._evento_titulo)
         # se publica o muestra el boton
         self.setCentralWidget(self.boton)
         
@@ -20,7 +22,13 @@ class VentanaPrincipal(QMainWindow):
         # cambiar el texto y titulo de la ventana
         self.boton.setText("Nuevo Click")
         self.boton.setEnabled(False)
-        self.boton.setWindowTitle("Nuevo Titulo")
+        self.setWindowTitle("Nuevo Titulo 2")
+        print("Evento Click")
+        
+    def _evento_titulo(self, titulo):
+        print(titulo)
+        # mostrar el titulo en la barra de estado
+        self.statusBar().showMessage(titulo)
         
 if __name__ == '__main__':
     app = QApplication(sys.argv)
