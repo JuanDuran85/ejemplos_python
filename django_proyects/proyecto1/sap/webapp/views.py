@@ -5,3 +5,6 @@ from django.shortcuts import render
 
 def bienvenidos(request):
     return HttpResponse("Bienvenidos a SAP")
+
+def despedida(request):
+    return HttpResponse("Hasta luego")
