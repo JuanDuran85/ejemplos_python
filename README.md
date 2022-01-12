@@ -43,3 +43,17 @@ Ejemplos de programacion con Python
   ```
     json-server db.json
   ```
+
+# Creando proyectos con Django
+- Iniciando el proyecto
+  ```
+    django-admin startproject nombre_proyecto
+  ```
+- Ejecutar ek proyecto o levantar el servicio o servidor de desarrollo
+  ```
+    python3 manage.py runserver number_port_to_run
+  ```
+  - Crear una nueva aplicacion dentre de la eistente
+  ```
+    python3 manege.py startapp nombre_app
+  ```
