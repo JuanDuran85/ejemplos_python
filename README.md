@@ -53,7 +53,7 @@ Ejemplos de programacion con Python
   ```
   python3 manage.py runserver number_port_to_run
   ```
-  - Crear una nueva aplicacion dentre de la eistente
+- Crear una nueva aplicacion dentre de la eistente
   ```
    python3 manege.py startapp nombre_app
   ```
