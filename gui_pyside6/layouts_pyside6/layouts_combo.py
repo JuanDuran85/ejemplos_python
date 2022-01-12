@@ -18,8 +18,12 @@ class VentanaPrincipal(QMainWindow):
         # creamos en primer lugarel horizontal y despues el vertical
         layout_horizontal = QHBoxLayout()
         layout_vertical = QVBoxLayout()
-        # agregando espacio en el layout vertical
+        # agregando espacio en el layout vertical y horizontal
         layout_vertical.setContentsMargins(10, 10, 10, 10)
+        layout_horizontal.setContentsMargins(10, 10, 10, 10)
+        # para agregar espacio de manera interna dentro de cada elemento
+        layout_vertical.setSpacing(10)
+        layout_horizontal.setSpacing(10)
         layout_vertical.addWidget(Color('red'))
         layout_vertical.addWidget(Color('green'))
         layout_vertical.addWidget(Color('blue'))
