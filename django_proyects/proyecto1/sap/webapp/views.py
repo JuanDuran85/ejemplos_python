@@ -8,3 +8,6 @@ def bienvenidos(request):
 
 def despedida(request):
     return HttpResponse("Hasta luego")
+
+def contacto(request):
+    return HttpResponse("Contacto")
