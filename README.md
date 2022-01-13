@@ -55,5 +55,25 @@ Ejemplos de programacion con Python
   ```
 - Crear una nueva aplicacion dentre de la eistente
   ```
-   python3 manege.py startapp nombre_app
+  python3 manage.py startapp nombre_app
+  ```
+- Para mostrar las migraciones pendientes
+  ```
+  python3 manage.py showmigrations
+  ```
+- Para ejecutar las migraciones de manera automatica
+  ```
+  python3 manage.py migrate
+  ```
+- Para ejecutar las migraciones pendientes
+  ```
+  python3 manage.py makemigrations
+  ```
+- Para ejeuctar la migracion con la sentencia SQL
+  ```
+  python3 manage.py sqlmigrate nombre_app nombre_migracion
+  ```
+- Par crear usuarios del paqueta de admin
+  ```
+  python3 manage.py createsuperuser
   ```

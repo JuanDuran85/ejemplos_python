@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webapp',
+    'personas',
 ]
 
 MIDDLEWARE = [
@@ -74,19 +75,12 @@ WSGI_APPLICATION = 'sap.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES_TWO = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'sap_db',
-        'USER': 'root',
-        'PASSWORD': '', 
+        'USER': 'postgres',
+        'PASSWORD': '123456789', 
         'HOST': 'localhost',
         'PORT': '5432',
     }
