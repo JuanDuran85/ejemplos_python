@@ -8,5 +8,7 @@ from personas.models import Persona
 def bienvenidos(request):
     # se utiliza las clases del modelo para trear los objetos
     numero_personas = Persona.objects.count()
-    personas = Persona.objects.all()
+    # el all trae todos los campos sin orden
+    #personas = Persona.objects.all()
+    personas = Persona.objects.order_by('id','nombre')
     return render(request, 'bienvenido.html', {'numero_personas':numero_personas, 'personas':personas})
