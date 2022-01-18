@@ -1,8 +1,8 @@
-# ejemplos_python
+# Python, DJango, Flask, PySide6, Tkinder
 
 Ejemplos de programacion con Python
 
-# Entorno Virtual para Python
+## Entorno Virtual para Python
 
 - se instala el entorno virtual
 
@@ -24,7 +24,7 @@ Ejemplos de programacion con Python
 
 - luego se selecciona el entorno virtual creado
 
-# Instalacion de requirements
+## Instalacion de requirements
 - Para instalar las librerias
     ```
     pip install -r requirements.txt
@@ -34,7 +34,7 @@ Ejemplos de programacion con Python
     pip freeze > requirements.txt
     ```
 
-# Usando servidor local para json
+## Usando servidor local para json
 - Instalacion de json-server
   ```
    npm install -g json-server
@@ -44,7 +44,7 @@ Ejemplos de programacion con Python
   json-server db.json
   ```
 
-# Creando proyectos con Django
+## Creando proyectos con Django
 - Iniciando el proyecto
   ```
   django-admin startproject nombre_proyecto
@@ -76,4 +76,30 @@ Ejemplos de programacion con Python
 - Par crear usuarios del paqueta de admin
   ```
   python3 manage.py createsuperuser
+  ```
+
+## Implementando Flask
+- Para levantar el servidor en modo de produccion
+  ```
+  flask run
+  ```
+- Para especificar el nombre del archivo de inicio, si ya es app.py se puede omitir el comando
+  ```bash
+  export FLASK_APP=app 
+  ```
+  ```cmd
+  set FLASK_APP=app
+  ```
+  ```powershell
+  $env:FLASK_APP = "app"
+  ```
+- Para configurar el servicio en modo de desarrollo
+  ```bash
+  export FLASK_ENV=development
+  ```
+  ```cmd
+  set FLASK_ENV=development
+  ```
+  ```powershell
+  $env:FLASK_ENV = "development"
   ```
