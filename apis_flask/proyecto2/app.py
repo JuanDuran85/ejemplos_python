@@ -23,3 +23,7 @@ def persona(nombre):
 @app.route('/edad/<int:edad>')
 def edad_usuario(edad):
     return f'Tu edad es: {edad}.'
+
+@app.route('/mostrar/<nombre>', methods=['GET', 'POST'])
+def mostrar_nombre(nombre):
+    return f'El nombre es: {nombre}'
