@@ -1,1 +1,3 @@
 tkinter
+PyPDF2
+PIL
