@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, url_for, redirect, flash, jsonify
+from flask_restful import abort
 
 app = Flask(__name__)
 
@@ -28,3 +29,19 @@ def redireccionar():
 @app.route('/redireccionar_nombre')
 def redireccion_nombre():
     return redirect(url_for('mostrar_nombre', nombre='Juan'))
+
+@app.route('/salir')
+def salir():
+    return abort(404)
+
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html', error=error), 404
+
+@app.route('/api/v1/mostrar/<nombre>', methods=['GET', 'POST'])
+def mostrar_nombre_json(nombre):
+    valores = {
+        "metod_http": request.method,
+        "nombre": nombre
+    }
+    return jsonify(valores)
