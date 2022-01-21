@@ -1,18 +1,35 @@
-from flask import Flask, request, render_template, url_for, redirect, flash, jsonify
+from flask import Flask, request, render_template, url_for, redirect, flash, jsonify, session
 from flask_restful import abort
 
 app = Flask(__name__)
+app.secret_key = '7898336090d2557e6d9566c564cbc8a16490fb30870f99c02cf3d93054f7775e'
 
 @app.route('/')
 def health():
-    print("Health check - logged checks")
-    app.logger.info(f'Entramos al path {request.path}')
-    app.logger.info('Health check')
-    app.logger.error('Health check error')
-    app.logger.warning('Health check warning')
-    app.logger.debug('Health check debug')
-    return 'OK'
+    if 'username' in session:
+        print("Health check - logged checks")
+        app.logger.info(f'Entramos al path {request.path}')
+        app.logger.info('Health check')
+        app.logger.error('Health check error')
+        app.logger.warning('Health check warning')
+        app.logger.debug('Health check debug')
+        return f"El usuario {session['username']} hizo loggin"
+    return "No hizo loggin"
 
+@app.route('/login', methods=['GET', 'POST'])
+def  login():
+    if request.method == 'POST':
+        usuario = request.form['username']
+        #agregar usuario a la sesion
+        session['username'] = usuario
+        return redirect(url_for('health'))
+    return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('login'))
+    
 @app.route('/mostrar/<nombre>', methods=['GET', 'POST'])
 def mostrar_nombre(nombre):
     return render_template('index.html', nombre_a_mostrar=nombre)
