@@ -41,7 +41,37 @@ class Persona(db.Model):
             f'Email: {self.email}'
         )
 
-
 @app.route('/')
+@app.route('/index')
+@app.route('/index.html')
 def health():
-    return 'ok -- -'
+    return jsonify({'status': 'OK'})
+
+@app.route('/api/vi/#')
+def inicio():
+    # listado de personas
+    personas = Persona.query.all()
+    total_personas = Persona.query.count()
+    app.logger.debug(f"Personas: {personas}")
+    app.logger.debug(f"Total personas: {total_personas}")
+    return render_template('index.html', personas = personas, total_personas = total_personas)
+
+@app.route('/api/vi/personas/')
+def personas_json():
+    # listado de personas
+    personas = Persona.query.all()
+    data_persona = []
+    for persona in personas:
+        data_persona.append({
+            "id":persona.id,
+            "nombre":persona.nombre,
+            "apellido":persona.apellido,
+            "email":persona.email
+        })
+    total_personas = Persona.query.count()
+    mostrar_personas = {
+        "total_personas": total_personas,
+        "personas": data_persona
+    }
+    app.logger.debug(f"Personas: {mostrar_personas}")
+    return jsonify(mostrar_personas)
