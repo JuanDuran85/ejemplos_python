@@ -47,7 +47,7 @@ class Persona(db.Model):
 def health():
     return jsonify({'status': 'OK'})
 
-@app.route('/api/vi/#')
+@app.route('/api/v1')
 def inicio():
     # listado de personas
     personas = Persona.query.all()
@@ -56,7 +56,7 @@ def inicio():
     app.logger.debug(f"Total personas: {total_personas}")
     return render_template('index.html', personas = personas, total_personas = total_personas)
 
-@app.route('/api/vi/personas/')
+@app.route('/api/v1/personas')
 def personas_json():
     # listado de personas
     personas = Persona.query.all()
