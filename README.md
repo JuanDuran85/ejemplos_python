@@ -107,3 +107,23 @@ Ejemplos de programacion con Python
   ```bash
   python3 -c 'import secrets; print(secrets.token_hex())'
   ```
+- Para crear la carpeta de migraciones
+  ```bash
+  flask db init
+  ```
+- Para crear los archivos que representaran el modelo para ser migrado a la base de datos
+  ```bash
+  flask db migrate
+  ```
+- Para guardar los cambios en la base de datos una vez creado los archivos de migracion
+  ```bash
+  flask db upgrade
+  ```
+- Comando para verificar que todo este actualizado con respecto a las migraciones
+  ```bash
+  flask db stamp head
+  ```
+- Comando para 
+  ```bash
+  
+  ```
