@@ -75,3 +75,12 @@ def personas_json():
     }
     app.logger.debug(f"Personas: {mostrar_personas}")
     return jsonify(mostrar_personas)
+
+@app.route('/api/v1/personas/<int:id>')
+def ver_personas(id):
+    # recuperamos la persona segun el id proporcionado
+    # persona = Persona.query.get(id)
+    persona = Persona.query.get_or_404(id)
+    print(f"{persona = }")
+    app.logger.debug(f"{persona = }")
+    return render_template('detalle.html', persona = persona)

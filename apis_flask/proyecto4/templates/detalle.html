@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAP</title>
+    <title>Document</title>
 </head>
 <body>
     <h1>Sistema de Administracion de Personas (SAP)</h1>
     <div>
-        <p>Total personas: {{total_personas}}</p>
+        <p>Persona encontrada: </p>
         <table>
             <thead>
                 <tr>
@@ -17,21 +17,20 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Ver más</th>
                 </tr>
             </thead>
             <tbody>
-                {% for persona in personas %}
-                    <tr>
-                        <td>{{persona.id}}</td>
-                        <td>{{persona.nombre}}</td>
-                        <td>{{persona.apellido}}</td>
-                        <td>{{persona.email}}</td>
-                        <td><a href="/api/v1/personas/{{persona.id}}">+</a></td>
-                    </tr>
-                {% endfor %}
+                <tr>
+                    <td>{{persona.id}}</td>
+                    <td>{{persona.nombre}}</td>
+                    <td>{{persona.apellido}}</td>
+                    <td>{{persona.email}}</td>
+                </tr>
             </tbody>
         </table>
+    </div>
+    <div>
+        <a href="{{url_for('inicio')}}">Regresar al inicio</a>
     </div>
 </body>
 </html>
