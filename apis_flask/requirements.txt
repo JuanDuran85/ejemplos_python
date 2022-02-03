@@ -9,3 +9,4 @@ gunicorn==20.1.0
 flask_sqlalchemy==2.3.2
 sqlalchemy==1.2.12
 flask-migrate==2.4.0
+flask-wtf==0.14.3

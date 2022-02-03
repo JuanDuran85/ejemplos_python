@@ -1,8 +1,12 @@
-from flask import Flask, request, render_template, url_for, redirect, flash, jsonify
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 import os
 from dotenv import load_dotenv
+from database import db
+
+from flask import Flask, render_template, jsonify
+from flask_migrate import Migrate
+
+from models import Persona
+from froms import PersonaForm
 
 load_dotenv()
 
@@ -18,28 +22,17 @@ FULL_URL_DB = f'postgresql://{USER_DB}:{PASSWORD_DB}@{URL_DB}/{NAME_DB}'
 app.config['SQLALCHEMY_DATABASE_URI'] = FULL_URL_DB
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+# configuracion de flasl-wtf
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+
 # inicializamosel objeto de base de datos de sqlAlchemy
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
+db.init_app(app)
 
 # configurando las migraciones y mapeo para la base de datos
 
 migrate = Migrate()
 migrate.init_app(app, db)
-
-# clase de modelo
-class Persona(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    nombre = db.Column(db.String(20), nullable = False)
-    apellido = db.Column(db.String(20), nullable = False)
-    email = db.Column(db.String(50), unique = True, nullable = False)
-
-    def __str__(self):
-        return (
-            f'Id: {self.id}, '
-            f'Nombre: {self.nombre}, ' 
-            f'Apellido: {self.apellido}, ' 
-            f'Email: {self.email}'
-        )
 
 @app.route('/')
 @app.route('/index')
@@ -84,3 +77,11 @@ def ver_personas(id):
     print(f"{persona = }")
     app.logger.debug(f"{persona = }")
     return render_template('detalle.html', persona = persona)
+
+@app.route('/api/v1/agregar', methods=['GET', 'POST'])
+def agregar():
+    # utilizando wtforms para los formularios
+    persona = Persona()
+    persona_form = PersonaForm(obj=persona)
+    return render_template('agregar.html', forma = persona_form)
+    
