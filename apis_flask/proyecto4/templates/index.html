@@ -18,6 +18,8 @@
                     <th scope="col">Apellido</th>
                     <th scope="col">Email</th>
                     <th scope="col">Ver más</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,7 +29,9 @@
                         <td>{{persona.nombre}}</td>
                         <td>{{persona.apellido}}</td>
                         <td>{{persona.email}}</td>
-                        <td><a href="/api/v1/personas/{{persona.id}}">+</a></td>
+                        <td><a href="/api/v1/personas/{{persona.id}}">+ mas</a></td>
+                        <td><a href="/api/v1/editar/{{persona.id}}">Editar</a></td>
+                        <td><a href="/api/v1/eliminar/{{persona.id}}">Eliminar</a></td>
                     </tr>
                 {% endfor %}
             </tbody>

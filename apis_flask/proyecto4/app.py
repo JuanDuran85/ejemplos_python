@@ -1,12 +1,12 @@
 import os
 from dotenv import load_dotenv
 from database import db
-
-from flask import Flask, render_template, jsonify
-from flask_migrate import Migrate
-
 from models import Persona
 from froms import PersonaForm
+
+from flask import Flask, render_template, jsonify, request, redirect, url_for
+from flask_migrate import Migrate
+
 
 load_dotenv()
 
@@ -43,7 +43,7 @@ def health():
 @app.route('/api/v1')
 def inicio():
     # listado de personas
-    personas = Persona.query.all()
+    personas = Persona.query.order_by('nombre')
     total_personas = Persona.query.count()
     app.logger.debug(f"Personas: {personas}")
     app.logger.debug(f"Total personas: {total_personas}")
@@ -83,5 +83,37 @@ def agregar():
     # utilizando wtforms para los formularios
     persona = Persona()
     persona_form = PersonaForm(obj=persona)
+    if request.method == 'POST':
+        if persona_form.validate_on_submit():
+            persona_form.populate_obj(persona)
+            app.logger.debug(f"{ persona = }")
+            # insertar el nuevo registro
+            db.session.add(persona)
+            db.session.commit()
+            return redirect(url_for('inicio'))
     return render_template('agregar.html', forma = persona_form)
+
+@app.route('/api/v1/editar/<int:id>', methods=['GET', 'POST'])
+def editar(id):
+    # objeto a editar
+    persona = Persona.query.get_or_404(id)
+    persona_forma = PersonaForm(obj=persona)
+    app.logger.debug(f"{persona = }")
+    if request.method == 'POST':
+        if persona_forma.validate_on_submit():
+            persona_forma.populate_obj(persona)
+            app.logger.debug(f"{ persona = }")
+            # se llama el commit
+            db.session.commit()
+            return redirect(url_for('inicio'))
+    return render_template('editar.html', forma = persona_forma)
+    # editando en base de datos
+    
+@app.route('/api/v1/eliminar/<int:id>')
+def eliminar(id):
+    persona = Persona.query.get_or_404(id)
+    app.logger.debug(f"{ persona = }")
+    db.session.delete(persona)
+    db.session.commit()
+    return redirect(url_for('inicio'))
     
