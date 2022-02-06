@@ -51,6 +51,9 @@ people_b = { 'Cathryn', 'Bessie', 'Federico', 'Jordy', 'Camille', 'Cara' }
 print(f"{people_a = }")
 print(f"{people_b = }")
 
+# you can use isdisjoint() to check intersection of two sets is empty.
+print(f"{people_a.isdisjoint(people_b) = }")
+
 # use method .intersection to get a new set containing only the elements that are in both sets
 print(f"{people_a.intersection(people_b) = }")
 
@@ -63,9 +66,21 @@ print(f"{people_a.union(people_b) = }")
 
 
 
+
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
-''' Convination of lists, tuples, dictionaries, set, map '''
+''' Using zip '''
+print("\n Using zip \n")
+list_numbers = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(f"{list_numbers = }")
+
+# use zip function to make N-tuples from N arguments, so it can be used with *args to transpose a list of lists.
+print(f"{list(zip(*list_numbers)) = }")
+
+
+"""----------------------------------------------------------------------------------------"""
+"""----------------------------------------------------------------------------------------"""
+''' Convination of lists, tuples, dictionaries, set, map, zip '''
 print("\n Convination of lists, tuples, dictionaries, set, map \n")
 numbers_a_bases = [1,2,3,4]
 numbers_b_exponents = [2,3,2,3]
