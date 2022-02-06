@@ -1,5 +1,5 @@
 import string
-from random import randint, sample
+from random import sample
 
 c_lower = string.ascii_lowercase
 print(f"{c_lower = }")
