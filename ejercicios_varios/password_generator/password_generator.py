@@ -1,32 +1,21 @@
+"""[summary]
+
+Password generator with 4 lowercase letters, 4 uppercase letters, 2 numbers and 2 special characters.
+
+The password is generated with 12 random characters.
+
+"""
+
 import string
 from random import sample
 
-c_lower = string.ascii_lowercase
-print(f"{c_lower = }")
 
-c_upper = string.ascii_uppercase
-print(f"{c_upper = }")
+def sample_charters(charters, n):
+    return sample(charters, n)
 
-c_digits = string.digits
-print(f"{c_digits = }")
 
-c_special = string.punctuation
-print(f"{c_special = }")
+result_sample = sample_charters(string.ascii_lowercase, 4) + sample_charters(
+    string.ascii_uppercase, 4) + sample_charters(string.digits, 2) + sample_charters(string.punctuation, 2)
 
-cl = sample(c_lower, 4)
-print(f"{cl = }")
-
-cu = sample(c_upper, 4)
-print(f"{cu = }")
-
-cd = sample(c_digits, 2)
-print(f"{cd = }")
-
-cs = sample(c_special, 2)
-print(f"{cs = }")
-
-c = cl + cu + cd + cs
-print(f"{c = }")
-
-password_new = "".join(sample(c,12))
+password_new = "".join(sample_charters(result_sample, 12))
 print(f"{password_new = }")
