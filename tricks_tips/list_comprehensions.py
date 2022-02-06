@@ -26,10 +26,12 @@ cuantity_products = {
 }
 fruits = ["peach", "banana", "apple"]
 numbers_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+names_list = ['Jayce','Thelma','Blair','Arvilla','Wava','Cassandre','Antonia','Grace']
 print(f"{n_numbers = }")
 print(f"{cuantity_products = }")
 print(f"{fruits = }")
 print(f"{numbers_list = }")
+print(f"{ names_list = }")
 
 # you can use list comprehension and random library to create a list with the result of n random numbers in another list.
 list_of_numbers = [random.randint(1,100) for _ in range(n_numbers)]
@@ -40,6 +42,9 @@ print(f"cuantity products: {[cuantity_products[fruit] for fruit in fruits] }")
 
 # use list comprehension to get the first n squares of the numbers in the list.
 print(f"{[n**2 for n in numbers_list] = }")
+
+# use list comprehension to get the names with n charters in the list x.
+print(f"{[name for name in names_list if len(name) == 5] = }") 
 
 
 """----------------------------------------------------------------------------------------"""
