@@ -20,6 +20,14 @@ print(f"{list(filter(None, n_values_in_list)) = }")
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
 ''' Using tuples - Can be: ordered, inmutable, duplicates'''
+print("\n Using tuples \n")
+players = ("Messi", "Ronaldo", "Neymar", "Suarez", "Pele", "Maradona", "Pirlo", "Ribery", "Bale")
+print(f"{players = }")
+
+# If you need yo get the first index of a given value inside a tuple, you can use the index method.
+print(f"{players.index('Pele') = }")
+
+
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
