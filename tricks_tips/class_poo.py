@@ -25,3 +25,16 @@ class Car(Vehicle):
         
 print(f"{issubclass(Car, Vehicle) = }")
 print(f"{issubclass(Vehicle, Car) = }")
+
+print("\n Using __len__ method \n")
+
+# To get the length of the class, you can use the __len__ method.
+
+class Cart:
+    def __init__(self, item):
+        self.item = item
+    def __len__(self):
+        return len(self.item)
+
+c = Cart("Hello")
+print(f"{len(c) = }")
