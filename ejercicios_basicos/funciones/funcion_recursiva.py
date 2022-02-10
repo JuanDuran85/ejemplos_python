@@ -30,3 +30,12 @@ def calcula_impuesto(*dineros,impuesto):
 
 total = calcula_impuesto(1,1,1,1,1, impuesto=0.16)
 print(total)
+
+# Funciones recursivas
+
+def recursiveness_func(x,ans):
+    if(x==0):
+        return 0
+    else:
+        return recursiveness_func(x-1,x+ans)
+print(recursiveness_func(2,66))

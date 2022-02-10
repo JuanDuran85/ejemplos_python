@@ -38,3 +38,19 @@ class Cart:
 
 c = Cart("Hello")
 print(f"{len(c) = }")
+
+print("\n Using hasattr and getattr methods \n")
+
+# If you want to know if a class has any attributes or get any attributes, you can use the hasattr and getattr methods.
+
+class Job:
+    def __init__(self, name, title):
+        self.name = name
+        self.title = title
+        
+job = Job("Juan","Developer")
+print(f"{hasattr(job, 'name') = }")
+print(f"{hasattr(job, 'title') = }")
+print(f"{getattr(job, 'name') = }")
+print(f"{getattr(job, 'title') = }")
+print(f"{hasattr(job, 'age') = }")
