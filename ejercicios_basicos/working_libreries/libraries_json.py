@@ -20,3 +20,7 @@ datos_nuevos = """
 datos_nuevos_diccionario = json.loads(datos_nuevos)
 print(datos_nuevos_diccionario)
 print(type(datos_nuevos_diccionario))
+
+
+# The json module can print better lines. Thos only work with dicts containing primitive types.
+print(json.dumps(tabla_datos, indent=4, sort_keys=True))

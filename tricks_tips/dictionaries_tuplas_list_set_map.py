@@ -7,11 +7,15 @@ All the examples are in the same file, but they are separated with a mark
 All examples are from the internet with somes variations, so they are not 100% correct. Thanks to the authors.
 
 """
+
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
 ''' Using lists - Can be: ordered, mutable, duplicates'''
 print("\n Using lists \n")
 n_values_in_list = ["", 0, None, -3, 5, [], 1, {}, 7.5]
+n_values_in_list_two = range(0,10,2)
+print(f"{n_values_in_list = }")
+print(f"{n_values_in_list_two = }")
 
 # You can use the filter method to filter a list of values, in this case, the values ​​None or empty. Be careful with the zero value.
 print(f"{list(filter(None, n_values_in_list)) = }")
