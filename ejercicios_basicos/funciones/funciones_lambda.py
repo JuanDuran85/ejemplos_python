@@ -15,7 +15,7 @@ print(mi_funcion_lambda())
 mi_funcion_lambda = lambda a=2,b=5: a+b
 print(f"La suma es: {mi_funcion_lambda()}")
 
-mi_funcion_lambda = lambda x=15: x**2
+mi_funcion_lambda = lambda x=2: x**2
 print(f"El cuadrado es: {mi_funcion_lambda()}")
 
 # funcion lambda copn argumentos variables *args(tuplas) y **kwargs(diccionarios)

@@ -54,6 +54,39 @@ key, value = user.popitem()
 print(f"{key = } and {value = } deleted")
 print(f"New dictionary {user = }") 
 
+# The get() method on dicts has a default value if the key is not found. 
+def greeting(key_user):
+    return "Hi %s!" % user.get(key_user, "there")
+print(f"{greeting('name') = }")
+print(f"{greeting('names') = }")
+
+# If you want to merge two dictionaries, you can use the unpacking operator.
+x = {
+    'a': 1,
+    'b': 2,
+    'c': 3,
+    'd': 4,
+}
+
+y = {
+    'a': 10,
+    'f': 3,
+    'c': 20,
+    'o': -1,
+    'p': 5,
+}
+
+# In the first example, the unpacking operator will be used on both dictionaries, overwriting duplicates from left to right.
+z = {**x, **y}
+print("{**x, **y} = ", z)
+w = dict(x, **y)
+print("dict(x, **y) = ", w)
+
+# If you need to sort a Python dict by value, you can use the sorted method.
+dict_sort = {'a': 4, 'b': 2, 'c': 1, 'd': 3}
+print(f"{sorted(dict_sort.items(), key=lambda x: x[1]) = }")
+print(dict_sort.items())
+
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
 ''' Using set - Can be: unordered, mutable, no duplicates'''
