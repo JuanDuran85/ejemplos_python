@@ -49,13 +49,13 @@ class UnderlineTextDecorator(TextDecorator):
     def write_text(self, texto):
         print(f"Agregando subrayado al <u>{texto}</u>")
         return super().write_text(texto)
-    
+texto_ejemplo = "Texto base ingresado"    
 base_text = BaseText()
-base_text.write_text("Hola mundo")
+base_text.write_text(f"{texto_ejemplo}")
 bold_text = BoldTextDecorator(base_text)
-bold_text.write_text("Hola mundo")
+bold_text.write_text(f"{texto_ejemplo}")
 underline_text = UnderlineTextDecorator(base_text)
-underline_text.write_text("Hola mundo")
+underline_text.write_text(f"{texto_ejemplo}")
 underline_text = UnderlineTextDecorator(bold_text)
-underline_text.write_text("Hola mundo")
+underline_text.write_text(f"{texto_ejemplo}")
     
