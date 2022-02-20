@@ -1,6 +1,8 @@
-''' 
-Patron decorador
-'''
+"""[summary]
+
+    Patron decorador
+
+"""
 from abc import ABC, abstractmethod
 
 class Enemy(ABC):
@@ -15,7 +17,6 @@ class EnemyDecorator(Enemy):
         
     def compute_damage(self, recive_attack: str) -> int: ...
     
-
 def helement_decorator(cls):
     def wrapper(*args, **kwargs):
         def new_compute_damage(self, recive_attack: str) -> int:
