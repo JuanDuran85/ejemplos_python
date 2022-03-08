@@ -1,3 +1,0 @@
-nombre: yece4 
-telefono: 56425345 
-categoria: user 

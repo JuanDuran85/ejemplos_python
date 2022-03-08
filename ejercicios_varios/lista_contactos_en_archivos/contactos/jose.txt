@@ -1,3 +1,0 @@
-nombre: jose 
-telefono: 8765432 
-categoria: admin 

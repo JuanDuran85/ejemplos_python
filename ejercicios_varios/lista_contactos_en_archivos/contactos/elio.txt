@@ -1,3 +1,0 @@
-nombre: elio 
-telefono: 456473556 
-categoria: admin 

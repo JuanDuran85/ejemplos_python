@@ -1,3 +1,0 @@
-nombre: josefina 
-telefono: 355474564 
-categoria: user 
