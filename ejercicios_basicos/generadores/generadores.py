@@ -81,3 +81,19 @@ print(resultado_pares)
 print(type(resultado_pares))
 for i in resultado_pares:
     print(i)
+    
+    
+''' Usando yield from con funciones y ciclos for '''
+
+def listar_cursos(*cursos)-> Generator[str, None, None]:
+    for elemento in cursos:
+        yield from elemento
+        
+cursos_listados: Generator[str, None, None] = listar_cursos('Python', 'Django', 'Flask', 'Java', 'C#')
+
+print(next(cursos_listados))
+print(next(cursos_listados))
+print(next(cursos_listados))
+print(next(cursos_listados))
+print(next(cursos_listados))
+print(next(cursos_listados))
