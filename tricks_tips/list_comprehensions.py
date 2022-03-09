@@ -44,7 +44,14 @@ print(f"cuantity products: {[cuantity_products[fruit] for fruit in fruits] }")
 print(f"{[n**2 for n in numbers_list] = }")
 
 # use list comprehension to get the names with n charters in the list x.
-print(f"{[name for name in names_list if len(name) == 5] = }") 
+print(f"{[name for name in names_list if len(name) == 5] = }")
+
+
+# Use list comprehension with split to get the first word of each sentence in a list.
+sentences: list = ['Primer texto de la cadena', "Segundo texto de la cadena", "Tercer texto de la cadena", "Cuarto texto de la cadena"]
+first_words = [sentence.split()[0] for sentence in sentences]
+print(f"{first_words = }")
+
 
 
 """----------------------------------------------------------------------------------------"""

@@ -195,3 +195,12 @@ resultado_split: list = frease_string.split()
 print(f"Resultado de split: {resultado_split}")
 resultado_split.remove('en')
 print(f"Resultado de remove: {resultado_split}")
+
+# para obtener la primera palabra de un string
+
+sentence: str = "Cadena de texto..."
+print(f"Primera palabra de la cadena: {sentence.split()[0]}")
+
+# cuando se desea separar una cadena de texto solamente en dos elementos de una lista con la primera palabra como primer elemento de la lista
+
+print(f"{sentence.split(' ',1)}")

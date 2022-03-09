@@ -45,3 +45,12 @@ llave = ["edad"]
 nueva_edad = [40]
 diccionario.update(zip(llave, nueva_edad))
 print(diccionario)
+
+# para mezclar dos listas en un solo elemento, pero perdiendo los valores que no tenga par
+x: list = [1, 2, 3, 4, 5]
+y: list = ['a', 'b', 'c']
+
+print(f"{x = }")
+print(f"{y = }")
+result_x_y: list = list(zip(x, y))
+print(f"{result_x_y = }")

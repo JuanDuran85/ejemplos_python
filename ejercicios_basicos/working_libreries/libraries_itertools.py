@@ -2,10 +2,11 @@
 
     Usando la libreria itertools
     Using itertools library
+    Using zip_longest
 
 """
 
-from itertools import accumulate, filterfalse
+from itertools import accumulate, filterfalse, zip_longest
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
@@ -23,3 +24,12 @@ print(f"{list(accumulate(n_values_in_list_two)) = }")
 list_any: list = [None, True, 1, 0, False, '', [], {}, [1,2], {'a':1}, 'string...']
 list_filter: list = list(filterfalse(bool, list_any))
 print(f"{list_filter = }")
+
+
+# If you want to zip uneven list in Python, you can either accept that one list will be truncated ot you can use zip_longest from itertools library
+
+x: list = [1, 2, 3, 4, 5]
+y: list = ['a', 'b', 'c']
+
+result_x_y: list = list(zip_longest(x, y))
+print(f"{result_x_y = }")
