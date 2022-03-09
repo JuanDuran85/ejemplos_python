@@ -54,3 +54,13 @@ print(f"{hasattr(job, 'title') = }")
 print(f"{getattr(job, 'name') = }")
 print(f"{getattr(job, 'title') = }")
 print(f"{hasattr(job, 'age') = }")
+
+
+# If you need set a new attribute, you can use the setattr method.
+
+class Animal: ...
+
+cat: Animal = Animal()
+print(f"{cat = }")
+setattr(cat, 'name', 'Garfield')
+print(f"{cat.name = }")

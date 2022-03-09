@@ -38,3 +38,14 @@ print(f"{tuple_values = }")
 print(f"{dict_values = }")
 print(f"{function_one(*tuple_values) = } ")
 print(f"{function_one(**dict_values) = } ")
+
+'''
+    In Python, you can define a function's arguments to be positional-only. In order to do that, you just use a '/' in the argument list. What comes before the '/' is positional-only
+'''
+
+print(f"\r\nArguments Positional-Only\r\n")
+def example_function(a: int,b: int,/) -> int:
+    return a+b
+
+print(example_function(1,4))
+# print(example_function(1,b=4)), In this case, we catch an error, because the arguments in the function are only positional

@@ -50,4 +50,7 @@ if any((x,y,z)):
     print("True")
 else:
     print("False")
-
+    
+# use the all function if you need to test true on all elements of a tuple
+if all((x,y,z)):
+    print("All True")

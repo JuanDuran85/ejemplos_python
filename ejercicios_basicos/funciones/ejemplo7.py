@@ -21,7 +21,7 @@ print("-----------------------")
 print()
 
 def subrayar(espacio):
-  for i in range(0,espacio):
+  for _ in range(0,espacio):
     print("-",end="")
   print()
 
@@ -87,7 +87,7 @@ print("-----------------------")
 print()
 
 def linea(letra1, letra2, repeticion):
-  for x in range(repeticion):
+  for _ in range(repeticion):
     print(letra1, end="")
     print(letra2, end="")
 

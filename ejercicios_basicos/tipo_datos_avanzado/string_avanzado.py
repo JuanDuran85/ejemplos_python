@@ -187,3 +187,11 @@ if variable:
     print("La variable es verdadera")
 else:
     print("La variable es falsa")
+    
+# utilizando split y remove para trabajar con string
+
+frease_string: str = "Ejemplo de frese en varibale del tipo string en python"
+resultado_split: list = frease_string.split()
+print(f"Resultado de split: {resultado_split}")
+resultado_split.remove('en')
+print(f"Resultado de remove: {resultado_split}")
