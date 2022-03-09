@@ -123,6 +123,14 @@ print(f"{list_numbers = }")
 print(f"{list(zip(*list_numbers)) = }")
 
 
+# use zip to set the list to a dictionary with keys and values
+keys: list = ['nombre','ciudad','edad']
+values: list = ['Juan','Santiago','40']
+dict_result: dict = {}
+for key, dict_result[key] in zip(keys, values): ...
+print(f"{dict_result = }")
+
+
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
 ''' Convination of lists, tuples, dictionaries, set, map, zip '''

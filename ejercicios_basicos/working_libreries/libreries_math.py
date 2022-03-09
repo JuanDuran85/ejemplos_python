@@ -1,3 +1,9 @@
+"""_summary_
+
+    Implementado la libreria Math
+
+"""
+
 # trabajando con la libereria math
 
 import math
@@ -45,3 +51,20 @@ print(math.isqrt(1))
 float_list = [0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1]
 print(sum(float_list))
 print(math.fsum(float_list)) # da mas exacto
+
+
+# ------------------------------------------------------------------------------------------------
+
+'''
+No uses '==' para comprobar si dos puntos flotantes son iguales. Especialmente después de realizar algunas operaciones aritméticas. Usa math.isclose() en su lugar.
+'''
+# por ejemplo, la suma a continuacion no es exacta gracias al error de redondedo de los decimales
+a: float = 0.1 + 0.2
+print(f"{a = }")
+# para verificar el error por igualdad
+print(f"{a == 0.3}") # el resultado es False
+# Por consiguiente se recomienda implementar la funcion "math.isclose()" de la libreria math
+print(f"{math.isclose(a, 0.3)}") # el resultado es True
+
+
+
