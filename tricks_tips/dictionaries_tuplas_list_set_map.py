@@ -87,6 +87,15 @@ dict_sort = {'a': 4, 'b': 2, 'c': 1, 'd': 3}
 print(f"{sorted(dict_sort.items(), key=lambda x: x[1]) = }")
 print(dict_sort.items())
 
+# You can mix dictionaries using the ** kwargs operator.
+dictionary_one: dict = {'1':'one','2':'two','3':'three'}
+result_dict: dict = dict(**dictionary_one, x_value=56)
+print(f"{result_dict = }")
+result_dict_two: dict = dict(**dictionary_one, x_value="Nuevo valor", **{'4':'four'})
+print(f"{result_dict_two = }")
+
+
+
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
 ''' Using set - Can be: unordered, mutable, no duplicates'''
@@ -153,5 +162,30 @@ print(f"{list(set(users)) = }")
 
 # If you need to remove duplicates from a list, you can use the fromkeys and list method to generate a new list, but you lose the order of the elements.
 print(f"{list(dict.fromkeys(users)) = }")
+
+# you can merge two lists into a dictionary with different methods
+countries: list = ['Colombia','Chile','Spain','Brazil','Gabon','Indonesia']
+codes: list = ['CO','CL','ES','BR','GA','ID']
+
+# First: Using indexing
+dictionarie_indexing: dict = {}
+for i in range(len(codes)):
+    dictionarie_indexing[codes[i]] = countries[i]
+print(f"{dictionarie_indexing = }")
+
+# Second: Using zip
+dictionary_zip: dict = {}
+for code,country in zip(codes,countries):
+    dictionary_zip[code] = country
+print(f"{dictionary_zip = }") 
+
+# Thirds: Replacing loop with dict comprehension
+dictionary_comprehension: dict = {code: country for code, country in zip(codes, countries)}
+print(f"{dictionary_comprehension = }")
+
+# Fourth: Replace dict comprehension with dict call
+dictionary_final: dict = dict(zip(codes, countries))
+print(f"{dictionary_final = }")
+
 
 """----------------------------------------------------------------------------------------"""

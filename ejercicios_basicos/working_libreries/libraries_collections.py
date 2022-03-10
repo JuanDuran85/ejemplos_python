@@ -35,6 +35,11 @@ print(f"{count_in_dict['red'] = }")
 count_in_keyword_args: Counter = Counter(a=4, b=2, c=0, d=-2)
 print(f"{sorted(count_in_keyword_args.elements()) = }")
 
+conteador_numeros_lista: Counter = Counter([1,1,2,2,3,3,3,3,4,4,5,5,5,6,7,8,9,9,9])
+print(f"{conteador_numeros_lista = }")
+print(f"{conteador_numeros_lista.most_common(1) = }")
+print(f"{conteador_numeros_lista.most_common(2) = }")
+
 # -------------------------------------------------------------------------------------
 # Using ChainMap
 

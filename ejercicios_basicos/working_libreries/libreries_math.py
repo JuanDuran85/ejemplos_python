@@ -67,4 +67,11 @@ print(f"{a == 0.3}") # el resultado es False
 print(f"{math.isclose(a, 0.3)}") # el resultado es True
 
 
-
+'''
+    Use math.fsum() to accurately sum the numbers
+'''
+# por ejemplo
+nums: list = [0.1119] * 10
+print(f"{nums = }")
+print(f"{sum(nums) = }")
+print(f"{math.fsum(nums) = }")

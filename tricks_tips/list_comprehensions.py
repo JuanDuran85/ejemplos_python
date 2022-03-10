@@ -48,11 +48,14 @@ print(f"{[name for name in names_list if len(name) == 5] = }")
 
 
 # Use list comprehension with split to get the first word of each sentence in a list.
-sentences: list = ['Primer texto de la cadena', "Segundo texto de la cadena", "Tercer texto de la cadena", "Cuarto texto de la cadena"]
+sentences: list = ["Primer texto de la cadena", "Segundo texto de la cadena", "Tercer texto de la cadena", "Cuarto texto de la cadena"]
 first_words = [sentence.split()[0] for sentence in sentences]
 print(f"{first_words = }")
 
-
+# If you have a list of string, you can get the list of first letters
+sentences_name: list = ["Juan","Jose","Maria","Petra","Josefina","Ignacia"]
+result_list: list = [name[0] for name in sentences_name]
+print(f"{result_list = }")
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
