@@ -204,4 +204,12 @@ my_range: range = range(5)
 final_combo: list = [*my_tuple, *my_list, *my_range]
 print(f"{final_combo = }")
 
+# if you want to remove duplicate items in a list you can use different options
+duplicate_items_list: list = [34,56,2,34,2,45,56,2,34]
+print(f"{duplicate_items_list = }")
+cleaned_items_list: list = list(set(duplicate_items_list))
+print(f"{cleaned_items_list = }")
+cleaned_items_list_two: list = list(dict.fromkeys(duplicate_items_list))
+print(f"{cleaned_items_list_two = }")
+
 """----------------------------------------------------------------------------------------"""

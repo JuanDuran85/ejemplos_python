@@ -75,3 +75,14 @@ nums: list = [0.1119] * 10
 print(f"{nums = }")
 print(f"{sum(nums) = }")
 print(f"{math.fsum(nums) = }")
+
+
+'''
+    Use math.sqrt() to calculate the square root of a number. But, you can use other tricks to calculate the square root.
+'''
+# with math.sqrt()
+print(f"{math.sqrt(25) = }")
+# with **
+print(f"{ 25 ** 0.5 = }")
+# with pow
+print(f"{ pow(25,0.5) = }")
