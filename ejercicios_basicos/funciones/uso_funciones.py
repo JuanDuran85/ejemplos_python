@@ -1,6 +1,8 @@
 # las funciones en python son ciudadanos de primera clase (FCC)
 # First Class Citizen
 
+from typing import Any
+
 def sumar(a, b):
     return a + b
 
@@ -23,3 +25,30 @@ def retorno_funcion():
 
 mi_funcion_retornada = retorno_funcion()
 print(f"Resultado: {mi_funcion_retornada(15,10)}")
+
+
+# se puede usar *args para pasar una lista de argumentos indeterminados a una funcion
+def varios_argumentos(*args: Any) -> None:
+    total_elementos: int = len(args)
+    for i,elmento in enumerate(args):
+        print(f"Elemento {i+1} de {total_elementos}: {elmento}")
+        
+varios_argumentos(1,"Cadena de texto", [1,2,3,4], {"clave":"valor"})
+
+# se puede usar **kewargs para pasar un diccionario de argumentos indeterminados a una funcion.Cnstruye un diccionario con los argumentos pasados
+def argumentos(**kwargs) -> None:
+    print(f"Diccionario de argumentos: {kwargs}")
+    for key,value in kwargs.items():
+        print(f"{key} : {value}")
+    
+argumentos(clave1="valor1", clave2="valor2")
+
+# Se pueden utilizar *args y **kwargs combinados como argumentos indeterminados de una funcion
+def argumentos_indeterminados(*args, **kwargs) -> None:
+    suma: int = 0
+    for e in args:
+        suma += e
+    print(f"El promedio es: {(suma/len(args)).__round__(2)}")
+    for clave in kwargs:
+        print(clave, "\t", kwargs[clave])    
+argumentos_indeterminados(10,20,30,10,10,20, id = 5, nombre= "Isabell", edad = 23, notas=[10,12,20,20,17])

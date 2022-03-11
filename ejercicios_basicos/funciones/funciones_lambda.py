@@ -27,3 +27,21 @@ print(mi_funcion_lambda(1,5,3,2, a=5,b=34))
 # funciones lambda con argumentos, argumentos varibales y valores por defecto
 mi_funcion_lambda = lambda x,y,z=4,*args, **kwargs: x+y+z+len(args)+len(kwargs)
 print(mi_funcion_lambda(1,5,3,2,5,-6, r=5,w=34))
+
+# utilizando funciones lambda
+
+# el doble del numero enviado
+doblar_numero = lambda num: num * 2
+print(f"{doblar_numero(25) = }")
+
+# numero impar
+impar = lambda num: num % 2 != 0
+print(f"{impar(2) = }")
+
+# revertir cadena
+revertir_cadena = lambda texto: texto[::-1]
+print(f"{revertir_cadena('hola') = }")
+
+# sumar dos numeros
+sumar_numeros = lambda num1,num2: num1 + num2
+print(f"{sumar_numeros(5,6) = }")

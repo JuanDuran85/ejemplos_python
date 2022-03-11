@@ -39,3 +39,25 @@ def recursiveness_func(x,ans):
     else:
         return recursiveness_func(x-1,x+ans)
 print(recursiveness_func(2,66))
+
+
+# Una funcion recursiva es una funcion que se utiliza a si misma para resolver un problema.
+def cuenta_atras(num: int) -> None:
+    num -= 1
+    if num > 0:
+        print(f"{num = }")
+        cuenta_atras(num)
+    else:
+        print(f"{num = }")
+        print("Fin de la funcion")
+    
+cuenta_atras(10)
+
+# factorial de un numero con funciones recursivas
+
+def factorial_numero(num):
+    if num > 1:
+        num = num * factorial_numero(num - 1)
+    return num
+    
+print(f"{factorial_numero(5) = }")
