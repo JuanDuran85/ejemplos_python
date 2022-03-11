@@ -3,10 +3,15 @@
     Usando la libreria itertools
     Using itertools library
     Using zip_longest
+    Using count
+    Using permutations
+    Using product
+    Using starmap
 
 """
 
-from itertools import accumulate, filterfalse, zip_longest
+from itertools import accumulate, filterfalse, zip_longest, count, permutations, product, starmap
+from typing import Generator, Iterable
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
@@ -33,3 +38,45 @@ y: list = ['a', 'b', 'c']
 
 result_x_y: list = list(zip_longest(x, y))
 print(f"{result_x_y = }")
+
+# Make an iterator that returns evenly spaced values starting with number start --> itertools.count(start=0, step=1)
+# default sequence, start at 0 and count by one
+sequence: count = count()
+print(f"{next(sequence) = }")
+print(f"{next(sequence) = }")
+# sequence with inital value
+sequence_two: count = count(10)
+print(f"{next(sequence_two) = }")
+print(f"{next(sequence_two) = }")
+print(f"{next(sequence_two) = }")
+# sequence with inital value and step
+sequence_three: count = count(100, 10)
+print(f"{next(sequence_three) = }")
+print(f"{next(sequence_three) = }")
+print(f"{next(sequence_three) = }")
+
+# If you need to create a permutation of numbers, you can use the permutation itertools library
+for p in permutations([5,6,7]):
+    print(''.join(str(x) for x in p))
+
+
+# -------------------------------------------------------------
+# Using starmap to return an iterator whose values are returned from the function evaluated with an argument tuple taken from the given sequence.
+args_base_pow: list = [(2,3), (2,4), (2,5)]
+
+result_pow: list = list(starmap(pow, args_base_pow))
+print(f"{result_pow = }")
+
+#--------------------------------------------------------------
+# 
+def alpha_iter(start: str, end: str) -> Iterable[str]:
+    """
+    Generate an iterable of strings from start to end
+    """
+    sords: map[int] = map(ord, start)
+    eords: map[int] = map(ord, end)
+    ranges: Generator[range, None, None] = (range(s,e+1) for s,e in zip(sords,eords))
+    for ords in product(*ranges):
+        yield ''.join(map(chr, ords))
+        
+print(f"{list(alpha_iter('a','z')) = }")

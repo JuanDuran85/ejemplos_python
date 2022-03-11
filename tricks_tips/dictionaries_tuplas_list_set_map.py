@@ -187,5 +187,21 @@ print(f"{dictionary_comprehension = }")
 dictionary_final: dict = dict(zip(codes, countries))
 print(f"{dictionary_final = }")
 
+#-------------------------------------------
+# You can use the zip function to make N-tuples from N arguments, so it can be used with *args to transpose a list of lists.
+first: list = ['Mickey', 'Harry', 'Sherlock']
+last: list = ['Mouse', 'Potter', 'Holmes']
+names = list(zip(first, last))
+print(f"{names = }")
+first_names, last_names = zip(*names)
+print(f"{first_names = }")
+print(f"{last_names = }")
+
+# You can use the unpack function to unpack a list or tuple or range into a large list
+my_tuple: tuple = (45,567,132,9)
+my_list: list = ['texto uno', 'otro texto', 'mas palabras en string']
+my_range: range = range(5)
+final_combo: list = [*my_tuple, *my_list, *my_range]
+print(f"{final_combo = }")
 
 """----------------------------------------------------------------------------------------"""
