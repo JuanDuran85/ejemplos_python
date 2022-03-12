@@ -54,3 +54,8 @@ else:
 # use the all function if you need to test true on all elements of a tuple
 if all((x,y,z)):
     print("All True")
+    
+# Check if these strings only contain alphabetic characters
+print("\n Check if these strings only contain alphabetic characters\n")
+print(all(char.isalnum() for char in "textovario"))
+print(all(char.isalnum() for char in "texto vario con espacio"))
