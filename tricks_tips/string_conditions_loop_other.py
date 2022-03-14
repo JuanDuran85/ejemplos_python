@@ -21,6 +21,13 @@ print(f"{letters_any.count('a') = }")
 print(f"{letters_any.count('f') = }")
 print(f"{letters_any.count('d') = }")
 
+# if you want to print a list in one row, use 'join' and list comprehension
+row_list: list = ["1","elio","developer","python"]
+print(f"{ ','.join(str(x) for x in row_list)  = }")
+# if you want to print a list in one row, use print with * and sep arguments
+print(*row_list, sep=',')
+
+
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
@@ -59,3 +66,14 @@ if all((x,y,z)):
 print("\n Check if these strings only contain alphabetic characters\n")
 print(all(char.isalnum() for char in "textovario"))
 print(all(char.isalnum() for char in "texto vario con espacio"))
+
+# if you want to return a binary string "Unicode code point for all characters strings"
+def make_bitseq(character_in: str) -> str:
+    if not character_in.isascii():
+        raise ValueError("Only ascii characters are allowed")
+    return "".join(f"{ord(i):08b}" for i in character_in)
+
+print(make_bitseq("bits"))
+print(make_bitseq("TRICKS"))
+print(make_bitseq("lower caps"))
+print(make_bitseq("$25.43"))

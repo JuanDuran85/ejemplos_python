@@ -212,4 +212,11 @@ print(f"{cleaned_items_list = }")
 cleaned_items_list_two: list = list(dict.fromkeys(duplicate_items_list))
 print(f"{cleaned_items_list_two = }")
 
+# use enumerate to extrac all the characters from a string in a dictionary
+string_to_print: str = "python"
+dict_result: dict = {}
+for i, dict_result[i] in enumerate(string_to_print):
+    i = 1
+print(f"{dict_result = }")
+
 """----------------------------------------------------------------------------------------"""
