@@ -64,3 +64,25 @@ cat: Animal = Animal()
 print(f"{cat = }")
 setattr(cat, 'name', 'Garfield')
 print(f"{cat.name = }")
+
+# you can delete a object class with __del__ method.
+
+class Video():
+    def __init__(self, title: str, duration: int):
+        self.title = title
+        self.duration = duration
+        print(f"Se creo el video {self.title}")
+        
+    def __str__(self):
+        return f"{self.title} - {self.duration}"
+        
+    def __del__(self):
+        print(f"Se elimino el video {self.title}")
+        
+    def __len__(self):
+        return self.duration
+        
+video_one: Video = Video("Video 1", 130)
+print(video_one)
+print(f"La duracion del video es: {len(video_one)}")
+del(video_one)

@@ -10,6 +10,7 @@ All examples are from the internet with somes variations, so they are not 100% c
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
 ''' Using functions '''
+
 print("\n Using functions \n")
 
 ''' 
@@ -49,3 +50,32 @@ def example_function(a: int,b: int,/) -> int:
 
 print(example_function(1,4))
 # print(example_function(1,b=4)), In this case, we catch an error, because the arguments in the function are only positional
+
+
+'''
+    Becouse Python has first-class functions they can be use to emulate switch/case statements
+'''
+
+def dispatch_if(operator: str,x: int, y: int):
+    if operator == 'add':
+        return x + y
+    elif operator == 'sub':
+        return x - y
+    elif operator == 'mul':
+        return x * y
+    elif operator == 'div':
+        return x / y
+    else:
+        return None
+    
+def dispatch_dict(operator: str,x: int, y: int):
+    return {
+        'add': lambda: x + y,
+        'sub': lambda: x - y,
+        'mul': lambda: x * y,
+        'div': lambda: x / y,
+    }.get(operator, lambda: None)()
+    
+    
+print(f"{ dispatch_if('add',1,2) = } ")
+print(f"{ dispatch_dict('add',1,2) = } ")
