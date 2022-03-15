@@ -57,5 +57,11 @@ sentences_name: list = ["Juan","Jose","Maria","Petra","Josefina","Ignacia"]
 result_list: list = [name[0] for name in sentences_name]
 print(f"{result_list = }")
 
+# Use list comprehension to get all the methods of a dictionary.
+values_dict: dict = {'bob':'11', 'julian':'22','tim':'33','jose':'44'}
+result_method: list = [attr for attr in dir(values_dict) if not attr.startswith('__')]
+print(f"{result_method = }")
+print(values_dict.keys())
+
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""

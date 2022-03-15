@@ -77,3 +77,21 @@ print(make_bitseq("bits"))
 print(make_bitseq("TRICKS"))
 print(make_bitseq("lower caps"))
 print(make_bitseq("$25.43"))
+
+# if you need to get the position of a character in a string you can use for loop to get it in three different options
+i: int = 0
+s: str = 'abc'
+
+# option 1
+for c in s:
+    print(f"{i}: {c}")
+    i += 1
+    
+# option 2
+for i,c in enumerate(s):
+    print(f"{i}: {c}")
+
+i = 0    
+# option 3
+for key,value in enumerate(s, start=1):
+    print(f"{key}: {value}")

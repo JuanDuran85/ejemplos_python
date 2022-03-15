@@ -119,8 +119,6 @@ print(f"{people_a.union(people_b) = }")
 ''' Using map '''
 
 
-
-
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
 ''' Using zip '''
@@ -139,11 +137,24 @@ dict_result: dict = {}
 for key, dict_result[key] in zip(keys, values): ...
 print(f"{dict_result = }")
 
+# use zip to get the key and value of a list of tuples
+args_list: list = [(2,3),(2,4),(2,4)]
+print(f"{args_list = }")
+base, exponents = zip(*args_list)
+print(f"{base = }")
+print(f"{exponents = }")
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
 ''' Convination of lists, tuples, dictionaries, set, map, zip '''
 print("\n Convination of lists, tuples, dictionaries, set, map \n")
+
+# you can use the map function with list and pow to get the power of each element in the list.
+args_list_pow: list = [(2,3),(2,4),(2,4)]
+
+print(f"{list(map(pow, base,exponents)) = }")
+
+#---------------------------------------------------------------------------------------------
 numbers_a_bases = [1,2,3,4]
 numbers_b_exponents = [2,3,2,3]
 users = ['Shanna', 'Bessie', 'Cara', 'Antonio', 'Bessie', 'Cara', 'Antonio' , 'Jordy', 'Cara']
@@ -218,5 +229,7 @@ dict_result: dict = {}
 for i, dict_result[i] in enumerate(string_to_print):
     i = 1
 print(f"{dict_result = }")
+
+#------------------------------------------------------------------
 
 """----------------------------------------------------------------------------------------"""

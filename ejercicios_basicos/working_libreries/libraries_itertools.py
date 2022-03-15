@@ -10,7 +10,7 @@
 
 """
 
-from itertools import accumulate, filterfalse, zip_longest, count, permutations, product, starmap
+from itertools import accumulate, filterfalse, zip_longest, count, permutations, product, starmap, chain, repeat, cycle
 from typing import Generator, Iterable
 
 """----------------------------------------------------------------------------------------"""
@@ -80,3 +80,14 @@ def alpha_iter(start: str, end: str) -> Iterable[str]:
         yield ''.join(map(chr, ords))
         
 print(f"{list(alpha_iter('a','z')) = }")
+
+# ---------------------------------------------------------------------------------------------
+# infinity sequence of numbers with chain, repeat and cycle
+sequ = chain(repeat(17,4), cycle(range(4)))
+for i,num in enumerate(sequ):
+    print(f"{i} - {num}")
+    if i == 30:
+        break
+
+
+
