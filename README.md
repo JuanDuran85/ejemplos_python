@@ -26,13 +26,17 @@ Ejemplos de programacion con Python
 
 ## Instalacion de requirements
 - Para instalar las librerias
-    ```bash
-    pip install -r requirements.txt
-    ```
+  ```bash
+  pip install -r requirements.txt
+  ```
 - Para generar el archivo de requirements
-    ```bash
-    pip freeze > requirements.txt
-    ```
+  ```bash
+  pip freeze > requirements.txt
+  ```
+- Para observar todos los paquetes instalados con pip
+  ```bash
+    pip list
+  ```
 
 ## Usando servidor local para json
 - Instalacion de json-server

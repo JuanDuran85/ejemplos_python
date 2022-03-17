@@ -95,3 +95,6 @@ i = 0
 # option 3
 for key,value in enumerate(s, start=1):
     print(f"{key}: {value}")
+    
+# You can use zfill to add zeros to the left of a string
+print(f"{'293'.zfill(10) = }")

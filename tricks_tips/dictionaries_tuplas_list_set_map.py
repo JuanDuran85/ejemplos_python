@@ -20,6 +20,16 @@ print(f"{n_values_in_list_two = }")
 # You can use the filter method to filter a list of values, in this case, the values ​​None or empty. Be careful with the zero value.
 print(f"{list(filter(None, n_values_in_list)) = }")
 
+# use An assignment expression (sometimes also called a “named expression” or “walrus”) to assign a value to a variable.
+numbers: list = [2,8,0,1,1,9,7,7]
+descripction: dict = {
+    "length": (num_length := len(numbers)),
+    "sum": (num_sum := sum(numbers)),
+    "mean": (num_sum / num_length),
+}
+
+print(f"{descripction = }")
+
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
