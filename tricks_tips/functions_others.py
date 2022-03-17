@@ -79,3 +79,11 @@ def dispatch_dict(operator: str,x: int, y: int):
     
 print(f"{ dispatch_if('add',1,2) = } ")
 print(f"{ dispatch_dict('add',1,2) = } ")
+
+# ----------------------------------------------------------------------------------------------
+# Use * in functions to use positional arguments
+def my_function_two(*, a, b) -> None:
+    print(a,b)
+    
+my_function_two(a=1,b=2)
+# my_function_two(1,2) # Error, because the functin need arguments are positional only

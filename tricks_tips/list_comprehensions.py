@@ -63,5 +63,19 @@ result_method: list = [attr for attr in dir(values_dict) if not attr.startswith(
 print(f"{result_method = }")
 print(values_dict.keys())
 
+# Use list comprehension to extract the keys of a dictionary when using a list.
+prices: dict = {
+    "milk": 1,
+    "bread": 2,
+    "coffee": 3,
+    "butter": 4,
+    "tea": 5,
+    "banana": 6
+}
+
+products: list = ["milk","tea","butter"]
+
+print(f"{ [prices[product] for product in products]  = }")
+
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""

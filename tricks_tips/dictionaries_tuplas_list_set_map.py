@@ -29,7 +29,16 @@ descripction: dict = {
 }
 
 print(f"{descripction = }")
-
+users: list = ["Mike", "John", "Smith"]
+print(f"{users = }")
+# you can reverse the order of a list with the reverse() method and other methods.
+# example 1: use reversed - it returns iterator, you need to convert it to list
+print(f"{list(reversed(users)) = }")
+# example 2: use slicing from begining to end using negative step
+print(f"{users[::-1] = }")
+# example 3: use .reverse()
+users.reverse()
+print(f"{users = }")
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
@@ -139,7 +148,6 @@ print(f"{list_numbers = }")
 # use zip function to make N-tuples from N arguments, so it can be used with *args to transpose a list of lists.
 print(f"{list(zip(*list_numbers)) = }")
 
-
 # use zip to set the list to a dictionary with keys and values
 keys: list = ['nombre','ciudad','edad']
 values: list = ['Juan','Santiago','40']
@@ -153,6 +161,12 @@ print(f"{args_list = }")
 base, exponents = zip(*args_list)
 print(f"{base = }")
 print(f"{exponents = }")
+
+# use zip to set two lists to a dictionary
+users: list = ["Juan", "Pedro", "Maria"]
+user_visit: list = [354,456,23]
+for user, visits in zip(users, user_visit):
+    print(f"{user = } and {visits = }")
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""

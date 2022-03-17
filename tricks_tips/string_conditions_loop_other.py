@@ -98,3 +98,9 @@ for key,value in enumerate(s, start=1):
     
 # You can use zfill to add zeros to the left of a string
 print(f"{'293'.zfill(10) = }")
+
+# use rjust to add a character to the right of a string. Return a right-justified string of length width.
+print(f"{'Juan'.rjust(10,'*') = }")
+
+# Use sep in the print function to separate the string
+print("123","345","654", sep="-")
