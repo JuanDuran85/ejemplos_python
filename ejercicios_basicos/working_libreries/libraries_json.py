@@ -1,3 +1,9 @@
+"""_summary_
+
+    Trabajando con la libreria json de python
+
+"""
+
 import json
 
 tabla_datos = {
@@ -8,6 +14,7 @@ tabla_datos = {
     "telefono": '123'
 }
 
+# el metodo dumps convierte un diccionario en una cadena de texto json
 json_string = json.dumps(tabla_datos)
 print(json_string)
 print(type (json_string))
