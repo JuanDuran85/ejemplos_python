@@ -6,6 +6,8 @@ All the examples are in the same file, but they are separated with a mark
 
 All examples are from the internet with somes variations, so they are not 100% correct. Thanks to the authors.
 
+You can use Docstrings to describe the function and help methods to show the documentation.
+
 """
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""

@@ -48,6 +48,16 @@ Ejemplos de programacion con Python
   json-server db.json
   ```
 
+## Generar documentacion por la terminar
+- Utilizando pydoc
+  ```bash
+   pydoc ruta_archivo.py
+  ```
+- Para generar un HTML con pydoc
+  ```bash
+   pydoc -w ruta_archivo.py
+  ```
+
 ## Creando proyectos con Django
 - Iniciando el proyecto
   ```bash
