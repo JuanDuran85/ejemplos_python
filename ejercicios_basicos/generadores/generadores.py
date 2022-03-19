@@ -97,3 +97,15 @@ print(next(cursos_listados))
 print(next(cursos_listados))
 print(next(cursos_listados))
 print(next(cursos_listados))
+
+# funcion generadora de pares hasta un numero maximo
+print("\r\n")
+
+def pares(maximo: int) -> Generator[int, None, None]:
+    for numero in range(maximo):
+        if (numero % 2 == 0):
+            yield numero
+
+maximo: int = 11
+for numero in pares(maximo):
+    print(numero)
