@@ -25,4 +25,10 @@ numeros_lista: list = [3,5,7]
 print(f"{numeros_lista = }")
 resultado: list = list(map(lambda x: x*2, numeros_lista))
 print(f"{resultado = }")
- 
+
+# A partir de una lista de numeros, obtenga una lista con los numeros incrementados en 10 utilizando la funcion map()
+print('-----------------------------------------------------------2')
+lista_numeroa: list = list(range(1,11))
+resultado_numeros: list = list(map(lambda x: x+10, lista_numeroa))
+print(f"{resultado_numeros = }")
+

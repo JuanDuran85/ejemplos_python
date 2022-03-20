@@ -109,3 +109,20 @@ def pares(maximo: int) -> Generator[int, None, None]:
 maximo: int = 11
 for numero in pares(maximo):
     print(numero)
+    
+
+# Crear una funcion generadora de numeros primos entre el 0 y el 100 y mostrar los numeros primos menores a 100.
+print("\r\n")
+numeros_primos: list = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97]
+
+def primos(numero_maximo: int)-> Generator[int, None, None]:
+    for numero in range(numero_maximo):
+        if(numero in numeros_primos):
+            yield numero
+        if (numero > 100):
+            break
+
+maximo_numero: int = 50   
+resultado_numeros: Generator[int, None, None] = primos(maximo_numero)
+for resultado in resultado_numeros:
+    print(resultado)

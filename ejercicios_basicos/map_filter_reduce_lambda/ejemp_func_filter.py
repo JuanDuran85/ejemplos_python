@@ -21,9 +21,14 @@ nums = [49, 57, 62, -147, 2101, 22]
 print(list(filter(lambda x: (x % 7 == 0), nums)))
 
 # La función proporcionada a filter() no tiene por qué ser lambda, sino que puede ser una ya existente, o bien una creada por nosotros mismos. Con las siguientes líneas de código vamos a obtener todas las palabras cuya tercera letra sea s haciendo uso de filter() y la función creada:
-
 print('-----------------------------------------------------------3')
 def third_letter_is_s(word):
   return word[1] == "a"
 words = ["castaña", "astronomía", "masa", "bolígrafo", "mando", "tostada"]
 print(list(filter(third_letter_is_s, words)))
+
+# a partir de una lista de numeros, obtener mediante filter() una lista de numeros pares
+print('-----------------------------------------------------------3')
+numeros_lista: list = list(range(1,11))
+pares: list = list(filter(lambda x: x % 2 == 0, numeros_lista))
+print(f"Los numeros pares para -> [{numeros_lista}] son -> {pares}") 
