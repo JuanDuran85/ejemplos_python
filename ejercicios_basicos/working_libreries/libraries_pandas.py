@@ -6,6 +6,7 @@
 
 # trabajando con la libreria pandas
 
+import numpy as np
 import pandas as pd
 
 df = pd.DataFrame({'col1': [1, 2], 'col2': [3, 4]})
@@ -106,3 +107,69 @@ print(dataframe.loc['Fisica'])
 print(dataframe.index)
 
 # eliminar elementos de un dataframe
+series_nueva_ordenar: pd.Series = pd.Series(np.arange(4), index=['d', 'b', 'a', 'c'])
+print(series_nueva_ordenar)
+# ordenacion y clasificacion de series
+print("Series nueva por ordenar")
+print(series_nueva_ordenar.sort_index())
+print(series_nueva_ordenar.sort_values())
+# para borrar se usa el drop
+resulta_delete: pd.Series = series_nueva_ordenar.drop('c')
+print(resulta_delete)
+
+# borrar fila y/o columna en dataframa
+print(" \r -------------------------------------------- \n")
+lista_valores_nueva = np.arange(9).reshape(3,3)
+lista_indices: list = ['c', 'b', 'a']
+lista_columnas = ['c1', 'c2', 'c3']
+dataframe_por_ordenar = pd.DataFrame(lista_valores_nueva, index=lista_indices, columns=lista_columnas)
+print(dataframe_por_ordenar)
+borrar_elemento = dataframe_por_ordenar.drop('c1', axis=1)
+print(borrar_elemento)
+borrar_elemento = dataframe_por_ordenar.drop('a')
+print(borrar_elemento)
+
+# seleccionando datos de una serie
+print(" \r -------------------------------------------- \n")
+lista_valores_nueva = np.arange(3)
+lista_indices: list = ['i1', 'i2', 'i3']
+series_nueva: pd.Series = pd.Series(lista_valores_nueva, index=lista_indices)
+print(series_nueva)
+print(series_nueva[2])
+print(series_nueva['i2'])
+print(series_nueva['i1':'i2'])
+series_nueva = series_nueva * 2
+print(series_nueva[series_nueva > 3])
+
+
+# -----------------------------------------------------------------------------------------
+# seleccionar datos en dataframe
+print(" --- -------- ------------------------------- \n")
+lista_valores_nueva = np.arange(25).reshape(5,5)
+lista_indices: list = ['i1', 'i2', 'i3', 'i4', 'i5']
+lista_columnas = ['c1', 'c2', 'c3', 'c4', 'c5']
+dataframe = pd.DataFrame(lista_valores_nueva, index=lista_indices, columns=lista_columnas)
+print(dataframe)
+print(dataframe['c2'])
+print(dataframe['c2']['i4'])
+print(dataframe[['c3','c4']])
+print(dataframe[dataframe['c3'] > 15])
+print(dataframe > 20)
+print(dataframe.loc['i3'])
+
+# operaciones sobre series y dataframes
+lista_valores = np.arange(4).reshape(2,2)
+lista_indices: list = ['b', 'a']
+lista_columnas = ['1', '2']
+dataframe = pd.DataFrame(lista_valores, index=lista_indices, columns=lista_columnas)
+print(dataframe)
+lista_valores_dos = np.arange(9).reshape(3,3)
+lista_indices_dos: list = ['c', 'a', 'b']
+lista_columnas_dos = ['1', '2','3']
+dataframe_dos = pd.DataFrame(lista_valores_dos, index=lista_indices_dos, columns=lista_columnas_dos)
+print(dataframe_dos)
+
+print(dataframe + dataframe_dos)
+resultado_suma = dataframe + dataframe_dos
+
+print(dataframe.add(dataframe_dos, fill_value=0))

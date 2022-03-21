@@ -20,3 +20,23 @@ persona_uno = Persona("Juan", 36)
 print(persona_uno.nombre)
 print(persona_uno.edad)
 persona_uno.imprimir()
+
+
+class Automovil:
+# Recuerde programar el constructor de clase que inicializa los 3 atributos
+    def __init__(self,velocidad_actual,marca,estado):
+        self.velocidad_actual = velocidad_actual
+        self.marca = marca
+        self.estado = estado
+        
+    def aumentar_velocidad(self):
+        self.velocidad_actual += 10
+        
+    def disminuir_velocidad(self):
+        self.velocidad_actual -= 6
+        
+    def encender(self):
+        self.estado = True
+        
+    def apagar(self):
+        self.estado = False
