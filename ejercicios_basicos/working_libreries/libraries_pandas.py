@@ -173,3 +173,68 @@ print(dataframe + dataframe_dos)
 resultado_suma = dataframe + dataframe_dos
 
 print(dataframe.add(dataframe_dos, fill_value=0))
+
+#------------------------------------------------------------------------------------
+print("\n")
+# estadiisticas con dataframes y series
+lista_valores = np.arange(25).reshape(5,5)
+lista_indices: list = ['i1', 'i2', 'i3', 'i4', 'i5']
+lista_columnas = ['c1', 'c2', 'c3', 'c4', 'c5']
+dataframe_estadisticas = pd.DataFrame(lista_valores, index=lista_indices, columns=lista_columnas)
+print(dataframe_estadisticas)
+# suma por columa
+print(dataframe_estadisticas.sum())
+# suma por fila
+print(dataframe_estadisticas.sum(axis=1))
+# el minimo valor
+print(dataframe_estadisticas.min())
+# el maximo valor
+print(dataframe_estadisticas.max(axis=1))
+# para ver cual es el indice con el menor valor
+print(dataframe_estadisticas.idxmin())
+# serie de valores estadisticos para un dataframe
+print(dataframe_estadisticas.describe())
+
+
+#------------------------------------------------------------------------------------
+print("\n")
+print("Valores nulos en Series y DataFrame".center(50, "-"))
+# trabajando con valores nulos
+lista_valores: list = ['3','0',np.nan,'-4','9']
+series_nulos: pd.Series = pd.Series(lista_valores, index=list('abcde'))
+print(series_nulos)
+# ver cuales son nulos
+print(series_nulos.isnull())
+# borrar valores nulos
+nueva_series_borrada = series_nulos.dropna()
+print(nueva_series_borrada)
+
+# con dataframes
+lista_valores: list = [[3,0,-2],[np.nan,2,-2],[9,5,np.nan]]
+lista_indices: list = list('123')
+lista_columnas: list = list('abc')
+dataframe_nulos = pd.DataFrame(lista_valores, index=lista_indices, columns=lista_columnas)
+print(dataframe_nulos)
+# valores nulos
+print(dataframe_nulos.isnull())
+# borrar valores nulos, borrando toda la fila que contenga algun elemento nulo
+print(dataframe_nulos.dropna())
+# rellenar los nulos con algun valor de forma rapida
+print(dataframe_nulos.fillna(0))
+
+
+# ----------------------------------------------------------------------------------------
+# construyendo dataframe desde pagina web con pandas
+# ----------------------------------------------------------------------------------------
+print("\n--------------------------------")
+
+url_web: str = 'https://es.wikipedia.org/wiki/Anexo:Selecciones_de_f%C3%BAtbol_campeonas_del_mundo'
+dataframe_puro = pd.read_html(url_web)
+print(dataframe_puro)
+
+
+
+
+
+
+
