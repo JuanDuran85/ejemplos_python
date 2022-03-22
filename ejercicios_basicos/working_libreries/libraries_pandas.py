@@ -233,7 +233,8 @@ dataframe_puro = pd.read_html(url_web)
 print(dataframe_puro)
 
 
-
+dataframe_resultante = dataframe_puro[0]
+print(dataframe_resultante)
 
 
 
