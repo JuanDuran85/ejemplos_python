@@ -1,5 +1,10 @@
-# trabajando con funciones lambda: es una funcion anonima y pequeña (una linea de codigo)
-# se usa la palabra reservada lambda, los parametros son opcionales
+"""_summary_
+
+    Trabajando con funciones lambda: es una funcion anonima y pequeña (una linea de codigo). Se usa la palabra reservada lambda, los parametros son opcionales.
+    
+    What Is Lambda Function: A lambda function is an anonymous function. In Python, an anonymous function is a function without a name. A normal function will start by def keyword. An anonymous function deﬁnes by the lambda keyword, therefore we usually call them as a lambda function.
+
+"""
 
 mi_funcion_lambda = lambda a,b: a+b
 print(f"La suma es: {mi_funcion_lambda(22,53)}")
@@ -18,7 +23,7 @@ print(f"La suma es: {mi_funcion_lambda()}")
 mi_funcion_lambda = lambda x=2: x**2
 print(f"El cuadrado es: {mi_funcion_lambda()}")
 
-# funcion lambda copn argumentos variables *args(tuplas) y **kwargs(diccionarios)
+# funcion lambda con argumentos variables *args(tuplas) y **kwargs(diccionarios)
 mi_funcion_lambda = lambda *args, **kwargs: print(args, kwargs)
 mi_funcion_lambda(1,5,3,2, a=5,b=34)
 mi_funcion_lambda = lambda *args, **kwargs: len(args) + len(kwargs)
@@ -45,3 +50,42 @@ print(f"{revertir_cadena('hola') = }")
 # sumar dos numeros
 sumar_numeros = lambda num1,num2: num1 + num2
 print(f"{sumar_numeros(5,6) = }")
+
+
+# -------------------------------------------------------------------------------------------------
+print("\n------------------------------------------\n")
+# Lambda function with only 1 argument
+print("Lambda function with only 1 argument")
+result_double: int = lambda x: x*2
+print(f"{result_double(5) = }")
+
+# Lambda function with multiple arguments
+print("Lambda function with multiple arguments")
+sum_tow_numbers: int = lambda x,y: x+y
+print(f"{sum_tow_numbers(5,6) = }")
+
+# Lambda And Map Function
+print("Lambda And Map Function")
+list_one: list = [1,2,3,4,5,6,7,8,9,10]
+list_two: list = [6,2,-8,-2,-1,0,3,6,9]
+print(f"{list_one = }")
+print(f"{list_two = }")
+result_lambda_map: list = list(map(lambda x,y: x+y, list_one, list_two))
+print(f"{result_lambda_map = }")
+
+# Lambda And Filter Function
+print("Lambda And Filter Function")
+data_list: range = range(-6,6)
+print(f"{data_list = }")
+
+greater_then_zero: list = list(filter(lambda x: x > 0, data_list))
+print(f"{greater_then_zero = }")
+
+# Find Factorial of a Number with lambda
+
+factorial_number = lambda num: 1 if num <= 1 else num*factorial_number(num-1)
+
+print(f"{factorial_number(3) = }")
+print(f"{factorial_number(6) = }")
+print(f"{factorial_number(9) = }")
+print(f"{factorial_number(13) = }")

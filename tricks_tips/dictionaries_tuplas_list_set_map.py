@@ -40,6 +40,10 @@ print(f"{users[::-1] = }")
 users.reverse()
 print(f"{users = }")
 
+# Finding Highest Frequency Element: We can find the element, which occurs the maximum time, by passing the key as the count of elements, in the example, the number of times they appear.
+list_numbers: list = [5,3,2,6,3,21,5,3,1,5,3,2,7,8,8,5,3,9,9,1]
+print("Most frequent item: ", max(set(list_numbers), key=list_numbers.count))
+
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
 ''' Using tuples - Can be: ordered, inmutable, duplicates'''
@@ -113,6 +117,37 @@ print(f"{result_dict = }")
 result_dict_two: dict = dict(**dictionary_one, x_value="Nuevo valor", **{'4':'four'})
 print(f"{result_dict_two = }")
 
+print("There is more than one method where you can merge two dictionaries.")
+dict_one: dict = {
+    'a': 1,
+    'b': 2,
+    'c': 3
+}
+
+dict_two: dict = {
+    'f': 3,
+    'a': 10,
+    'd': 4,
+}
+
+print(f"{dict_one = }")
+print(f"{dict_two = }")
+
+# The first method uses dictionary unpacking where the two dictionaries unpack together into result. 
+print("first method")
+result_merge: dict = {**dict_one, **dict_two}
+print(f"{result_merge = }")
+
+# The second method, we first copy the first dictionary into the result and then update it with the content of the second dictionary. 
+print("second method")
+result_merge_two: dict = dict_one.copy()
+result_merge_two.update(dict_two)
+print(f"{result_merge_two = }")
+
+# The third method is a straightforward implementation using dictionary comprehension, similar to what we saw in list comprehension above.
+print("second method")
+result_merge_three: dict = {key: value for d in (dict_one,dict_two) for key, value in d.items()}
+print(f"{result_merge_three = }")
 
 
 """----------------------------------------------------------------------------------------"""
@@ -255,5 +290,34 @@ for i, dict_result[i] in enumerate(string_to_print):
 print(f"{dict_result = }")
 
 #------------------------------------------------------------------
+# Sorting a list of dictionaries, we can do it using two different, yet similar approaches. We can simply use the in-built sorted() or sort() function which works on lists using a lambda function inside it which sorts the dictionaries based on their ‘id’ key
+
+person: list = [
+    {
+        'name': 'Anne',
+        'age': '34',
+        'id': '21657'
+    },
+    {
+        'name': 'Lucinda',
+        'age': '67',
+        'id': '18058'
+    },
+    {
+        'name': 'Fabiola',
+        'age': '12',
+        'id': '31216'
+    },
+]
+print(f"{person = }")
+
+# first approach: a new list of sorted dictionaries is returned. A custom key function can be supplied to customize the sort order, and the reverse flag can be set to request the result in descending order.
+person_sort: list = sorted(person, key= lambda item: item.get('id'))
+print(f"{person_sort = }")
+
+# second approach: the return type is None as the changes are in place
+person.sort(key= lambda item: item.get('id'))
+print(f"{person = }")
+
 
 """----------------------------------------------------------------------------------------"""

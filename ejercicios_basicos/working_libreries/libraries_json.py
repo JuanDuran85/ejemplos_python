@@ -28,6 +28,16 @@ datos_nuevos_diccionario = json.loads(datos_nuevos)
 print(datos_nuevos_diccionario)
 print(type(datos_nuevos_diccionario))
 
-
 # The json module can print better lines. Thos only work with dicts containing primitive types.
 print(json.dumps(tabla_datos, indent=4, sort_keys=True))
+
+# Get all keys and values from json object
+with open("/home/juan/Descargas/programacion/ejemplos_python/people.json") as json_file:
+    data_file = json.load(json_file)
+    print(data_file)
+    json_data = data_file["person"]
+    for x in json_data:
+        keys = x.keys()
+        print(keys)
+        values = x.values()
+        print(values)

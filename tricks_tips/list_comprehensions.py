@@ -79,3 +79,8 @@ print(f"{ [prices[product] for product in products]  = }")
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
+
+# In the following code, we can see that we are checking multiples of 6, and then multiples of 2 and 3 using the if-else conditions inside the list, which reduced the code to a great extent.
+
+list_final: list = ['Multiplo de 6' if i%6 == 0 else 'Multiplo de 2' if i%2 == 0 else 'Multiplo de 3' if i % 3 == 0 else i for i in range(1,15)]
+print(f"{list_final = }")

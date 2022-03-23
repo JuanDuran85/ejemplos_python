@@ -1,3 +1,10 @@
+"""[summary]
+
+    Password generator with hash
+
+"""
+
+
 import os
 import hashlib
 

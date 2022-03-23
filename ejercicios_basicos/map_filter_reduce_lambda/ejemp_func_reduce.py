@@ -1,12 +1,13 @@
-#             La función reduce()
-# Aplica continuamente una misma función a los elementos de un objeto
-# iterable
+"""_summary_
 
-# 1.- Aplica la función a los primeros dos elementos
-# 2.- Aplica la función al resultado del paso anterior y el tercer elemento
-# 3.- Aplica la función al resultado del paso anterior y el cuarto elemento
-# 4.- Sigue así hasta que solo queda un elemento
-# 5.- Devuelve el valor resultante
+    La función reduce(): Aplica continuamente una misma función a los elementos de un objeto iterable
+    1.- Aplica la función a los primeros dos elementos
+    2.- Aplica la función al resultado del paso anterior y el tercer elemento
+    3.- Aplica la función al resultado del paso anterior y el cuarto elemento
+    4.- Sigue así hasta que solo queda un elemento
+    5.- Devuelve el valor resultante
+
+"""
 
 # Con la ayuda de las funciones lambda, apliquemos reduce() para calcular 
 # el producto de todos los elementos de una lista:

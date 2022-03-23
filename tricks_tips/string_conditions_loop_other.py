@@ -104,3 +104,61 @@ print(f"{'Juan'.rjust(10,'*') = }")
 
 # Use sep in the print function to separate the string
 print("123","345","654", sep="-")
+
+# -------------------------------------------------------------------------------
+# Finding Substring in List of Strings
+
+records: list = [
+    "Vani Gupta, University of Hyderabad",
+    "Elon Musk, Tesla",
+    "Bill Gates, Microsoft",
+    "Steve Jobs, Apple"
+]
+
+# If we need to find substrings inside a list of strings (can also be applied on larger strings rather than just lists), we can use the find() method which returns -1 if the value is not present in the string, or returns the first occurrence. 
+
+name: str = "Vani"
+for record in records:
+    if record.find(name) >= 0:
+        print(f"{name} found in {record}")
+
+
+# In the second method, we can directly use the 'in' operator to see if the desired substring is present in the string.
+name: str = "Musk"
+for record in records:
+    if name in record:
+        print(f"{name} found in {record}")
+
+# --------------------------------------------------------------------------------
+# FizzBuzz One-Liner in Python: The FizzBuzz challenge is a classic challenge that's used as an interview screening device for computer programmers. You can solve the FizzBuzz challenge in just one line of code
+
+[print("Fizz"*(i%3==0)+"Buzz"*(i%5==0) or i) for i in range(1,20)]
+
+# --------------------------------------------------------------------------------------
+# Conditional Expressions: The conditional expression’s value is set to expr2 if the outcome is true. The conditional expression’s value is set to expr3 if the outcome is false.
+
+# Instead or this... for example:
+def is_even(num: int) -> None:
+    if num % 2 == 0:
+        print(f"{num} is even")
+    else:
+        print(f"{num} is odd")
+
+# use this way
+def is_even_one(num: int) -> None:
+    print(f"{num} is even" if num % 2 == 0 else f"{num} is odd")
+
+# or use this way
+def is_even_two(num: int) -> None:
+    print(f"{num} is even") if num % 2 == 0 else print(f"{num} is odd")
+    
+is_even(5)
+is_even_two(5)
+is_even_two(5)
+
+# ----------------------------------------------------------------------
+# Comparison Operator: you can use one line comparation withy logical operator. For example:
+num: int = 100
+if 25 < num < 150:
+    print(f"{num} is between 25 and 150")
+
