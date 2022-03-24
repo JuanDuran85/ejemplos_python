@@ -50,6 +50,13 @@ print(f"{users = }")
 list_numbers: list = [5,3,2,6,3,21,5,3,1,5,3,2,7,8,8,5,3,9,9,1]
 print("Most frequent item: ", max(set(list_numbers), key=list_numbers.count))
 
+#------------------------------------------------------------------------------------
+# Deleting Multiple Elements from a List
+list_number: list = [1,2,3,4,5]
+print(f"{list_number = }")
+del list_number[1:4]
+print(f"{ list_number = }")
+
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
 ''' Using tuples - Can be: ordered, inmutable, duplicates'''
@@ -325,5 +332,11 @@ print(f"{person_sort = }")
 person.sort(key= lambda item: item.get('id'))
 print(f"{person = }")
 
+# -----------------------------------------------------------------------------------------
+# Sum of Even Numbers In a List using a List Comprehension and SUM() function
+list_number: list = [3,5,6,2,8,9,1,0,6]
+print(f"{list_number = }")
+sum_even_number: int = sum([number for number in list_number if number % 2 == 0])
+print(f"{sum_even_number = }")
 
 """----------------------------------------------------------------------------------------"""

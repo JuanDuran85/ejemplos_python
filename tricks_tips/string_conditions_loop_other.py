@@ -186,3 +186,20 @@ iter1: list = [1, 2, 3, 4]
 iter2: list = ['a', 'b', 'c']
 [print(x,y) for x in iter1 for y in iter2]
 
+#-------------------------------------------------------------------------
+# Swapping Two Variables
+a: int = 4
+b: int = -23
+a,b = b,a
+print(f"{a} {b}")
+
+# Multiple Variable Assignments
+a, b, c = 3,5,'Python'
+print(f"{a} {b} {c}")
+
+# you cab use * to assign variables from a list
+a, b, *c = [1,2,3,4,5,6,7]
+print(f"{a} {b} {c}")
+
+
+

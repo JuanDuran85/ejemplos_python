@@ -1,0 +1,4 @@
+Datos en el archivo de texto
+1. Ejemplo 1
+2. Ejemplo 2
+Nuevos datos escritos en el archivo
