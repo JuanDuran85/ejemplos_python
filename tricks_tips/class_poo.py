@@ -86,3 +86,7 @@ video_one: Video = Video("Video 1", 130)
 print(video_one)
 print(f"La duracion del video es: {len(video_one)}")
 del(video_one)
+
+# class in one line
+School = type('School', (object,), {'fun':{}})
+print(f"{School = }")

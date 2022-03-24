@@ -89,3 +89,13 @@ print(f"{factorial_number(3) = }")
 print(f"{factorial_number(6) = }")
 print(f"{factorial_number(9) = }")
 print(f"{factorial_number(13) = }")
+
+# ---------------------------------------------------------------------------------
+# Quicksort with Lambda and list comprehension
+list_number: list = [29,99,27,41,66,28,44,78,87,19,31,76,58,88,83,97,12,21,44]
+sorted_list = lambda list_of_number: sorted_list([x for x in list_of_number[1:] if x <= list_of_number[0]])+ [list_of_number[0]] + sorted_list([x for x in list_of_number if x > list_of_number[0]]) if list_of_number else []
+print(f"{sorted_list(list_number) = }")
+
+# Fibonacci with Lambda
+fibonacci_function = lambda x: x if x<= 1 else fibonacci_function(x-1) + fibonacci_function(x-2)
+print(f"{fibonacci_function(7) = }")

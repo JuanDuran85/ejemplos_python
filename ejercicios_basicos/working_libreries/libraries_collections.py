@@ -10,7 +10,7 @@ defaultdict return a new dictionary-like object. defaultdict is a subclass of th
 
 """
 
-from collections import namedtuple, Counter, ChainMap, defaultdict
+from collections import OrderedDict, namedtuple, Counter, ChainMap, defaultdict
 
 Car = namedtuple('Car', 'mileage color mark')
 
@@ -41,7 +41,7 @@ print(f"{conteador_numeros_lista.most_common(1) = }")
 print(f"{conteador_numeros_lista.most_common(2) = }")
 
 # -------------------------------------------------------------------------------------
-# Using ChainMap
+# Using ChainMap: Using ChainMap spares us from using a lot of conditional statements to check if a key is present in each of the dictionaries.
 
 car_parts: dict = {
     'hood': 500,
@@ -66,6 +66,7 @@ print(f"{car_pricing = }")
 print(f"{car_pricing['A/C'] = }")
 
 # -------------------------------------------------------------------------------------
+# Using defaultdict
 
 data: str = """Tim,ID
 Sara,BR
@@ -83,3 +84,28 @@ for line in data.splitlines():
     countries[country_code].append(name)
 print(f"{countries = }")
 print(f"{countries['CN'] = }")
+
+# -------------------------------------------------------------------------------------
+# Using dOrderedDict: OrderedDict is commonly used whenever we want to keep the order in which the items are inserted into our dictionary.
+
+ordered_dict: OrderedDict = OrderedDict()
+ordered_dict['red'] = 0
+ordered_dict['green'] = 3
+ordered_dict['blue'] = 9
+ordered_dict['yellow'] = 2
+print(f"{ordered_dict = }")
+
+del ordered_dict['red']
+print(f"{ordered_dict = }")
+ordered_dict['red'] = 0
+
+ordered_dict.move_to_end('red')
+print(f"{ordered_dict = }")
+
+pop_item_dict = ordered_dict.popitem()
+print(f"{pop_item_dict = }")
+print(f"{ordered_dict = }")
+
+
+
+

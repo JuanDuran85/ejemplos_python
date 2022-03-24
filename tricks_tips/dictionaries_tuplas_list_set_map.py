@@ -29,6 +29,12 @@ descripction: dict = {
 }
 
 print(f"{descripction = }")
+
+# use Walrus to evaluated the value of an input
+while (command := input("Ingresa quit para salir: ")) != "quit": print(f"Ingresaste {command}")
+
+# ------------------------------------------------------------------------------------------
+
 users: list = ["Mike", "John", "Smith"]
 print(f"{users = }")
 # you can reverse the order of a list with the reverse() method and other methods.

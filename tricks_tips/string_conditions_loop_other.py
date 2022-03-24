@@ -12,6 +12,9 @@ All examples are from the internet with somes variations, so they are not 100% c
 """----------------------------------------------------------------------------------------"""
 ''' Using string methods'''
 
+from typing import Literal
+
+
 print("\n Using count \n")
 letters_any = "aaabbbcccdddeeffffff"
 print(f"{letters_any = }")
@@ -161,4 +164,25 @@ is_even_two(5)
 num: int = 100
 if 25 < num < 150:
     print(f"{num} is between 25 and 150")
+
+# is you want to initialize a variable with a value in one line, you can use the following way:
+initial_num: int = 100
+final_num: Literal[21, 42] = 21 if initial_num<2 else 42
+print(f"{final_num}")
+
+# elif in one line
+print("no") if final_num > 42 else print("yes") if final_num == 42 else print("maybe")
+
+# If without else in one line
+print("hello") if final_num > 42 else print("no")
+
+# While Loop with if else
+count_number: int = 0
+while count_number<10: count_number+=1; print(count_number) if count_number!=5 else print("-Five-")
+
+
+# Nested For Loops in one line
+iter1: list = [1, 2, 3, 4]
+iter2: list = ['a', 'b', 'c']
+[print(x,y) for x in iter1 for y in iter2]
 

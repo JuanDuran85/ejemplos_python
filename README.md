@@ -48,6 +48,12 @@ Ejemplos de programacion con Python
   json-server db.json
   ```
 
+## Servidor local con python
+- Iniciar un servidor local con python desde la terminal
+  ```bash
+    python -m http.server 8000
+  ```
+
 ## Generar documentacion por la terminar
 - Utilizando pydoc
   ```bash

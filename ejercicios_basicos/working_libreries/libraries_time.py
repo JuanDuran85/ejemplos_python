@@ -19,10 +19,24 @@ print("Calculating Execution Time")
 start_time: float = time()
 
 # print all even numbers till 20
-for i in range(20):
+for i in range(10):
     if i % 2 == 0:
         print(i, end="")
 
 end_time: float = time()
 time_taken: float = end_time - start_time
 print(f"\nTime taken to execute the code is {time_taken} seconds")
+
+# ------------------------------------------------------------------
+# Countdown Timer
+def countdown(time_number):
+    while time_number:
+        mins, secs = divmod(time_number, 60)
+        timer = f"{mins:02d}:{secs:02d}"
+        print(timer, end="\r")
+        sleep(1)
+        time_number -= 1
+    print("Time's up!")
+
+time_input = input("Enter the time in seconds: ")
+countdown(int(time_input))

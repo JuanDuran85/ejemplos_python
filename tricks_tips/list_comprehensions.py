@@ -84,3 +84,15 @@ print(f"{ [prices[product] for product in products]  = }")
 
 list_final: list = ['Multiplo de 6' if i%6 == 0 else 'Multiplo de 2' if i%2 == 0 else 'Multiplo de 3' if i % 3 == 0 else i for i in range(1,15)]
 print(f"{list_final = }")
+
+# We can use list comprehension to get square of numbers from a list.
+squares: list = [i**2 for i in range(1,10)]
+print(f"{squares = }")
+
+# We can use list comprehension to get square of numbers from a list if the number is even of 2 with if.
+squares_two: list = [i**2 for i in range(1,10) if i % 2 == 0]
+print(f"{squares_two = }")
+
+# We can use list comprehension to get square of numbers from a list if the number is even of 2 with if-else.
+squares_three: list = [i**2 if i % 2 == 0 else f"No even {i}" for i in range(1,10)]
+print(f"{squares_three = }")
