@@ -57,6 +57,20 @@ print(f"{list_number = }")
 del list_number[1:4]
 print(f"{ list_number = }")
 
+#---------------------------------------------------------------------------------------
+# Creating Lists with Lists Comprehension
+list_number: list = [i for i in range(0,11)]
+print(f"{list_number = }")
+
+# Creating list with range
+list_number: list = list(range(0,11))
+print(f"{list_number = }")
+
+# We can also create a list of strings using the same method.
+list_word: list = [("Hi " + name) for name in ['Karl','Alex','John','Mary','Bob']]
+print(f"{list_word = }")
+
+
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
 ''' Using tuples - Can be: ordered, inmutable, duplicates'''
@@ -66,8 +80,6 @@ print(f"{players = }")
 
 # If you need yo get the first index of a given value inside a tuple, you can use the index method.
 print(f"{players.index('Pele') = }")
-
-
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
@@ -184,6 +196,13 @@ print(f"{people_a.union(people_b) = }")
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
 ''' Using map '''
+print("\n Using map \n")
+# Mapping Lists or TypeCasting Whole List
+
+list_number_int: list = list(map(int, ['1','2','3']))
+print(f"{list_number_int = }")
+list_number_float: list = list(map(float, ['1','2','3']))
+print(f"{list_number_float = }")
 
 
 """----------------------------------------------------------------------------------------"""
