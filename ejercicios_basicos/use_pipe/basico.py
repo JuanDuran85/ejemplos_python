@@ -9,7 +9,7 @@
 
 """
 
-from pipe import select, where, chain, traverse
+from pipe import select, where, chain, traverse, groupby, dedup
 
 arr: list = [1,2,3,4,5,]
 print(f"{arr = }")
@@ -44,3 +44,34 @@ fruits: list = [
 ]
 result_list: list = list(fruits | select(lambda  fruit: fruit["price"]) | traverse)
 print(f"{result_list = }")
+
+# Group Elements in a List: we use groupby to group numbers into the Even group and the Odd group
+list_number: list = [1,2,3,4,5,6,7,8,9,10,11,12]
+resul_list: list = list(list_number | groupby(lambda num: "Par" if num%2==0 else "Impar") | select(lambda x: {x[0] : list(x[1])}))
+print(f"{resul_list = }")
+
+# To get only the values that are greater than 2, we can add the where method inside the select method.
+new_result_list: list = list(list_number | groupby(lambda num: "Par" if num%2==0 else "Impar") | select(lambda num: {num[0]: list(num[1] | where(lambda num: num > 2))}))
+print(f"{new_result_list = }")
+
+# dedup — Deduplicate Values Using a Key. The dedup method removes duplicates in a list.
+list_number: list = [3,3,4,6,3,5,7,3,2,4,3,6,3,5]
+result_not_duplicate: list = list(list_number | dedup)
+print(f"{result_not_duplicate = }")
+
+# you can use the dedup method to get a unique element that is smaller than 5 and another unique element that is larger than or equal to 5.
+new_result_not_duplicate: list = list(list_number | dedup(lambda key: key < 5))
+print(f"{new_result_not_duplicate = }")
+
+#In the code above, you can remove items with the same name, get the values of count, only choose the values that are integers.
+data_list: list = [
+    {"name":"Jack", "count": 4},
+    {"name":"Isabel", "count": 1},
+    {"name":"Joshuah", "count": None},
+    {"name":"Isabel", "count": 3},
+    {"name":"Kody", "count": 8},
+    {"name":"Joshuah", "count": 2},
+]
+
+result_data: list = list(data_list | dedup(key=lambda person: person["name"]) | select(lambda person: person["count"])| where(lambda count: isinstance(count, int)))
+print(f"{result_data = }")
