@@ -278,39 +278,77 @@ print(f"{text_any} --> {result_text}")
 
 print(" ")
 print("rstrip: Same as strip but only trailing chars".center(100, "-"))
-
-
-print(" ")
-print("".center(100, "-"))
-
-print(" ")
-print("".center(100, "-"))
+text_any: str = "    Python 3.10          "
+r_strip_result: str = text_any.rstrip()
+print(f"{text_any} --> {r_strip_result} !!!")
 
 print(" ")
-print("".center(100, "-"))
+print("split: Split string at whitespace and return list".center(100, "-"))
+print("2 optional params allow you to specify separator and how many splits to do.".center(100, "-"))
+text_any: str = "No! No! No! No! No! No! No!"
+result_split: list = text_any.split('! ',3)
+print(f"{text_any} --> {result_split}")
 
 print(" ")
-print("".center(100, "-"))
+print("splitlines: Split string at linebreaks and return list".center(100, "-"))
+print("Optional param determines whether to include line break after split".center(100, "-"))
+text_any: str = "Line 1\nLine 2\nLine 3"
+result_splitlines: list = text_any.splitlines()
+print(f"{text_any} --> {result_splitlines}")
 
 print(" ")
-print("".center(100, "-"))
+print("startswith: Return true if string starts with value".center(100, "-"))
+name_text: str = "Maria"
+starts_with: bool = name_text.startswith("M")
+print(f"{name_text} --> {starts_with}")
 
 print(" ")
-print("".center(100, "-"))
+print("strip: Remove leading & trailing chars".center(100, "-"))
+print("Optional param specifies chars to remove as leading/trailing chars".center(100, "-"))
+text_any: str = "   Espacios en blanco   "
+result_strip: str = text_any.strip()
+print(f"{text_any} --> {result_strip}!!!")
 
 print(" ")
-print("".center(100, "-"))
+print("swapcase: Swap cases (e.g. lowercase become upper)".center(100, "-"))
+text_any: str = "e.t PHONE HOME"
+swapcase_result: str = text_any.swapcase()
+print(f"{text_any} --> {swapcase_result}")
 
 print(" ")
-print("".center(100, "-"))
+print("title: Covert first character of each word to upper case".center(100, "-"))
+text_title: str = "este titulo fue cambiado con title"
+result_title: str = text_title.title()
+print(f"{text_title} --> {result_title}")
 
 print(" ")
-print("".center(100, "-"))
+print("translate: Returns a translated string using mapping table, or dictionary with ascii characters".center(100, "-"))
+text_ascii: dict = {74: 80, 105: 97}
+result_translate: str = "Joe".translate(text_ascii)
+print(f"{text_ascii} --> {result_translate}")
 
 print(" ")
-print("".center(100, "-"))
+print("upper: Convert characters to uppercase".center(100, "-"))
+text_any: str = "TeXto CuAlQuieRa stRing"
+result_upper: str = text_any.upper()
+print(f"{text_any} --> {result_upper}")
 
 print(" ")
-print("".center(100, "-"))
+print("zfill: Fills string with specified number of 0 values at start".center(100, "-"))
+price_article: str = ".125"
+price_fill: str = price_article.zfill(5)
+print(f"{price_article} --> {price_fill}")
+
+print(" ")
+print("removeprefix: Return string without specified prefix. Only Python 3.9+".center(100, "-"))
+name_text: str = "Aeron"
+new_name = name_text.removeprefix("Ae")
+print(f"{name_text} --> {new_name}")
+
+print(" ")
+print("removesuffix: Return string without specified suffix. Only Python 3.9+.".center(100, "-"))
+name_text: str = "Aeron"
+new_name = name_text.removesuffix("on")
+print(f"{name_text} --> {new_name}")
 
 

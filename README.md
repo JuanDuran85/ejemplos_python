@@ -18,8 +18,11 @@ Ejemplos de programacion con Python
 
 - se ejecuta el entorno virtual
 
-    ```bash
+    ```bash window
     source entorno-virtual/Scripts/activate
+    ```
+    ```bash linux
+    source entorno-virtual/bin/activate
     ```
 
 - luego se selecciona el entorno virtual creado
