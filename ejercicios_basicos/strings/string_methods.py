@@ -193,7 +193,92 @@ is_upper: bool = text_any.isupper()
 print(f"{text_any} --> {is_upper}") 
 
 print(" ")
-print("".center(100, "-"))
+print("istitle: Return true if string follows rules of a title".center(100, "-"))
+print("if all words are lowercase except the first letter of each word".center(100, "-"))
+title_text: str = "Titulo Nuevo De La Pagina"
+is_title: bool = title_text.istitle()
+print(f"{title_text} --> {is_title}")
+
+
+print(" ")
+print("join: Join iterable elements to end of stiring".center(100, "-"))
+cadena_uno: tuple = ("texto 1", "texto 2", "texto 3")
+result_text: str = "__".join(cadena_uno)
+print(f"{cadena_uno} --> {result_text}")
+
+print(" ")
+print("ljust: Return string left justified".center(100, "-"))
+print("2nd optional param specifies character to fill space. Default is space".center(100, "-"))
+text_any: str = "Python 3.10"
+result: str = text_any.ljust(20, "*")
+print(f"{text_any} --> {result}")
+
+print(" ")
+print("lower: Convert string to lower case".center(100, "-"))
+text_any: str = "TODO EL TEXTO EN MAYUSCULAS"
+lower_text: str = text_any.lower()
+print(f"{text_any} --> {lower_text}")
+
+print(" ")
+print("lstrip: Same as strip but only leading chars".center(100, "-"))
+text_any: str = "   Python 3.10          "
+result_text: str = text_any.lstrip()
+print(f"{text_any} --> {result_text}")
+
+print(" ")
+print("maketrans: Return translation table that can be used with translate()".center(100, "-"))
+text_any: str = "Harry Cotter"
+result_change:dict = text_any.maketrans("C", "P")
+print(f"{text_any} --> {text_any.translate(result_change)}")
+
+print(" ")
+print("partition: Return tuple with string parted in 3 parts".center(100, "-"))
+print("Middle part is specified string. If not found, entire string stored in first part of tuple".center(100, "-"))
+text_any: str = "Program Language Python 3.10"
+result_text: tuple = text_any.partition('Language')
+print(f"{text_any} --> {result_text}")
+
+print(" ")
+print("replace: Return string where one value is replaced with another".center(100, "-"))
+print("Optional parameter specifies how many occurrences to replace".center(100, "-"))
+text_any: str = "Texto que esta estatico una vez"
+result_text: str = text_any.replace('estatico', 'remplazado')
+print(f"{text_any} --> {result_text}")
+
+print(" ")
+print("rfind: Same as find but searches for last occurrence of string".center(100, "-"))
+text_any: str = "Texto que se usa para busqueda con rfind"
+result_search: int = text_any.rfind('busqueda')
+print(f"{text_any} --> {result_search}")
+
+print(" ")
+print("rindex: Same as index but searches for last occurence of string".center(100, "-"))
+text_any: str = "It's alive!!! It's alive!!!"
+result_search: int = text_any.rindex('alive')
+print(f"{text_any} --> {result_search}")
+
+print(" ")
+print("rjust: Return string right justified.".center(100, "-"))
+print("2nd optional param specifies character to fill space. Default is space.".center(100, "-"))
+text_any: str = "Texto a justificar"
+r_just_text: str = text_any.rjust(50, ".")
+print(f"{r_just_text}")
+
+print(" ")
+print("rpartition: Same as partition but searches for last occurence of string".center(100, "-"))
+text_any: str = "One for you and one for me"
+r_partition: tuple = text_any.rpartition('for')
+print(f"{text_any} --> {r_partition}")
+
+print(" ")
+print("rsplit: Same as split but starts from the right".center(100, "-"))
+text_any: str = "One for you and one for me"
+result_text = text_any.rsplit('for')
+print(f"{text_any} --> {result_text}")
+
+print(" ")
+print("rstrip: Same as strip but only trailing chars".center(100, "-"))
+
 
 print(" ")
 print("".center(100, "-"))
@@ -219,5 +304,13 @@ print("".center(100, "-"))
 print(" ")
 print("".center(100, "-"))
 
+print(" ")
+print("".center(100, "-"))
+
+print(" ")
+print("".center(100, "-"))
+
+print(" ")
+print("".center(100, "-"))
 
 
