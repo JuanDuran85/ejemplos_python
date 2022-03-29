@@ -12,7 +12,7 @@
 from re import search, findall, split
 from typing import Match
 
-# ------------------------------------ search ------------------------------------------------------
+# ------------------------------------ search -------------------------------------------------
 
 cadena_texto: str = "Ejemplo de Expresiones Regulares con Python"
 
@@ -41,7 +41,17 @@ if resultado_cuatro:
 else:
     print(f"No se encontró la busqueda: {resultado_cuatro }, en la cadena: {cadena_texto}")
     
-# ------------------------------------ findall ------------------------------------------------------
+# --------------------------------------------------------------------
+result: Match = search(r"(\w+)-(\d+)", "Look: Abc-123 info")
+# classic access
+print(f"{result.group(1)} --> encontrado en la cadena: 'Look: Abc-123 info'")
+# new access since 3.6
+print(f"{result[1]} --> encontrado en la cadena: 'Look: Abc-123 info'")
+print(f"{result[2]} --> encontrado en la cadena: 'Look: Abc-123 info'")
+# Entire match
+print(f"{result[0]} --> encontrado en la cadena: 'Look: Abc-123 info'")
+    
+# ------------------------------------ findall -----------------------------------------------
 
 texto_cadena_dos: str = """
 El vehiculo de Luis es blanco,
@@ -58,9 +68,11 @@ if resultado_cinco:
 else:
     print(f"No se encontraron elementos")
     
-# ------------------------------------ split ------------------------------------------------------
+# ------------------------------------ split-----------------------------------------------------
 
 texto_cadena_tres = "La silla es blanca y cuesta 90 mil"
 
 resultado_seis: list = split("\s", texto_cadena_tres)
 print(f"Los elementos encontrados fueron: {resultado_seis}")
+
+

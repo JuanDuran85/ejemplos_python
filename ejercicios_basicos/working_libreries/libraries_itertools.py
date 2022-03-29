@@ -7,10 +7,12 @@
     Using permutations
     Using product
     Using starmap
+    Using chain
+    Using groupby
 
 """
 
-from itertools import accumulate, filterfalse, zip_longest, count, permutations, product, starmap, chain, repeat, cycle
+from itertools import accumulate, filterfalse, zip_longest, count, permutations, product, starmap, chain, repeat, cycle, groupby
 from typing import Generator, Iterable
 
 """----------------------------------------------------------------------------------------"""
@@ -89,5 +91,48 @@ for i,num in enumerate(sequ):
     if i == 30:
         break
 
+# ----------------------------------------------------------------------------------------
+# get a list of numbers from another mixed list
+numbers: list = [[1,2],(3,4),{5,6}]
+print(f"{list(chain(*numbers)) = }")
+
+# ----------------------------------------------------------------------------------------
+# group a list of numbers by frequency
+def look_and_say(digits) -> list:
+    return list(chain.from_iterable(
+        (len(list(g)),k) for k,g in groupby(digits)
+    ))
+
+print(f"{look_and_say([1,1,2,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9]) = }")
+
+# group a list of tuples of frecuency and numbers by list
+def look_and_say_two(digits) -> list:
+    return [(len(list(g)),k) for k,g in groupby(digits)]
+    
+print(f"{look_and_say_two([1,1,2,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9]) = }")
+
+# ----------------------------------------------------------------------------------------
+# using chain from iterable to create one list broken a group
+print(list(chain.from_iterable(
+    [(3,'A'),(1,'B'),(2,'C'),(4,'A'),(1,'D'),(2,'B')]
+)))
+
+# ----------------------------------------------------------------------------------------
+# Using groupby from itertools
+# The key are the unique elements:
+print([k for k,_ in groupby("AABBBAADDCCDFFDDDFFDCCCBB")])
+
+# The groups are iterables with the consecutive elements:
+print([list(g) for _,g in groupby("AABBBAADDCCDFFDDDFFDCCCBB")])
+
+# We can compute the length of a group:
+print([len(list(g)) for _,g in groupby("AABBBAADDCCDFFDDDFFDCCCBB")])
+
+# We can pair keys and length of groups to count elements:
+print([(len(list(g)),k) for k,g in groupby("AABBBAADDCCDFFDDDFFDCCCBB")])
 
 
+# -------------------------------------------------------------------------------------
+# you can use product to generate a Multiplication table
+for x,y in product(range(1,4),range(1,11)):
+    print(f"{x} * {y} = {x*y}")

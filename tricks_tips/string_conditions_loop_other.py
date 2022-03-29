@@ -202,4 +202,10 @@ a, b, *c = [1,2,3,4,5,6,7]
 print(f"{a} {b} {c}")
 
 
+# ------------------------------------------------------------------------------
+text_any: str = '7792'
+result_text: list = text_any.split('-')
+print(result_text)
+print(f"{result_text[2]}" if len(result_text) > 1 else None)
+
 
