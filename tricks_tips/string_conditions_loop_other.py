@@ -208,4 +208,15 @@ result_text: list = text_any.split('-')
 print(result_text)
 print(f"{result_text[2]}" if len(result_text) > 1 else None)
 
+# ------------------------------------------------------------------------------
+# using all to Return True if bool(x) is True for all values x in the iterable. If the iterable is empty, return True.
+def contains_only_vowels(word:str) -> bool:
+    word = word.lower()
+    vowels = 'aeiou'
+    return all(c in vowels for c in word)
+
+print(contains_only_vowels('Python'))
+print(contains_only_vowels('Juan'))
+print(contains_only_vowels('AEI'))
+
 

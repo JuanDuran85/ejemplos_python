@@ -174,6 +174,22 @@ print("second method")
 result_merge_three: dict = {key: value for d in (dict_one,dict_two) for key, value in d.items()}
 print(f"{result_merge_three = }")
 
+# ----------------------------------------------------------------------------------------
+dict_one: dict = {'a':1, 'b':2, 'z':1}
+dict_two: dict = {'c':3, 'd':4, 'z':9}
+print(f"{dict_one = }")
+print(f"{dict_two = }")
+# merge two dictionaries in Python 3.9
+dict_result: dict = dict_one | dict_two
+print(f"{dict_result = }")
+
+# merge two dictionaries in Python 3.8 and below
+dict_result: dict = {**dict_one, **dict_two}
+print(f"{dict_result = }")
+
+# You can intermix unpacking with explicit keys:
+dict_result: dict = {**dict_one, 'q':56, **dict_two, 'z':99}
+print(f"{dict_result = }")
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
@@ -234,6 +250,18 @@ users: list = ["Juan", "Pedro", "Maria"]
 user_visit: list = [354,456,23]
 for user, visits in zip(users, user_visit):
     print(f"{user = } and {visits = }")
+    
+# using zip built-in function to create and unpack dictionaries
+names_users: list = "juan elio maria petra".split()
+ages_users: tuple = (23,34,45,31)
+
+# make a dict from two iterable lists
+dict_result: dict = dict(zip(names_users, ages_users))
+print(f"{dict_result = }")
+
+# the other way around you can also use zip to unpack a dict's keys + values into two tuples
+result_list: list = list(zip(*dict_result.items()))
+print(f"{result_list = }")
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""

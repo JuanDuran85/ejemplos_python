@@ -41,3 +41,24 @@ with open("/home/juan/Descargas/programacion/ejemplos_python/people.json") as js
         print(keys)
         values = x.values()
         print(values)
+        
+# Creating a json file
+def create_json_file(path: str, obj: dict) -> None:
+    with open(path,'w') as json_file:
+        json.dump(obj,json_file)
+        
+if __name__ == '__main__':
+    object_to_file: dict = {
+        "menu": {
+            "id":"file",
+            "value":"File",
+            "popup":{
+                "menuitem": [
+                    {"value": "New", "onclick": "CreateNewDoc()"},
+                    {"value": "Open", "onclick": "OpenDoc()"},
+                    {"value": "Close", "onclick": "CloseDoc()"}
+                ]
+            }
+        }
+    }
+    create_json_file('test.json',object_to_file)
