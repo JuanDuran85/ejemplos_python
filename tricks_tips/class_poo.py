@@ -90,3 +90,28 @@ del(video_one)
 # class in one line
 School = type('School', (object,), {'fun':{}})
 print(f"{School = }")
+
+# ---------------------------------------------------------------------------------------------
+# you can use class and dict to load classes
+class ProductionConfig:
+    ELASTICSEARCH_URL: str = 'https://elasticsearch.example.com'
+
+class DevelopmentConfig:
+    ELASTICSEARCH_URL: str = 'https://development-elasticsearch.example.com'
+    
+class TestConfig:
+    ELASTICSEARCH_URL: str = 'http://localhost:9200'
+
+CONFIGS: dict = {
+    "production": ProductionConfig,
+    "development": DevelopmentConfig,
+    "test": TestConfig
+}
+
+def load_config(enviroment):
+    return CONFIGS.get(enviroment, DevelopmentConfig)
+
+print(f"{load_config('production') = }")
+print(f"{load_config('test') = }")
+print(f"{load_config('unknow') = }")
+print(f"{load_config('development') = }")
