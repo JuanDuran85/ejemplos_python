@@ -46,14 +46,15 @@ result_union_set_three = set_items_one | set_items_three
 print(f"{result_union_set_three = }")
 
 print(" ")
-print("ISSUPERSET: ".center(100, "-"))
-
-
+print("ISSUPERSET:  returns True if a set has every elements of another set".center(100, "-"))
+print("If not, it returns False.".center(100, "-"))
+super_set: bool = set_items_one.issuperset(set_items_two)
+print(f"{super_set = }")
 
 print(" ")
-print("ISSUBSET: ".center(100, "-"))
-
-
+print("ISSUBSET: Return True if all items in set x are present in set y:".center(100, "-"))
+sub_set: bool = set_items_one.issubset(set_items_two)
+print(f"{sub_set = }")
 
 print(" ")
 print("INTERSECTION: Returns a set, that is the intersection of two or more sets".center(100, "-"))
