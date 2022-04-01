@@ -70,6 +70,29 @@ print(f"{list_number = }")
 list_word: list = [("Hi " + name) for name in ['Karl','Alex','John','Mary','Bob']]
 print(f"{list_word = }")
 
+# ----------------------------------------------------------------------------------------
+# if you need to flatten a list
+list_of_list: list = [["a","b","c"],["d","e","f"],["g","h","i"]]
+print(f"{list_of_list = }")
+flatten_list: list = [item for sublist in list_of_list for item in sublist]
+print(f"{flatten_list = }")
+
+# -----------------------------------------------------------------------------------------
+# if you need get unique elements from the list, you can use set() function
+list_duplicates: list = ["a","b","c","d","e","f","a","f","a","b","c","b","x"]
+print(f"{list_duplicates = }")
+unique_list: list = list(set(list_duplicates))
+print(f"Sorted unique elements: {sorted(unique_list)}")
+
+# -----------------------------------------------------------------------------------------
+# Sorting a list based on another list
+# the first containing the data and the second containing the order of this information.
+list_a_data: list = ['a','b','c','d']
+list_b_order: list = [2,0,1,3]
+print(f"{list_a_data = }")
+print(f"{list_b_order = }")
+ordered_list_a_data: list = [list_a_data[item] for item in list_b_order]
+print(f"{ordered_list_a_data = }")
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
@@ -190,6 +213,20 @@ print(f"{dict_result = }")
 # You can intermix unpacking with explicit keys:
 dict_result: dict = {**dict_one, 'q':56, **dict_two, 'z':99}
 print(f"{dict_result = }")
+
+# -------------------------------------------------------------------------------------------
+# Sort a list of dictionaries by key using sorted function
+people: list = [
+    {"name": "John", "height": 180},
+    {"name": "Peter", "height": 170},
+    {"name": "Amy", "height": 155},
+    {"name": "Hannah", "height": 130},
+    {"name": "Michael", "height": 190},
+    {"name": "Sandy", "height": 165},
+]
+print(f"{people = }")
+sorted_people: list = sorted(people, key = lambda he: he['height'])
+print(f"{sorted_people = }")
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
@@ -385,5 +422,15 @@ list_number: list = [3,5,6,2,8,9,1,0,6]
 print(f"{list_number = }")
 sum_even_number: int = sum([number for number in list_number if number % 2 == 0])
 print(f"{sum_even_number = }")
+
+# -----------------------------------------------------------------------------------------
+# you can use zip and dict functions to merge to lists in a dictionary
+list_a: list = ['a','b','c']
+list_b: list = [1,2,3,4]
+print(f"{list_a = }")
+print(f"{list_b = }")
+merge_dict_final: dict = dict(zip(list_a, list_b))
+print(f"{merge_dict_final = }")
+
 
 """----------------------------------------------------------------------------------------"""

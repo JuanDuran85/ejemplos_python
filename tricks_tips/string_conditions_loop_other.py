@@ -30,7 +30,8 @@ print(f"{ ','.join(str(x) for x in row_list)  = }")
 # if you want to print a list in one row, use print with * and sep arguments
 print(*row_list, sep=',')
 
-
+# If you need to print a string n times
+print("This is a separator","-"*50)
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
@@ -219,4 +220,11 @@ print(contains_only_vowels('Python'))
 print(contains_only_vowels('Juan'))
 print(contains_only_vowels('AEI'))
 
-
+# -----------------------------------------------------------------------------------
+# if you want to split a string and join it back
+my_string: str = "Esto es una cadena de texto"
+print(f"Cadena de texto original sin modificar: {my_string}")
+my_string_list: list = my_string.split()
+my_string_new_list: list = [text.title() for text in my_string_list]
+final_my_string: str = " ".join(my_string_new_list)
+print(f"Cadena de texto modificada: {final_my_string}")
