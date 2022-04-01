@@ -3,3 +3,4 @@ pandas
 whatismyip
 varname
 textblob
+requests_cache

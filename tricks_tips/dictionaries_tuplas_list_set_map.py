@@ -94,6 +94,13 @@ print(f"{list_b_order = }")
 ordered_list_a_data: list = [list_a_data[item] for item in list_b_order]
 print(f"{ordered_list_a_data = }")
 
+# -----------------------------------------------------------------------------------------
+#  Get the most frequent value from a list
+list_values_a: list = ["b","c","a","a","c","d","e","f","c","a","a"]
+print(f"{list_values_a = }")
+print(f"Most frequent value: {max(set(list_values_a), key=list_values_a.count)}")
+
+
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
 ''' Using tuples - Can be: ordered, inmutable, duplicates'''
@@ -227,6 +234,23 @@ people: list = [
 print(f"{people = }")
 sorted_people: list = sorted(people, key = lambda he: he['height'])
 print(f"{sorted_people = }")
+
+# -------------------------------------------------------------------------------------------
+# Sorted a dictionary by value using sorted function
+athlete_times: dict = {
+    'Mike':'0:01:17.785111',
+    'Sarah':'0:01:30.818056',
+    'Tina':'0:01:19.828256',
+    'Pedro':'0:01:17.999991',
+    'Miguel':'0:01:10.101010',
+    'Carlos':'0:01:19.924444',
+    'Daniel':'0:01:10.000000',
+    'Liz':'0:01:10.000000',
+}
+
+time_sorted: dict = {key: value for key,value in sorted(athlete_times.items(), key=lambda item: item[1])}
+print(f"{time_sorted = }")
+
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
