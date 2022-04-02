@@ -1,6 +1,6 @@
 """_summary_
 
-    Python List Method.
+    Python List Methods.
     
     - append
     - clear

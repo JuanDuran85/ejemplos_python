@@ -150,3 +150,9 @@ Ejemplos de programacion con Python
   ```bash
   
   ```
+
+## Implementando FastAPI
+- Para levantar el servidor
+  ```bash
+    uvicorn nombre_archivo:app --reload --port=8080
+  ```

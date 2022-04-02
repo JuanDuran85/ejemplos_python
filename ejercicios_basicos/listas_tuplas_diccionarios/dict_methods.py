@@ -1,6 +1,6 @@
 """_summary_
 
-    Python Dictionary Method.
+    Python Dictionary Methods.
     
     - clear
     - copy
