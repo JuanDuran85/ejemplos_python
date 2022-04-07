@@ -156,3 +156,10 @@ Ejemplos de programacion con Python
   ```bash
     uvicorn nombre_archivo:app --reload --port=8080
   ```
+
+## Generando Ejecutable con pyinstaller
+- Para generar el ejecutable
+  ```bash
+  pyinstaller --onefile --windowed --icon=icon.ico nombre_archivo.py
+  ```
+  En el caso de Mac o linux no usar --windowed
