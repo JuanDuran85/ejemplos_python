@@ -7,10 +7,6 @@
 from tkinter import END, Listbox, Tk, messagebox
 from operaciones_db import crear_tabla, insertar, borrar, visualizar, buscar, actualizar
 
-# crear_tabla()
-# insertar("test11","josefa",2002,114)
-# insertar("test22","maria",2014,6432)
-
 def comando_visualizar(lista_libro: Listbox) -> None:
     lista_libro.delete(0,END)
     libros: list = visualizar()

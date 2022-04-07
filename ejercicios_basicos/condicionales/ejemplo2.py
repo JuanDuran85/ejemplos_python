@@ -5,17 +5,17 @@ comentarios 2
 n1 = int(input("ingresa un numero entero: "))
 
 if n1 % 2 == 0 :
-  print("El número ingresado: ",n1," es par")
+  print("El número ingresado--> ",n1," es par")
 else :
-  print("El número ingresado: ",n1," es impar")
+  print("El número ingresado a continuacion: ",n1," es impar")
 
 
 if n1 > 0 :
-  print("El número ingresado: ",n1," es positivo")
+  print("El número ingresado --> ",n1," es positivo")
 if n1 == 0 : 
-  print("El número ingresado: ",n1," es cero")
+  print("El número ingresado->: ",n1," es cero")
 if n1 < 0 :
-  print("El número ingresado: ",n1," es negativo")
+  print("El número ingresado-->: ",n1," es negativo")
 
 print("----------------")
 
