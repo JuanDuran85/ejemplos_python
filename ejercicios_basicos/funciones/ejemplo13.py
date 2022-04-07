@@ -113,3 +113,57 @@ print(f"El precio con GST es: {gst_fn(1000, 'Service')}")
 vat_fn = find_tax_calculator("VAT")
 print(f"El precio con VAT es: {vat_fn(1000, 'Product')}")
 print(f"El precio con VAT es: {vat_fn(1000, 'Service')}")
+
+# -------------------------------------------------------------------------------------
+def es_bisiesto(anyo: int) -> bool:
+    #Programe su solución aquí
+    if anyo % 4 == 0 and anyo > 0:
+        if anyo % 100 == 0:
+            if anyo % 400 == 0:
+                return True
+            else:
+                return False
+        else:
+            return True
+    return False
+print(es_bisiesto(-2020))
+
+def encontrar_mayor(a: int, b: int, c: int) -> int:
+    lista: list = []
+    lista.append(a)
+    lista.append(b)
+    lista.append(c)
+    return max(lista)
+    
+print(encontrar_mayor(5,22,5))
+
+# con for
+def determinar_primo(numero: int) -> bool:
+    #Implemente su solución aquí
+    if numero <= 1:
+        return False
+    elif numero == 2:
+        return True
+    for i in range(2, numero):
+        if (numero % i == 0):
+            return False
+        return True
+        
+print(determinar_primo(2))
+
+# con while
+def es_primo(numero: int) -> bool:
+    contador: int = 2
+    
+    if (numero < 2):
+        return False
+    
+    while(contador <= numero**(1/2)):
+        if(numero % contador == 0):
+            return False
+        contador += 1
+    
+    return True
+
+for i in range(1,101):
+    print(f"{i} - {es_primo(i)}")
