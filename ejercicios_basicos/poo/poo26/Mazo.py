@@ -5,6 +5,7 @@
 """
 
 from Carta import Carta
+import random
 
 class Mazo:
     def __init__(self) -> None:
@@ -18,10 +19,20 @@ class Mazo:
                 carta: Carta = Carta(i, mazo)
                 self.cartas.append(carta)
                 
+    def revolver(self) -> None:
+        for celda in range(len(self.cartas)):
+            aleatorio: int = random.randint(0, len(self.cartas)-1)
+            temporal = self.cartas[celda]
+            self.cartas[celda] = self.cartas[aleatorio]
+            self.cartas[aleatorio] = temporal
+    
     def imprimir(self) -> None:
         for instancia_carta in self.cartas:
             instancia_carta.imprimir()
 
 if __name__ == '__main__':
     mazo1: Mazo = Mazo()
+    mazo1.imprimir()
+    print("----------------------------------------------")
+    mazo1.revolver()
     mazo1.imprimir()

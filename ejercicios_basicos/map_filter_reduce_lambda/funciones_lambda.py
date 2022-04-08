@@ -99,3 +99,5 @@ print(f"{sorted_list(list_number) = }")
 # Fibonacci with Lambda
 fibonacci_function = lambda x: x if x<= 1 else fibonacci_function(x-1) + fibonacci_function(x-2)
 print(f"{fibonacci_function(7) = }")
+
+# --------------------------------------------------------------------------------------

@@ -63,3 +63,28 @@ def calcular_cantidad_digitos(numero: int) -> int:
     return len(str((numero*-1))) if numero <= -1 else len(str(numero))
 
 print(calcular_cantidad_digitos(-3))
+
+# ----------------------------------------------------------------------------------------
+# Programe una función que reciba una lista de números y retorne la multiplicación de cada una de sus celdas.
+
+def multiplicar_celdas(lista: list) -> int:
+    acumulado: int = 1 if len(lista)>=1 else 0
+    for _,value in enumerate(lista):
+        acumulado *= value
+    return acumulado
+
+print(multiplicar_celdas([1,2,3,4,5]))
+
+# -------------------------------------------------------------------------------------------
+# Se quiere implementar una función que sea capaz de recibir una lista de números enteros y nos retorne un número entero con la unión de cada una de sus celdas. Por ejemplo si se recibe la lista: [11,2,34,5] el valor de retorno será: 112345. El tamaño de la lista puede variar. Si recibe un número negativo, debe ignorar el signo tomar su parte positiva para procesarlo por ejemplo si se recibe la lista [1,-2,3,-4,-5] el valor de retorno será: 12345
+
+def formar_numero(lista: list) -> int:
+    numero_final: str = ""
+    for _,value in enumerate(lista):
+        if value <= -1:
+            value *= -1
+        numero_final += str(value)
+        
+    return int(numero_final) if len(lista) > 0 else 0
+
+print(formar_numero([]))
