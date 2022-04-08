@@ -6,3 +6,4 @@ textblob
 requests_cache
 opencv-python
 bcrypt
+icecream
