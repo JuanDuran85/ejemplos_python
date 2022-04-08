@@ -52,3 +52,14 @@ def argumentos_indeterminados(*args, **kwargs) -> None:
     for clave in kwargs:
         print(clave, "\t", kwargs[clave])    
 argumentos_indeterminados(10,20,30,10,10,20, id = 5, nombre= "Isabell", edad = 23, notas=[10,12,20,20,17])
+
+'''
+ Se desea hacer una función que ayude a determinar la cantidad de dígitos que posee un número. La función recibirá un número entero cualquiera y retornara la cantidad de dígitos que compone el número. Considere que la función puede recibir números enteros positivos o negativos
+ Por ejemplo: 
+ -- Si se recibe 124 el valor de retorno será 3
+ -- Si se recibe 638290 el valor de retorno será 6
+'''
+def calcular_cantidad_digitos(numero: int) -> int:
+    return len(str((numero*-1))) if numero <= -1 else len(str(numero))
+
+print(calcular_cantidad_digitos(-3))

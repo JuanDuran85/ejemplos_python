@@ -23,7 +23,6 @@
 
 class Matematicas:
     def calcular_coseno(self, x: int,n: int) -> float:
-        # Implemente aquí su solución y retorne el resultado
         if n >= 0:
             if n % 2 != 0:
                 n += 1
