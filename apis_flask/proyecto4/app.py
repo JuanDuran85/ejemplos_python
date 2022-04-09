@@ -84,7 +84,7 @@ def agregar():
     persona = Persona()
     persona_form = PersonaForm(obj=persona)
     if request.method == 'POST':
-        if persona_form.validate_on_submit():
+        if (persona_form.validate_on_submit()):
             persona_form.populate_obj(persona)
             app.logger.debug(f"{ persona = }")
             # insertar el nuevo registro

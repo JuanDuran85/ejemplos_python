@@ -88,3 +88,40 @@ def formar_numero(lista: list) -> int:
     return int(numero_final) if len(lista) > 0 else 0
 
 print(formar_numero([]))
+
+# --------------------------------------------------------------------------------------
+# imprimir matrices de una menor manera
+
+print("\t\r\n")
+def imprimir_matriz(matriz: list) -> None:
+    contenido: str = ""
+    for f in range(len(matriz)):
+        for c in range(len(matriz[f])):
+            contenido += str(matriz[f][c]) + "\t"
+        contenido += "\n"
+    print(contenido)
+    
+matriz_uno: list = [None] * 3
+
+for celda in range(len(matriz_uno)):
+    matriz_uno[celda] = [1] * 3
+    
+imprimir_matriz(matriz_uno)
+
+# ---------------------------------------------------------------------------------------------
+# Su misión es crear una matriz que representa una tabla de multiplicar de tamaño NxN, donde N corresponde al valor que representa el tamaño recibido por parámetro. Para valores 0 o negativos, deberá devolver una matriz vacía.
+
+def crear_tabla_multiplicar(n: int) -> list:
+    if n <= -1:
+        return []
+    matriz_final: list = []
+    lista_interna: list = []
+    for i in range(n):
+        for j in range(n):
+            lista_interna.append((i+1)*(j+1))
+        matriz_final.append(lista_interna)
+        lista_interna = []
+    return matriz_final
+            
+result: list = crear_tabla_multiplicar(-5)
+imprimir_matriz(result)

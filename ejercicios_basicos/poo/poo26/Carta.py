@@ -26,6 +26,9 @@ class Carta:
         else:
             valor = str(self.numero)
         return valor
+    
+    def obtener_numero(self) -> None:
+        return 10 if self.numero > 10 else self.numero
 
 if __name__ == '__main__':
     carta: Carta = Carta(11, "Treboles")

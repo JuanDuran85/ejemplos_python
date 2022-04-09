@@ -89,3 +89,30 @@ def my_function_two(*, a, b) -> None:
     
 my_function_two(a=1,b=2)
 # my_function_two(1,2) # Error, because the functin need arguments are positional only
+
+# -----------------------------------------------------------------------------------------------
+# Use * in functions parameters to use keyword arguments
+# find the smallest number passed as argument in a function
+def find_smallest_number(*values) -> int:
+    
+    # using min() function to find the smallest number
+    lower_value: int = min(values) 
+    print(f"{lower_value = }")
+    #-------------------------------------------------
+    # using for loop to find the smallest number
+    lower_value_two: int = values[0]
+    for value in values:
+        if (value < lower_value_two):
+            lower_value_two = value
+    return lower_value_two
+
+print(find_smallest_number(1,-2,3,24,5,6,-7,8,9,-10))
+
+# ------------------------------------------------------------------------------------------------
+# Use ** in functions parameters to use keyword arguments
+
+def print_parameters(**values) -> None:
+    for key,value in values.items():
+        print(f"{key} -> {value}")
+        
+print_parameters(a=1,b=2,c=3,d=4,e=5)
