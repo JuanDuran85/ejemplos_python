@@ -41,7 +41,7 @@ try:
             f"{valor} grados son {funcion_grados[grados.upper()](valor)} grados")
     else:
         print("No se puede convertir")
-except:
+except ValueError:
     print("La escala ingresada no es válida")
 
 
@@ -79,5 +79,5 @@ except ValueError:
     print("Valor ingresado no permitido")
 except KeyError:
     print("No se permiten esos tipos de caracteres")
-except:
+except Exception:
     print("Ocurrió un error al ejecutar el programa")
