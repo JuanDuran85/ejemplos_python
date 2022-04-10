@@ -13,7 +13,7 @@ class Buscaminas:
         
         for i in range(filas):
             self.tablero[i] = [0] * columna
-            self.tablero_usuario[i] = [0] * columna
+            self.tablero_usuario[i] = ["_"] * columna
     
     def colocar_mina(self, minas: int) -> None:
         while (minas > 0):
@@ -48,14 +48,44 @@ class Buscaminas:
                     contenido += ("M\t")
                 else:
                     contenido += str(self.tablero[f][c]) + "\t"
-            contenido += "\n"    
+            contenido += "\n"
+            
+        contenido += " - - Tablero Usuario\n"
+        
+        for f in range(len(self.tablero_usuario)):
+            for c in range(len(self.tablero_usuario[f])):
+                contenido += str(self.tablero_usuario[f][c]) + "\t"
+            contenido += "\n"
+         
         return contenido
+    
+    def colocar_pieza(self, fila_in: int, columna_in: int, pierde: bool = True) -> None:
+        filas: list = [0,0,-1,1,1,1,-1,-1,]
+        columnas: list = [1,-1,0,0,1,-1,1,-1]
+        
+        if(fila_in >= 0 and fila_in < len(self.tablero) and columna_in >= 0 and columna_in < len(self.tablero[fila_in])):
+            if (self.tablero_usuario[fila_in][columna_in] == '_' and self.tablero[fila_in][columna_in] == 0):
+                self.tablero_usuario[fila_in][columna_in] = str(self.tablero[fila_in][columna_in])
+                contador: int = 0
+                while(contador < 8):
+                    nueva_fila = fila_in + filas[contador]
+                    nueva_columna = columna_in + columnas[contador]
+                    pierde = self.colocar_pieza(nueva_fila, nueva_columna, False)
+                    contador += 1
+            elif (self.tablero[fila_in][columna_in] > 0):
+                self.tablero_usuario[fila_in][columna_in] = str(self.tablero[fila_in][columna_in])
+                pierde = False
+            else:
+                self.tablero_usuario[fila_in][columna_in] = str(self.tablero[fila_in][columna_in])
+        return pierde
     
 if __name__ == '__main__':
     buscaminas: Buscaminas = Buscaminas(5,6)
     print(buscaminas)
-    buscaminas.colocar_mina(10)
+    buscaminas.colocar_mina(3)
     print(buscaminas)
     buscaminas.colocar_numeros()
+    print(buscaminas)
+    buscaminas.colocar_pieza(0,0)
     print(buscaminas)
     

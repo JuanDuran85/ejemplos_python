@@ -125,3 +125,88 @@ def crear_tabla_multiplicar(n: int) -> list:
             
 result: list = crear_tabla_multiplicar(-5)
 imprimir_matriz(result)
+
+# ---------------------------------------------------------------------------------------------
+# Programe una función que determine si una palabra recibida por parámetro es un palíndromo o no. Un palíndromo es una palabra que se puede leer de la misma forma de izquierda a derecha o derecha a izquierda, por ejemplo: 'Ana', 'aérea', 'erigiré' o 'radar'.
+# Implemente la función de forma que retorne un valor booleano (True si es un palíndromo y false en caso contrario).
+# - Considere cómo eliminar los acentos para asegurarse tener comparaciones 1:1 correctas cono en el caso de las é en aérea y erigiré respectivamente.
+# - Considere normalizar las mayúsculas y minúsculas
+
+
+def es_palindromo(palabra: str) -> bool:
+    #Implemente aquí su solución y retorne un valor boolean
+    palabra = palabra.lower()
+    palabra = remplazo_tilde(palabra)
+    if(palabra[::-1] == palabra):
+        return True
+    return False
+    
+def remplazo_tilde(palabra: str) -> str:
+    acentos: dict = {'á':'a', 'é':'e', 'í':'i', 'ó':'o', 'ú':'u'}
+    palabra = palabra.lower()
+    for acento in acentos:
+        if acento in palabra:
+            palabra = palabra.replace(acento, acentos[acento])
+    return palabra
+
+print(es_palindromo("aérea"))
+
+# --------------------------------------------------------------------------------
+# Unos amigos están cansados de enviarse mensajes de forma convencional ya que han visto que algunas personas están húsmeando sus conversaciones, por lo que decidieron cambiar el formato de los mensajes para que sea un poco más difícil de leerlos por personas que no son los que deberian recibir los mensajes. Para evitar esto, se requiere que programe una función que sea capaz de encriptar los mensajes que se envían por la aplicación y otra capaz de desencriptar para que los usuarios puedan leer los mensajes. Puede suponer que recibe hileras de caracteres sin valores numéricos.
+# Escriba la función que, recibiendo por parámetro un arreglo de mensajes, encripta las vocales por números de forma que:
+# a -> 1, e -> 2, i -> 3, o -> 4, u -> 5, A -> 6, E -> 7, I -> 8, O -> 9, U -> 0
+# Por ejemplo, si la entrada es [“Hola", "MUNDO”], el resultado será: ['H4l1', 'm5nd4']
+
+def encriptar(lista_palabras: list) -> list:
+    #agregue aquí su código para encriptar y retorne una lista de datos encriptados
+    vocales: dict = {
+        'a':1,
+        'e':2,
+        'i':3,
+        'o':4,
+        'u':5,
+        'A':6,
+        'E':7,
+        'I':8,
+        'O':9,
+        'U':0,
+    }
+    nueva_palabra: list = []
+    for palabra in lista_palabras:
+        for letra in vocales:
+            if(letra in palabra):
+                palabra = palabra.replace(letra, str(vocales[letra]))
+        nueva_palabra.append(palabra)
+    
+    return nueva_palabra
+
+print(encriptar(["Hola", "MUNDO"]))
+
+# ----------------------------------------------------------------------------------------------
+# Para finalizar nuestro programa, necesitamos que los amigos tengan una forma de convertir los mensajes de vuelta a texto plano para poder ser leidos desde cualquier lado. 
+# Escriba la función que, recibiendo por parámetro un arreglo de mensajes, desencripta las vocales por números de forma que:
+# 1 -> a, 2 -> e, 3 -> i, 4 -> o, 5 -> u, 6 -> A, 7 -> E, 8 -> I, 9 -> O, 0 -> U
+# Por ejemplo, si la entrada es [“H4l1", "M0ND9”], el resultado será:  [“Hola", "MUNDO”]
+def desencriptar(lista_palabra: list) -> list:
+    #agregue aquí su código para desencriptar y retorne una lista de datos encriptados
+    vocales: dict = {
+        1:'a',
+        2:'e',
+        3:'i',
+        4:'o',
+        5:'u',
+        6:'A',
+        7:'E',
+        8:'I',
+        9:'O',
+        0:'U',
+    }
+    nuevas_palabras: list = []
+    for palabra in lista_palabra:
+        for letra in vocales:
+            if (str(letra) in str(palabra)):
+                palabra = palabra.replace(str(letra), vocales[letra])
+        nuevas_palabras.append(palabra)
+    return nuevas_palabras
+
+print(desencriptar(["H4l1", "M0ND9"]))
