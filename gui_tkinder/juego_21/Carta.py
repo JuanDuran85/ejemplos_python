@@ -34,5 +34,5 @@ class Carta:
         return f"/home/juan/Descargas/programacion/ejemplos_python/gui_tkinder/juego_21/images/{self.convertir_numero_a_letras()}_de_{self.palo}.png"
 
 if __name__ == '__main__':
-    carta: Carta = Carta(11, "Treboles")
+    carta: Carta = Carta(11, "treboles")
     carta.imprimir()

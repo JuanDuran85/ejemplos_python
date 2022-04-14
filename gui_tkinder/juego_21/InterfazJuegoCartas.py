@@ -5,7 +5,9 @@
 """
 
 from tkinter import Canvas, PhotoImage, Tk, Label, Button, Entry, StringVar, IntVar, END, W, E, N, S, messagebox
-from Carta import Carta
+from Repartidor import Repartidor
+from Jugador import Jugador
+from JugadorVirtual import JugadorVirtual
 
 class InterfazJuegoCartas:
     
@@ -15,11 +17,72 @@ class InterfazJuegoCartas:
         self.canvas: Canvas = Canvas(self.ventana, width=1200, height=600)
         self.canvas.pack()
         self.dibujar_fondo()
-        self.dibujar_rectangulo(4, 50, 55, 120, 175, 5)
-        carta_uno: Carta = Carta(11,"corazones")
-        self.dibujar_carta(110,143,carta_uno.obtener_nombre_archivo())
         self.dibujar_etiqutas()
+        
+        self.boton_iniciar: Button = Button(self.ventana, text="Iniciar Juego", command=self.jugar)
+        self.boton_quedarse: Button = Button(self.ventana, text="Quedarse", command=self.finalizar_juego)
+        self.boton_solicitar: Button = Button(self.ventana, text="Solicitar", command=self.solicitar_carta)
+        self.ocultar_opciones_juego()
+        
+        self.jugador_uno: Jugador = Jugador('Jugador 1')
+        self.jugador_virtual_uno: JugadorVirtual = JugadorVirtual('Computadora 1')
+        self.repartidor: Repartidor = Repartidor([self.jugador_uno, self.jugador_virtual_uno])
+        
         self.ventana.mainloop()
+    
+    def solicitar_carta(self) -> None:
+        suma: int = self.jugador_uno.solicitar_carta(self.repartidor.mazo)
+        if (suma > 21):
+            self.finalizar_juego()
+        self.dibujar_rectangulo(1,self.jugador_uno_x - 60, 400, 120, 175, 0)
+        self.dibujar_carta(self.jugador_uno_x, self.jugador_uno_y, self.jugador_uno.cartas[-1].obtener_nombre_archivo())
+        self.jugador_uno_x += 125
+    
+    def finalizar_juego(self) -> None:
+        print("Juego finalizado")
+        self.dibujar_rectangulo(1,self.jugador_virtual_inicio-60,self.jugador_virtual_y-88,120,175,0)
+        self.dibujar_carta(self.jugador_virtual_inicio,self.jugador_virtual_y,self.jugador_virtual_uno.cartas[0].obtener_nombre_archivo())
+        
+        ganador_humano = self.repartidor.determinar_ganador()
+        if (ganador_humano):
+            print("Ganador: Jugador 1")
+        else:
+            print("Ganador: Computadora 1")
+        self.ocultar_opciones_juego()
+        
+    def jugar(self) -> None:
+        self.jugador_virtual_x: int = 110
+        self.jugador_virtual_y: int = 143
+        self.jugador_uno_x: int = 110
+        self.jugador_uno_y: int = 490
+        self.jugador_virtual_inicio: int = self.jugador_virtual_x
+        
+        cartas = self.repartidor.iniciar_juego()
+        
+        self.jugador_virtual_uno.jugar(self.repartidor.mazo)
+        
+        self.jugador_virtual_x = self.estado_inicial(cartas['jv'], self.jugador_virtual_x, self.jugador_virtual_y, True)
+        self.jugador_uno_x = self.estado_inicial(cartas['j1'], self.jugador_uno_x, self.jugador_uno_y)
+        
+        self.mostrar_opciones_juego()
+        
+    def estado_inicial(self, cartas: list, x: int, y: int, ocultar_primera: bool = False) -> int:
+        for i in range(len(cartas)):
+            self.dibujar_rectangulo(1,x-60,y-88,120,175,5)
+            nombre = "/home/juan/Descargas/programacion/ejemplos_python/gui_tkinder/juego_21/images/back.png" if ocultar_primera and i == 0 else cartas[i].obtener_nombre_archivo()
+            self.dibujar_carta(x,y,nombre)
+            x += 125
+        return x
+    
+    def mostrar_opciones_juego(self) -> None:
+        self.boton_solicitar.place(x=700, y=500)
+        self.boton_quedarse.place(x=700, y=550)
+        self.boton_iniciar.place_forget()
+        
+    def ocultar_opciones_juego(self) -> None:
+        self.boton_iniciar.place(x=400, y=300)
+        self.boton_quedarse.place_forget()
+        self.boton_solicitar.place_forget()
         
     def dibujar_fondo(self) -> None:
         fondo: PhotoImage = PhotoImage(file="/home/juan/Descargas/programacion/ejemplos_python/gui_tkinder/juego_21/images/fondo.png")

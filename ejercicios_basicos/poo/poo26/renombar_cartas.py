@@ -3,10 +3,10 @@ from os.path import join, isfile
 from os import listdir
 
 simbolos: dict = {
-    "clubs": "treboles",
-    "diamonds": "diamantes",
-    "hearts": "corazones",
-    "spades": "espadas"
+    "clubs": "Treboles",
+    "diamonds": "Diamantes",
+    "hearts": "Corazones",
+    "spades": "Espadas"
 }
 
 numeros: dict = {

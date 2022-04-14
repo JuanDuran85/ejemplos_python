@@ -35,7 +35,27 @@ class Repartidor:
             print(f"la suma de {i} es {suma}")
             self.resultados.append(resultado)
         print(f"Los resultados son {self.resultados}, {self.jugadores[ganador].nombre} gana, con {valor}")   
+    
+    
+    def iniciar_juego(self) -> dict:
+        self.mazo.revolver()
+        self.repartir_cartas()
+        return {
+            'j1': self.jugadores[0].cartas,
+            'jv': self.jugadores[1].cartas,
+        }
         
+    def determinar_ganador(self) -> bool:
+        ganador: int = 0
+        valor: int = 21
+        for i in range(len(self.jugadores)):
+            suma: int = self.jugadores[i].sumar_cartas()
+            resultado: int = 21 - suma
+            if(resultado < valor and resultado >= 0):
+                valor = resultado
+                ganador = i
+                
+        return ganador == 0
 
 if __name__ == '__main__':
     j1: Jugador = Jugador("Juan")

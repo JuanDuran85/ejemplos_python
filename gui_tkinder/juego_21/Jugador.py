@@ -34,6 +34,10 @@ class Jugador:
             suma += 10
         return suma
     
+    def solicitar_carta(self,mazo) -> int:
+         self.cartas.append(mazo.obtener_siguiente_carta())
+         return self.sumar_cartas()
+    
     def jugar(self, mazo: Mazo) -> int:
         interfaz: Interfaz = Interfaz()
         solicitar: bool = True
