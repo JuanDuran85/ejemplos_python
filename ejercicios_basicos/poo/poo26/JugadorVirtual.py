@@ -8,7 +8,7 @@ from Carta import Carta
 from Mazo import Mazo
 from Interfaz import Interfaz
 
-class Jugador:
+class JugadorVirtual:
     def __init__(self, nombre: str, cartas: list = None) -> None:
         self.nombre = nombre
         self.cartas = cartas
@@ -34,28 +34,20 @@ class Jugador:
             suma += 10
         return suma
     
-    def jugar(self, mazo: Mazo) -> int:
-        interfaz: Interfaz = Interfaz()
-        solicitar: bool = True
-        titulo: str = "Digite:\n1- Pedir Carta\n2- Quedarse\nValor: "
+    def imprimir_juego(self) -> None:
+        cartas: list = ['_']
+        for i in range(1,len(self.cartas)):
+            cartas.append(self.cartas[i].numero)
+        print(cartas)
         
-        while(solicitar and self.sumar_cartas() <= 21):
-            self.imprimir()
-            valor: int = interfaz.solicitar_numero_entero(titulo)
-            if (valor == 1):
-                self.cartas.append(mazo.obtener_siguiente_carta())
-                self.cartas[-1].imprimir()
-            elif (valor == 2):
-                solicitar = False
-                print(self.sumar_cartas())
-                print("Gracias por Jugar")
-            else:
-                print("Ingrese un valor valido")
-        print(self.sumar_cartas())
+    def jugar(self, mazo: Mazo) -> int:
+        while(self.sumar_cartas() < 16):
+            self.cartas.append(mazo.obtener_siguiente_carta())
+        self.imprimir_juego()
         return self.sumar_cartas()
                 
         
 if __name__ == '__main__':
     mazo: Mazo = Mazo()
-    jugador_uno: Jugador = Jugador("Juan", [])
+    jugador_uno: JugadorVirtual = JugadorVirtual("Juan", [])
     jugador_uno.jugar(mazo)
