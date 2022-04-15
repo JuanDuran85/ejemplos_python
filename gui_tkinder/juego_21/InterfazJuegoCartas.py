@@ -46,11 +46,15 @@ class InterfazJuegoCartas:
         ganador_humano = self.repartidor.determinar_ganador()
         if (ganador_humano):
             print("Ganador: Jugador 1")
+            self.etiqueta_ganador.config(text="Ganador: Jugador 1")
         else:
             print("Ganador: Computadora 1")
+            self.etiqueta_ganador['text'] = "Ganador: Computadora 1"
         self.ocultar_opciones_juego()
         
     def jugar(self) -> None:
+        self.etiqueta_ganador.config(text="")
+        self.dibujar_fondo()
         self.jugador_virtual_x: int = 110
         self.jugador_virtual_y: int = 143
         self.jugador_uno_x: int = 110
@@ -117,11 +121,12 @@ class InterfazJuegoCartas:
             x_inicio = x_inicio + x_tamano + margen
     
     def dibujar_etiqutas(self) -> None:
-        etiqueta_pc: Label = Label(self.ventana, text="Computadora 1", background="green", foreground="white", font=("Arial", 14))
+        etiqueta_pc: Label = Label(self.ventana, text="Computadora 1", background="green", foreground="white", font=("Arial", 15))
         etiqueta_pc.place(x=50, y=20)
-        etiqueta_jugador_uno: Label = Label(self.ventana, text="Jugador 1", background="green", foreground="white", font=("Arial", 14))
+        etiqueta_jugador_uno: Label = Label(self.ventana, text="Jugador 1", background="green", foreground="white", font=("Arial", 15))
         etiqueta_jugador_uno.place(x=50, y=320)
-    
+        self.etiqueta_ganador: Label = Label(self.ventana, text="", background="green", foreground="white", font=("Arial", 15))
+        self.etiqueta_ganador.place(x=50,y=280)
     
     def dibujar_carta(self, x: int = 110, y: int = 143, imagen: str = '/home/juan/Descargas/programacion/ejemplos_python/gui_tkinder/juego_21/images/2_de_corazones.png') -> None:
         imagen_canvas: PhotoImage = PhotoImage(file=imagen)
@@ -131,7 +136,7 @@ class InterfazJuegoCartas:
         self.canvas.create_image(x, y, image=imagen_canvas)
         
 def main() -> None:
-    interfaz: InterfazJuegoCartas = InterfazJuegoCartas()
+    InterfazJuegoCartas()
     
 if __name__ == '__main__':
     main()
