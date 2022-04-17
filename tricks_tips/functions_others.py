@@ -88,7 +88,7 @@ def my_function_two(*, a, b) -> None:
     print(a,b)
     
 my_function_two(a=1,b=2)
-# my_function_two(1,2) # Error, because the functin need arguments are positional only
+# my_function_two(1,2) # Error, because the function only needs positional arguments
 
 # -----------------------------------------------------------------------------------------------
 # Use * in functions parameters to use keyword arguments

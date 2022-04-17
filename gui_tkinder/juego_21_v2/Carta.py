@@ -8,6 +8,18 @@ class Carta:
     def __init__(self, numero: int, palo: str)-> None:
         self.palo = palo
         self.numero = numero
+
+    @property
+    def numero(self) -> int:
+        print("Estamos en el getter")
+        return 10 if self._numero > 10 else self._numero
+    
+    @numero.setter
+    def numero(self, numero: int) -> int:
+        if(numero >= 1 and numero <= 13):
+            self._numero = numero
+        else:
+            print("Numero no permitido")
         
     def imprimir(self)-> None:
         letra_numero: str = self.convertir_numero_a_letras()
@@ -35,4 +47,18 @@ class Carta:
 
 if __name__ == '__main__':
     carta: Carta = Carta(11, "treboles")
+    carta.numero = 14
     carta.imprimir()
+    
+    carta: Carta = Carta(12, "treboles")
+    carta.imprimir()
+    
+    carta: Carta = Carta(13, "treboles")
+    carta.imprimir()
+    
+    
+    
+    
+    
+    
+    

@@ -50,3 +50,10 @@ numeros: list = [3,67,-3,7,-87,0,-9]
 for index,item in enumerate(numeros):
     if item < 0:
         print(f"El valor es: {item}")
+        
+        
+# usando el operador walrus en un ciclo for
+palabras: list = ["Palabra numero uno", "Otra palabra", "Nuevo tipo de palabras", "Mas palabaras"]
+for hilera in palabras:
+    if(len(resultado := hilera.split(" ")) == 2):
+        print(f"{resultado = }")

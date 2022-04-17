@@ -24,9 +24,7 @@ class Mazo:
     def revolver(self) -> None:
         for celda in range(len(self.cartas)):
             aleatorio: int = random.randint(0, len(self.cartas)-1)
-            temporal = self.cartas[celda]
-            self.cartas[celda] = self.cartas[aleatorio]
-            self.cartas[aleatorio] = temporal
+            (self.cartas[celda],self.cartas[aleatorio]) = (self.cartas[aleatorio],self.cartas[celda])
     
     def imprimir(self) -> None:
         for instancia_carta in self.cartas:
