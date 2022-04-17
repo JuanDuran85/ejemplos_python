@@ -163,3 +163,23 @@ Ejemplos de programacion con Python
   pyinstaller --onefile --windowed --icon=icon.ico nombre_archivo.py
   ```
   En el caso de Mac o linux no usar --windowed
+
+## Sentencias SQL
+- Para obtener el nombre de la base de datos
+  ```SQL
+  select current_database();
+  ```
+- Para obtener la fecha y/o del sistema
+  ```SQL
+  select now()
+  select timeofday()
+  select current_time
+  select current_date
+  ```
+- Para extraer un dia/mes/año de una fecha timestamp en una columna
+  ```SQL
+  select extract(day from timestamp)
+  select extract(month from timestamp)
+  select extract(quarter from timestamp)
+  select age(timestamp)
+  ```
