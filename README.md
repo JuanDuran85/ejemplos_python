@@ -183,3 +183,21 @@ Ejemplos de programacion con Python
   select extract(quarter from timestamp)
   select age(timestamp)
   ```
+- Para extraer la fecha o la hora del timestamp comviertiendo a caracter
+  ```SQL
+  select to_char(current_timestamp, 'HH:MM:SS')
+  select to_char(current_timestamp, 'DD:MM:YYYY')
+  ```
+- Funciones para trabajar con caracteres
+  ```SQL
+  select length("NOMBRE") as "longitug" from abc # longitud de un campo
+  ```
+  ```SQL
+  select lower("NOMBRE") from abc # convertir a minusculas
+  ```
+  ```SQL
+  select left("NOMBRE",3) from abc # extrae los tres primeros caracteres de un campo
+  ```
+  ```SQL
+  select "NOMBRE" || ' ' || "APELLIDO1" as "nombre_completo" from esquema."PERSONAS" # para concatenar dos campos
+  ```
