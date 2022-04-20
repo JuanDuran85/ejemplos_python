@@ -207,6 +207,10 @@ def desencriptar(lista_palabra: list) -> list:
             if (str(letra) in str(palabra)):
                 palabra = palabra.replace(str(letra), vocales[letra])
         nuevas_palabras.append(palabra)
+    print("variables locales")
+    print(locals()) # con locals se pueden ver todas las varibales locales de una funcion
     return nuevas_palabras
 
 print(desencriptar(["H4l1", "M0ND9"]))
+print("variables globales del programa")
+print(globals()) # con globals se pueden ver todas las varibales globales del programa
