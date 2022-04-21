@@ -197,6 +197,9 @@ Ejemplos de programacion con Python
   ```SQL
   select "NOMBRE" || ' ' || "APELLIDO1" as "nombre_completo" from esquema."PERSONAS" # para concatenar dos campos
   ```
+  ```SQL
+  select char_length("nombre:columna"::varchar) as longitud from "nombre_tabla" # permite contar la cantidad de caracteres en un string
+  ```
 - Actualizar y retornar valor inmediatamente
   ```SQL
   update "nombre_tabla" set "nombre_columna" = 'valor' where "columna_x" = 'valor_x' returning "columna_y", "columna_x"
