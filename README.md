@@ -146,10 +146,6 @@ Ejemplos de programacion con Python
   ```bash
   flask db stamp head
   ```
-- Comando para 
-  ```bash
-  
-  ```
 
 ## Implementando FastAPI
 - Para levantar el servidor
@@ -200,4 +196,34 @@ Ejemplos de programacion con Python
   ```
   ```SQL
   select "NOMBRE" || ' ' || "APELLIDO1" as "nombre_completo" from esquema."PERSONAS" # para concatenar dos campos
+  ```
+- Actualizar y retornar valor inmediatamente
+  ```SQL
+  update "nombre_tabla" set "nombre_columna" = 'valor' where "columna_x" = 'valor_x' returning "columna_y", "columna_x"
+  ```
+- Modificar propiedades de la table con alter
+  ```SQL
+  alter table "nombre_tabla" rename column "nombre_columna" to "nuevo_nombre" # modificar el nombre de una columna
+  ```
+  ```SQL
+  alter table "nombre_tabla" alter column "nombre_columna" drop/set not null # modificar propiedad de una columna
+  ```
+  ```SQL
+  alter table "nombre_tabla" drop column "nombre_columna" # eliminar columna
+  ```
+- Para eliminar una columna
+  ```SQL
+  alter table "nombre_tabla" drop column "nombre_columna"
+  ```
+- Para eliminar una tabla
+  ```SQL
+  drop table "nombre_tabla"
+  ```
+- Para eliminar una base de datos
+  ```SQL
+  drop database "nombre_base_datos"
+  ```
+- Se puede implementar case para una columna
+  ```SQL
+  select "columna_x", case when "columna_x" = 'valor_x' then 'valor' when "columna_x" = "valor_y" then "valor" else 'valor_z' end as "nuevo_nombre" from "nombre_tabla"
   ```
