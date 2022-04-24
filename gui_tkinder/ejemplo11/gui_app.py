@@ -1,3 +1,4 @@
 import PyPDF2
-from PIL import ImageTk, Image
+import PIL
 import tkinter as tk
+from PyPDF2 import PdfFileReader
