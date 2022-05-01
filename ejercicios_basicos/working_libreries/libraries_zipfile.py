@@ -8,7 +8,7 @@
 
 import zipfile
 
-try:
+try:    
     with zipfile.ZipFile("/home/juan/Descargas/programacion/ejemplos_python/ejemplo_zip.zip","r") as data_file:
         data_file.extractall()
         print("Archivo extraido correctamente")

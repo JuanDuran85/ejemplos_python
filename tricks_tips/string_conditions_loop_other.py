@@ -228,3 +228,12 @@ my_string_list: list = my_string.split()
 my_string_new_list: list = [text.title() for text in my_string_list]
 final_my_string: str = " ".join(my_string_new_list)
 print(f"Cadena de texto modificada: {final_my_string}")
+
+# -----------------------------------------------------------------------------------
+# two different ways to print a list in one line
+# option 1
+row: list = ["1", "juan", "developer", "python"]
+print(','.join(str(x) for x in row))
+
+# option 2
+print(*row, sep=',')

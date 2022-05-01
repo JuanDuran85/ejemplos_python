@@ -96,3 +96,16 @@ print(f"{squares_two = }")
 # We can use list comprehension to get square of numbers from a list if the number is even of 2 with if-else.
 squares_three: list = [i**2 if i % 2 == 0 else f"No even {i}" for i in range(1,10)]
 print(f"{squares_three = }")
+
+# ------------------------------------------------------------------------------------
+# using list comprehension into another list comprehension to generate a list of lists "matrix transpose"
+matrix_num: list = [[1,3,5,7],[2,4,6,8],[9,11,13,15],[10,12,14,16],[17,19,21,23]]
+print(f"{matrix_num = }")
+matrix_transpose: list = [[row[i] for row in matrix_num] for i in range(4)]
+print(f"{matrix_transpose = }")
+
+
+# using list comprehension to filter a list
+file_name: list = ["a.pdf","b.xls","c.pdf","d.ppt","e.txt"]
+pdf_list: list = [files for files in file_name if files.endswith(".pdf")]
+print(pdf_list)

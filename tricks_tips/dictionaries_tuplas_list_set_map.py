@@ -251,6 +251,32 @@ athlete_times: dict = {
 time_sorted: dict = {key: value for key,value in sorted(athlete_times.items(), key=lambda item: item[1])}
 print(f"{time_sorted = }")
 
+# -------------------------------------------------------------------------------------
+# using dictionaries and functions to get elements
+products_and_price: dict = {
+    "fish": 7.99,
+    "milk": 3.99,
+    "eggs": 2.99,
+    "beef": 5.23,
+    "broccoli": 4.00,
+    "bread": 1.89,
+}
+
+def find_price(item: str) -> str:
+    price_status: str = products_and_price.get(item, "not found")
+    return (f"The price for {item} is {price_status}")
+
+first_product: str = find_price("fishing")
+print(f"{first_product = }")
+
+# ------------------------------------------------------------------------------------------
+# usging dict comprehension to merge to list
+list_one: list = ["name","age","city"]
+list_two: list = ["Juan","36","Santiago"]
+
+dict_result: dict = {list_one[i]:list_two[i] for i in range(len(list_one))}
+print(f"{dict_result = }")
+
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""

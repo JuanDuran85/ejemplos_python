@@ -8,12 +8,17 @@
 
 from fastapi import FastAPI, Response
 from pydantic import BaseModel
+from enum import Enum
 
 app: FastAPI = FastAPI()
 
 class Product(BaseModel):
     name: str
     price: float
+    
+class Tags(Enum):
+    items = "items"
+    users = "users"
 
 products: list = [
     {"id": 1, "name": "Foo", "price": 100},
@@ -21,6 +26,8 @@ products: list = [
     {"id": 3, "name": "Baz", "price": 300},
     {"id": 4, "name": "Buz", "price": 400},
 ]
+
+PRODUCTS_NOT_FOUND: str = "Product not found"
 
 @app.get("/")
 def index() -> dict:
@@ -45,7 +52,7 @@ def product_by_id(id: int, response: Response) -> dict:
         if product['id'] == id:
             return product
     response.status_code = 404
-    return {"message": "Product not found"}
+    return {"message": "Product not found by id"}
 
 @app.post('/products')
 def add_product(new_product: Product, response: Response) -> list:
@@ -65,7 +72,7 @@ def put_product(id: int, edited_product: Product, response: Response) -> list:
             return product
 
     response.status_code = 404
-    return [{"message": "Product not found"}]
+    return [{"message": PRODUCTS_NOT_FOUND}]
 
 @app.delete('/products/{id}')
 def deleted_product(id: int, response: Response) -> list:
@@ -76,4 +83,12 @@ def deleted_product(id: int, response: Response) -> list:
             return products
 
     response.status_code = 404
-    return [{"message": "Product not found"}]
+    return [{"message": PRODUCTS_NOT_FOUND}]
+
+@app.get("/items/",tags=[Tags.items])
+async def get_items() -> list:
+    return ["Python","JavaScript"]
+
+@app.get("/users/",tags=[Tags.users])
+async def read_users() -> list:
+    return ["Jhon","Doe"]

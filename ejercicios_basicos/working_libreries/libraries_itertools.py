@@ -9,11 +9,15 @@
     Using starmap
     Using chain
     Using groupby
+    Using accumulate
+    Using cycle
+    Using compress
 
 """
 
-from itertools import accumulate, filterfalse, zip_longest, count, permutations, product, starmap, chain, repeat, cycle, groupby
+from itertools import accumulate, filterfalse, zip_longest, count, permutations, product, starmap, chain, repeat, cycle, groupby, compress
 from typing import Generator, Iterable
+import operator
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
@@ -91,6 +95,12 @@ for i,num in enumerate(sequ):
     if i == 30:
         break
 
+# ---------------------------------------------------------------------------------------------
+# using cycle from itertools library to generate a sequence of any
+colors: cycle = cycle('blue red yellow'.split())
+for _ in range(10):
+    print(next(colors))
+
 # ----------------------------------------------------------------------------------------
 # get a list of numbers from another mixed list
 numbers: list = [[1,2],(3,4),{5,6}]
@@ -136,3 +146,18 @@ print([(len(list(g)),k) for k,g in groupby("AABBBAADDCCDFFDDDFFDCCCBB")])
 # you can use product to generate a Multiplication table
 for x,y in product(range(1,4),range(1,11)):
     print(f"{x} * {y} = {x*y}")
+    
+# -------------------------------------------------------------------------------------
+# using accumulate from itertools to sum the values ​​in a list
+print(list(accumulate(range(10))))
+
+# -------------------------------------------------------------------------------------
+# Using operator with accumulate
+print(list(accumulate(range(1,5), operator.mul)))
+
+# -------------------------------------------------------------------------------------
+# you can use compress to make an iterator that filters elements from iterable returning only those for which the predicate is True
+latters: str = "ABCDEFG"
+bools: list = [True, False, False,True, True, False, True]
+result_out: list = list(compress(latters, bools))
+print(f"{result_out = }")
