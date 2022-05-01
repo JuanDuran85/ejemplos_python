@@ -8,3 +8,4 @@ opencv-python
 bcrypt
 icecream
 pycrypto
+eyeD3
