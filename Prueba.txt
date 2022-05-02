@@ -1,6 +1,2 @@
-Python 3.11
-Python 3.10
-Python 3.10
-Programando con Python
-Programando con Python
-Programando con Python
+Nuevo mensaje desde manejador_archivo
+Nuevo mensaje desde manejador_archivo
