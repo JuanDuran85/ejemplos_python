@@ -36,3 +36,6 @@ print(f"{now.strftime('%H:%M:%S')}")
 
 # But, you can also do things like this:
 print(f"{now.strftime('Today is the %d of the month %m of %y')}")
+
+# Deleted dates
+print(f"7 days pass: {now - datetime.timedelta(days=7)}")
