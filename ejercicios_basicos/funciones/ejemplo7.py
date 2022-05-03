@@ -1,18 +1,8 @@
-frase1 = "Hola a todos desde 'Python'"
-print(frase1)
-frase2 = 'Hola a todos desde "Python"'
-print(frase2)
+"""_summary_
 
-nombre = input("Ingresa tu nombre: ")
-print(nombre[2])
-print(nombre[5])
-
-print(len(nombre))
-print(nombre.upper())
-print(nombre.lower())
-print(nombre[0:2])
-print(nombre[-1])
-print(nombre[::-1])
+  Funciones
+  
+"""
 
 print()
 print("-----------------------")
@@ -95,3 +85,4 @@ letra1 = input("Ingresa una letra o simbolo cualquiera: ")
 letra2 = input("Ingresa una letra o simbolo cualquiera: ")
 repeti = int(input("Ingresa un numero entero para repetir: "))
 linea(letra1, letra2, repeti)
+

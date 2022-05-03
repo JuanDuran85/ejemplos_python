@@ -36,3 +36,20 @@ def area_triangulo(base,altura):
   return (base * altura)/2
   
 print(f"El área del triangulo es: {area_triangulo(2,3)}")
+
+
+frase1 = "Hola a todos desde 'Python'"
+print(frase1)
+frase2 = 'Hola a todos desde "Python"'
+print(frase2)
+
+nombre = input("Ingresa tu nombre: ")
+print(nombre[2])
+print(nombre[5])
+
+print(len(nombre))
+print(nombre.upper())
+print(nombre.lower())
+print(nombre[0:2])
+print(nombre[-1])
+print(nombre[::-1])

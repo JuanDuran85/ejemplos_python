@@ -35,3 +35,8 @@ hora_separada = hora.partition(":")
 print(hora_separada)
 hora, _ , minutos = hora_separada
 print(hora, minutos)
+
+# aplicando unpacking ignorando valores con "_" como variable temporal o sin importancia
+valores = ('Maria','Perez',26)
+nombre, _ , edad = valores
+print(nombre, edad)

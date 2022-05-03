@@ -115,3 +115,39 @@ print(f"{load_config('production') = }")
 print(f"{load_config('test') = }")
 print(f"{load_config('unknow') = }")
 print(f"{load_config('development') = }")
+
+# ---------------------------------------------------------------------------
+# con doble guion bajo, no solo es una convencion, ya que afecta la forma en que se acceden a los atributos y metodos
+
+class Padre:
+    def __init__(self) -> None:
+        self.varible_publica: int = 1
+        self._variable_publica: int = 2
+        self.__variable_privada: int = 3
+        self.__variable_dunder__ = 2 # a estas variables no se le aplica el concepto de name mangling
+        
+    def get_variable_privada(self) -> int:
+        return self.__variable_privada
+    
+    def get_metodo_privado(self) -> int:
+        return self.__metodo_privado()
+    
+    def __metodo_privado(self) -> int:
+        return self.__variable_privada
+    
+class Hijo(Padre):
+    def __init__(self) -> None:
+        super().__init__()
+        self.varible_publica: str = 'Variable sobreescrita 1'
+        self._variable_publica: str = 'Variable sobreescrita 2'
+        self.__variable_privada: str = 'Variable sobreescrita 3'
+        
+padre: Padre = Padre()
+print(dir(padre))
+# esto imprime para la variable privada: '_Padre__variable_privada', lo cual se denomina 'Name Mangling', para evitar conflictos que se hereden de las clases
+print(f"Variable privada: {padre._Padre__variable_privada}")
+print(f"metodo privado: {padre.get_metodo_privado()}")
+hijo: Hijo = Hijo()
+print(hijo.get_variable_privada())
+print(hijo.varible_publica)
+print(hijo._Hijo__variable_privada)

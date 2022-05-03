@@ -30,3 +30,16 @@ print(f'numero: {numero}')
 # convertir de hexadecimal en string a decimal con la funcion int
 numero = int('17', 16)
 print(f'numero: {numero}')
+
+# Convertir entero a decimal directamente en la cade con formato
+error: int = 500
+cadena_con_hexadecimal: str = 'Error en hexadecimal: %x' % error
+cadena_con_hexadecimal_dos: str = 'Error en hexadecimal: {error:x}'.format(error=error)
+cadena_con_hexadecimal_tres: str = f'Error en hexadecimal: {error:x}'
+print(f"{cadena_con_hexadecimal = }")
+print(f"{cadena_con_hexadecimal_dos = }")
+print(f"{cadena_con_hexadecimal_tres = }")
+
+# Si se quieren pasar varios valores, se debe utilizar una tupla
+cadena: str = 'Nuevo mensaje %s: %x' % ('de error', error)
+print(f"{cadena = }")
