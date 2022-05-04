@@ -115,3 +115,23 @@ print((lambda a,b: a + b)(4,6))
 lista_tuplas: list = [(2,'d'),(1,'a'),(7,'c'),(4,'b'),(5,'e'),(3,'f')]
 lista_ordenada: list = sorted(lista_tuplas,key= lambda tupla: tupla[1])
 print(f"{lista_ordenada = }")
+
+# ---------------------------------------------------------------------------------------
+# ordenando por valor absoluto mediante funciones lambda
+lista_numeros: list = list(range(-4,4))
+print(f"{lista_numeros = }")
+
+lista_ordenada: list = sorted(lista_numeros,key= lambda valor: valor*valor)
+print(f"{lista_ordenada = }")
+
+# ---------------------------------------------------------------------------------------
+# Con las funciones lambda tambien se puede utilizar closure
+def mostrar(titulo: str):
+    return lambda mensaje: titulo +' '+ mensaje
+
+mostrar_sr = mostrar('Sr.')
+print(mostrar_sr('Juan'))
+
+# -----------------------------------------------------------------------------------------
+
+
