@@ -151,3 +151,17 @@ hijo: Hijo = Hijo()
 print(hijo.get_variable_privada())
 print(hijo.varible_publica)
 print(hijo._Hijo__variable_privada)
+
+# ----------------------------------------------------------------------------------------------
+# sobreescritura de metodo call en una clase
+# Si se quiere que una clase defina objetos que se puedan llamar como una funcion, se debe sobreescribir el metodo call
+
+class Mostrar:
+    def __init__(self,titulo: str) -> None:
+        self.titulo: str = titulo
+
+    def __call__(self, mensaje: str) -> str:
+        return f"{self.titulo} {mensaje}"
+    
+mostrar: Mostrar = Mostrar("Sr.")
+print(mostrar("Juan"))

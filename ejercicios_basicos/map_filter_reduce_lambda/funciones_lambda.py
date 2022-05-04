@@ -101,3 +101,17 @@ fibonacci_function = lambda x: x if x<= 1 else fibonacci_function(x-1) + fibonac
 print(f"{fibonacci_function(7) = }")
 
 # --------------------------------------------------------------------------------------
+# las funciones lambdas nos permiten declarar funciones anonimas en una sola linea de codigo
+
+# funcion lambda basica que permite sumar dos numeros
+sumar_lambda = lambda a,b: a + b
+print(sumar_lambda(4,6))
+
+# se puede hacer en una sola linea tambien para simplificar el codigo
+print((lambda a,b: a + b)(4,6))
+
+# ---------------------------------------------------------------------------------------
+# Ordenar una lista de tuplas, por su segundo valor proporcinando una llave (key)
+lista_tuplas: list = [(2,'d'),(1,'a'),(7,'c'),(4,'b'),(5,'e'),(3,'f')]
+lista_ordenada: list = sorted(lista_tuplas,key= lambda tupla: tupla[1])
+print(f"{lista_ordenada = }")

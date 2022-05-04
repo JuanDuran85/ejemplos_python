@@ -1,5 +1,10 @@
-# concepto de closure en python: es una funcion que define a otra y ademas la puede regresar
-# la funcion anidada puede acceder a las variables locales definidas en la funcion principal o externa
+"""_summary_
+
+    Concepto de closure en python: es una funcion que define a otra y ademas la puede regresar la funcion anidada puede acceder a las variables locales definidas en la funcion principal o externa.
+    
+    Las funciones internas pueden capturar y guardar el estado de la funcion externa o padre
+
+"""
 
 # funcion principal o externa
 
@@ -23,3 +28,32 @@ def opracion_dos(a,b):
     return lambda: a + b
 
 print(opracion_dos(10,20)())
+
+# -------------------------------------------------------------------------------------------
+def hablar(texto: str, volumen: float):
+    def minuscula() -> str:
+        return texto.lower()
+    def mayusculas() -> str:
+        return texto.upper()
+    if volumen < 0.7:
+        return minuscula()
+    else:
+        return mayusculas()
+
+
+print(hablar("Texto para LLevar a Minusculas",0.4))
+print(hablar("Texto para LLevar a mayusculas",0.9))
+
+# -------------------------------------------------------------------------------------------
+def mostrar(titulo: str):
+    def saludar(mensaje: str) -> str:
+        return f"{titulo} {mensaje}"
+    return saludar
+
+mostrar_sr = mostrar("Sr.")
+mostrar_sra = mostrar("Sra.")
+
+print(mostrar_sr("Juan"))
+print(mostrar_sra("Maria"))
+
+print(callable(mostrar))
