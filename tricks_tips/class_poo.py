@@ -165,3 +165,42 @@ class Mostrar:
     
 mostrar: Mostrar = Mostrar("Sr.")
 print(mostrar("Juan"))
+
+
+# ----------------------------------------------------------------------------------------------
+# Utilizando clases para hacer validaciones personalizadas de errores.
+
+# Ejemplo para validar el largo de una cadeda de texto
+class ValidandoErrorClase(ValueError):
+    pass
+
+def largo_cadena_validacion(texto: str) -> bool:
+    if len(texto) < 3:
+        raise ValidandoErrorClase(f"El largo de la cadena -'{texto}'- debe ser mayor a 3")
+    else:
+        return True
+    
+cadena_texto: str = "Mensaje nuevo"
+print(largo_cadena_validacion(cadena_texto))
+
+# ----------------------------------------------------------------------------------------------
+# Utilizando clases para hacer validaciones personalizadas de errores, pero creando una clase base y de alli extender a las otras clases.
+    
+class ExceptionBaseClase(TypeError):
+    pass
+
+class LengthErrorClase(ExceptionBaseClase):
+    pass
+
+def length_string(text_in: str) -> bool:
+    if len(text_in) < 3:
+        raise LengthErrorClase(f"El largo de la cadena -'{text_in}'- debe ser mayor a 3")
+    else:
+        print("La cadena es valida")
+        return True
+    
+try:
+    length_string("Me")    
+except ExceptionBaseClase as e:
+    print(f"{type(e).__name__}, linea: {e.__traceback__.tb_lineno} en {__file__}, siendo el error: {e}")
+    
