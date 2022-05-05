@@ -1,5 +1,10 @@
-''' Un decorador recibe una funcion y retorna otra funcion. Se utiliza para extender funcionalidades '''
+"""_summary_
 
+    Decoradores
+    - Un decorador recibe una funcion y retorna otra funcion. Se utiliza para extender     funcionalidades
+    - Permite extender y modificar el comportamiento de una funcion. Recibe como parametro una funcion distinta y retorna otra funcion.
+
+"""
 
 # 1. Funcion como decorador (a)
 # 2. Funcion a decorar (b)
@@ -27,3 +32,77 @@ def sumar(a, b):
 
 resultado = sumar(1, 2)
 print(f'resultado suma: {resultado}')
+
+
+# ---------------------------------------------------------------------------------------
+
+# funcion decoradora
+def upper_case(function_in):
+    def envolt_function(*args: tuple, **kwargs: dict) -> str:
+        original_result: str = function_in(*args, **kwargs)
+        modify_result: str = original_result.upper()
+        return modify_result
+    return envolt_function
+
+
+# decorador
+@upper_case
+# funcion a decorar
+def function_to_decorate(text_in: str) -> str:
+    return text_in
+
+print(function_to_decorate('mensaje para decorar a mayusculas'))
+
+# ---------------------------------------------------------------------------------------
+# decoradores multiples
+
+def negrita(function_in):
+    def envolt_function(*args: tuple, **kwargs: dict) -> str:
+        return f"<strong>{function_in(*args, **kwargs)}</strong>"
+    return envolt_function
+
+def enfatizar(function_in):
+    def envolt_function(*args: tuple, **kwargs: dict) -> str:
+        return f"<em>{function_in(*args, **kwargs)}</em>"
+    return envolt_function
+
+@negrita
+@enfatizar
+def mensaje() -> str:
+    return "Mensaje con HTML"
+
+print(mensaje())
+
+# --------------------------------------------------------------------------------------
+# decoradores, funciones con varios argumentos
+
+def decorador_argumentos(function_in):
+    def envolt_function(*args: tuple, **kwargs: dict) -> str:
+        list_in: list = []
+        for value in args:
+            list_in.append(value.upper())
+        return function_in(*list_in, **kwargs)
+    return envolt_function
+
+@decorador_argumentos
+def ejemplo_mensaje(titulo: str, nombre: str) -> str:
+    return f"{titulo}. {nombre}"
+
+print(ejemplo_mensaje("Sr", "Juan"))
+
+
+# --------------------------------------------------------------------------------------
+# decoradores con argumentos
+
+def to_html(tag: str = "div"):
+    def to_html_decorator(function_in):
+        def envolt_function(*args: tuple, **kwargs: dict) -> str:
+            return f"<{tag}>{function_in(*args, **kwargs)}</{tag}>"
+        return envolt_function
+    return to_html_decorator
+
+@to_html('strong')
+def mensaje_with_html(text_in: str) -> str:
+    return text_in
+
+print(mensaje_with_html('Mensaje con HTML'))
