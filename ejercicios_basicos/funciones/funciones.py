@@ -57,7 +57,26 @@ saludar(mayusculas_dos)
 
 print(list(map(mayusculas_dos,["nuevo texto","otro texto","ultimo texto de la lista"])))
 
-
-
-
 # -----------------------------------------------------------------------------------------------
+# desenpaquetando parametros en funciones
+
+def imprimir_vector(x: int, y: int, z: int) -> str:
+    return f"<{x},{y},{z}>"
+
+list_vector: list = [3,5,4]
+tupla_vector: tuple = (-1,6,-4)
+
+print(imprimir_vector(*list_vector))
+print(imprimir_vector(*tupla_vector))
+
+expresion_vector: list = [x * x for x in range(3)]
+print(imprimir_vector(*expresion_vector))
+
+diccionario_vector: dict = {
+    'x':3,
+    'y':-5,
+    'z':-1
+}
+print(imprimir_vector(**diccionario_vector))
+# si se quiere solo pasar las llaves del diccionario
+print(imprimir_vector(*diccionario_vector))
