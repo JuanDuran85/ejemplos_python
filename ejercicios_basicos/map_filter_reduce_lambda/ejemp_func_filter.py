@@ -28,7 +28,7 @@ words = ["castaña", "astronomía", "masa", "bolígrafo", "mando", "tostada"]
 print(list(filter(third_letter_is_s, words)))
 
 # a partir de una lista de numeros, obtener mediante filter() una lista de numeros pares
-print('-----------------------------------------------------------3')
+print('-----------------------------------------------------------4')
 numeros_lista: list = list(range(1,11))
 pares: list = list(filter(lambda x: x % 2 == 0, numeros_lista))
 print(f"Los numeros pares para -> [{numeros_lista}] son -> {pares}") 

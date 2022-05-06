@@ -8,11 +8,11 @@
     5.- Devuelve el valor resultante
 
 """
+from functools import reduce
 
 # Con la ayuda de las funciones lambda, apliquemos reduce() para calcular 
 # el producto de todos los elementos de una lista:
 print('-----------------------------------------------------------1')
-from functools import reduce
 
 nums = [1, 2, 3, 4, 5, 6, 7]
 print(reduce(lambda x, y: x * y, nums)) #Funcion Factorial

@@ -63,3 +63,11 @@ print(f"{list_two = }")
 
 result_map: list = list(map(lambda x,y: x+y, list_one, list_two))
 print(f"{ result_map = }")
+
+# ----------------------------------------------------------------------------------------
+# Utilizando la funcion map para retornar una lista con los numeros al cuadrado
+
+lista_numeros: list = [4,7,2,8,4,1,8,9,3,-6,-9]
+print(f"{lista_numeros = }")
+result_lista: list = list(map(lambda x: x**2, lista_numeros))
+print(f"{result_lista = }")
