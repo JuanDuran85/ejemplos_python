@@ -138,6 +138,47 @@ pop_item_dict = ordered_dict.popitem()
 print(f"{pop_item_dict = }")
 print(f"{ordered_dict = }")
 
+# -------------------------------------------------------------------------------------
+# Using defaultdict with lambda function to generate a default value
 
+default_dict: defaultdict = defaultdict(lambda: 'Error Key - Not Found')
+default_dict['a'] = 3
+default_dict['c'] = 6
+default_dict['f'] = 1
+default_dict['w'] = -9
+print(default_dict.items())
+print(default_dict['a'])
+print(default_dict['z'])
 
+# -------------------------------------------------------------------------------------
+# Using defaultdict with lambda function to generate a default value in a list
 
+default_dict_list: defaultdict = defaultdict(list)
+default_dict_list['names'].append('Maria')
+default_dict_list['names'].append('Karla')
+default_dict_list['names'].append('Juan')
+print(default_dict_list)
+print(default_dict_list.items())
+print(default_dict_list.keys())
+print(default_dict_list.values())
+
+# -------------------------------------------------------------------------------------
+# Searching data in multiple dictionaries as a single dictionary
+
+dict_one: dict = {
+    'one': 1,
+    'two': 2,
+    'three': 3
+}
+
+dict_two: dict = {
+    'four': 4,
+    'five': 5,
+    'six': 6
+}
+
+combinational_dict: ChainMap = ChainMap(dict_one, dict_two)
+print(f"{combinational_dict}")
+
+# search starts from left to right
+print(f"{combinational_dict['one'] = }")

@@ -277,6 +277,11 @@ list_two: list = ["Juan","36","Santiago"]
 dict_result: dict = {list_one[i]:list_two[i] for i in range(len(list_one))}
 print(f"{dict_result = }")
 
+# -------------------------------------------------------------------------------------
+# you can use dict comprehension to create a dictionary
+dict_result_squere: dict = {x:x*x for x in range(10)}
+print(f"{dict_result_squere = }")
+
 
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
