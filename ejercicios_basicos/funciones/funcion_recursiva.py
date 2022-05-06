@@ -8,6 +8,7 @@ def mostrar_numeros(numero):
 mostrar_numeros(3)
 
 
+# ---------------------------------------------------------------------------------
 # Crear una función para calcular el total de un pago incluyendo un impuesto aplicado.
 # La función debe recibir una cantidad de dinero y un porcentaje de impuesto como parámetros.
 # La función debe retornar el total del pago, incluyendo el impuesto.
@@ -40,7 +41,7 @@ def recursiveness_func(x,ans):
         return recursiveness_func(x-1,x+ans)
 print(recursiveness_func(2,66))
 
-
+# ---------------------------------------------------------------------------------
 # Una funcion recursiva es una funcion que se utiliza a si misma para resolver un problema.
 def cuenta_atras(num: int) -> None:
     num -= 1
@@ -61,3 +62,13 @@ def factorial_numero(num):
     return num
     
 print(f"{factorial_numero(5) = }")
+
+# ---------------------------------------------------------------------------------
+# con una funcion recursiva, imprimir de forma descendente los numeros desde el mayor numero ingresado hasta 1. Si son valores negativos, no se debe imprimir nada.
+
+def imprimir_numero(numero: int) -> str:
+    if numero > 0:
+        print(numero)
+        return imprimir_numero(numero - 1)
+        
+print(imprimir_numero(10))
