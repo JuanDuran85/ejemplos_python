@@ -6,7 +6,7 @@
     - center
     - count
     - encode
-    - endwith
+    - endswith
     - expandtabs
     - find
     - format
