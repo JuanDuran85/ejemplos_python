@@ -9,3 +9,4 @@ bcrypt
 icecream
 pycrypto
 eyeD3
+psutil
