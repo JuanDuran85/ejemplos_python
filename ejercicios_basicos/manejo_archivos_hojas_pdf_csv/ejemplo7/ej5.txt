@@ -1,5 +1,5 @@
-x,y,Color,Shape 
-1,1,#6fb7ff,< 
--1,1,#ffa66f,v 
--1,-1,#ffee6f,> 
-1,-1,#db6fff,^ 
+x,y,Color,Shape
+1,1,#6fb7ff,<
+-1,1,#ffa66f,v
+-1,-1,#ffee6f,>
+1,-1,#db6fff,^

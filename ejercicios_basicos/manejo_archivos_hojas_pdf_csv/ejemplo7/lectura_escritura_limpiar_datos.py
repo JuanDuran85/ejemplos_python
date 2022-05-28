@@ -6,15 +6,12 @@
 
 path_file_txt: str = "/home/juan/Descargas/programacion/ejemplos_python/ejercicios_basicos/manejo_archivos_hojas_pdf_csv/ejemplo7/ej5.txt"
 
-text_in: str = ""
 list_text_out: list = []
 
-
 with open(path_file_txt, 'r', encoding="utf8") as total_file:
-    for i,line in enumerate(total_file):
+    for line in total_file:
         print(line)
         list_text_out.append(line.split(','))
-
 
 print(list_text_out)
 
