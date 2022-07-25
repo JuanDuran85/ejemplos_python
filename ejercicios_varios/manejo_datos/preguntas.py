@@ -1,91 +1,91 @@
 preguntas_basicas: dict = {
     'pregunta_1': {
-        'enunciado': ['Enunciado básico 1'],
+        'enunciado': ['Capital del Zulia: '],
         'alternativas': [
-            ['alt_1', 0],
-            ['alt_2', 1],
-            ['alt_3', 0],
-            ['alt_4', 0]
+            ['Barinas', 0],
+            ['Maracaibo', 1],
+            ['San Fernando', 0],
+            ['Barquisimeto', 0]
         ]
     },
     'pregunta_2': {
-        'enunciado': ['Enunciado básico 2'],
+        'enunciado': ['Capital de Barinas'],
         'alternativas': [
-            ['alt_1', 0],
-            ['alt_2', 1],
-            ['alt_3', 0],
-            ['alt_4', 0]
+            ['Guanare', 0],
+            ['Maracaibo', 0],
+            ['Barinas', 1],
+            ['Coro', 0]
         ]
     },
 
     'pregunta_3': {
-        'enunciado': ['Enunciado básico 3'],
+        'enunciado': ['Capital de Tachira'],
         'alternativas': [
-            ['alt_1', 0],
-            ['alt_2', 1],
-            ['alt_3', 0],
-            ['alt_4', 0]
+            ['San Cristobal', 1],
+            ['Barinas', 0],
+            ['Merida', 0],
+            ['Trujillo', 0]
         ]
     }
 }
 
 preguntas_intermedias: dict = {
     'pregunta_1': {
-        'enunciado': ['Enunciado intermedio 1'],
+        'enunciado': ['Capital de Paraguay'],
         'alternativas': [
-            ['alt_1', 0],
-            ['alt_2', 1],
-            ['alt_3', 0],
-            ['alt_4', 0]
+            ['Lima', 0],
+            ['Buenos Aires', 0],
+            ['Sau Paulo', 0],
+            ['Asuncion', 1]
         ]
     },
     'pregunta_2': {
-        'enunciado': ['Enunciado intermedio 2'],
+        'enunciado': ['Capital de Finlandia'],
         'alternativas': [
-            ['alt_1', 0],
-            ['alt_2', 1],
-            ['alt_3', 0],
-            ['alt_4', 0]
+            ['Dublín', 0],
+            ['Lisboa', 0],
+            ['Helsinki', 1],
+            ['Madrid', 0]
         ]
     },
 
     'pregunta_3': {
-        'enunciado': ['Enunciado intermedio 3'],
+        'enunciado': ['Capital de Dinamarca'],
         'alternativas': [
-            ['alt_1', 0],
-            ['alt_2', 1],
-            ['alt_3', 0],
-            ['alt_4', 0]
+            ['Copenhague', 1],
+            ['Belgrado', 0],
+            ['Viena', 0],
+            ['Lisboa', 0]
         ]
     }
 }
 
 preguntas_avanzadas: dict = {
     'pregunta_1': {
-        'enunciado': ['Enunciado avanzado 1'],
+        'enunciado': ['Capital de Kenia'],
         'alternativas': [
-            ['alt_1', 0],
-            ['alt_2', 1],
-            ['alt_3', 0],
-            ['alt_4', 0]
+            ['Bamako', 0],
+            ['Nairobi', 1],
+            ['Windhoek', 0],
+            ['Maputo', 0]
         ]
     },
     'pregunta_2': {
-        'enunciado': ['Enunciado avanzado 2'],
+        'enunciado': ['Capital de Zambia'],
         'alternativas': [
-            ['alt_1', 0],
-            ['alt_2', 1],
-            ['alt_3', 0],
-            ['alt_4', 0]
+            ['Lome', 0],
+            ['Lusaka', 1],
+            ['Tunez', 0],
+            ['Kigali', 0]
         ]
     },
     'pregunta_3': {
-        'enunciado': ['Enunciado avanzado 3'],
+        'enunciado': ['Capital de  Nigeria'],
         'alternativas': [
-            ['alt_1', 0],
-            ['alt_2', 1],
-            ['alt_3', 0],
-            ['alt_4', 0]
+            ['Pretoria', 0],
+            ['Maputo', 0],
+            ['Windhoek', 0],
+            ['Abuya', 1]
         ]
     }
 }

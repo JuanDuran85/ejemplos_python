@@ -2,6 +2,15 @@ import preguntas as preguntas_total
 from print_preguntas import print_pregunta
 
 def verificar(alternativas: list, eleccion: str) -> bool:
+    """_summary_
+        Funcion encargada de verificar si la alternativa elegida por el usuario es correcta
+    Args:
+        alternativas (list): Lista de alternativas de la pregunta disponible 
+        eleccion (str): Eleccion de usuario
+
+    Returns:
+        bool: Retorna true o false dependiendo si es correcta o no la eleccion del usuario
+    """
     eleccion = ['a', 'b', 'c','d'].index(eleccion)
     if (alternativas[eleccion][1] == 1):
         return True
