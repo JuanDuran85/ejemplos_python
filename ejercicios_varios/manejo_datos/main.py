@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+import progressbar
 
 import preguntas as p
 from level import choose_level
@@ -8,6 +9,15 @@ from print_preguntas import print_pregunta
 from question import choose_q
 from validador import validate
 from verify import verificar
+
+def barra_estado(tiempo_espera: float) -> None:
+    """_summary_
+
+    Args:
+        tiempo_espera (float): _description_
+    """
+    for _ in progressbar.progressbar(range(100)):
+        time.sleep(tiempo_espera)
 
 n_pregunta: int = 0
 continuar: str = 'y'
@@ -27,10 +37,10 @@ opcion = validate(['1', '0'], opcion)
 # 2. Definir el comportamiento de Salir
 if opcion == '0':
     print("Saliendo...")
-    time.sleep(2)
+    barra_estado(0.05)
     os.system(op_sys)
     sys.exit()
-    
+ 
 while correcto and n_pregunta < 3*p_level:
     
     if n_pregunta == 0:
@@ -59,11 +69,11 @@ while correcto and n_pregunta < 3*p_level:
             os.system(op_sys)
         else: 
             print(f'Lo siento, conseguiste {n_pregunta - 1} respuestas correctas,\n Sigue participando!!')
-            time.sleep(3)
+            barra_estado(0.05)
             exit()
     else: 
         print('Nos vemos la proxima vez, sigue practicando')
-        time.sleep(3)
+        barra_estado(0.05)
         exit()
             
             
