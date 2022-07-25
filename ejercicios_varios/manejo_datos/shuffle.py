@@ -1,7 +1,15 @@
 import preguntas as preguntas_total
 import random
 
-def shuffle_alt(pregunta_entrada):
+def shuffle_alt(pregunta_entrada: dict) -> list:
+    """_summary_
+    Funcion encargada de barajar las alternativas de una pregunta
+    Args:
+        pregunta_entrada (dict): Recibe el diccionario donde se encuentra el eneunciado y las alternativas
+
+    Returns:
+        list: retorna las alternativas barajadas en forma de lista
+    """
     random.shuffle(pregunta_entrada['alternativas'])
     return pregunta_entrada['alternativas']
 
