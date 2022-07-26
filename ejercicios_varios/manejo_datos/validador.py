@@ -9,7 +9,7 @@ def validate(opciones: list, eleccion: str) -> str:
         str or None: retorna la eleccion del usuario si se encuentra dentro de las opciones o None si no se encuentra
     """
     while eleccion not in opciones:
-        eleccion: str = input("Opción no válida, ingrese una de las opciones válidas: ").lower()
+        eleccion = input("Opción no válida, ingrese una de las opciones válidas: ").lower()
     return eleccion
 
 if __name__ == "__main__":

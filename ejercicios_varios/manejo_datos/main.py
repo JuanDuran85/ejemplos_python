@@ -3,7 +3,6 @@ import sys
 import time
 import progressbar
 
-import preguntas as p
 from level import choose_level
 from print_preguntas import print_pregunta
 from question import choose_q
@@ -12,9 +11,9 @@ from verify import verificar
 
 def barra_estado(tiempo_espera: float) -> None:
     """_summary_
-
+        Funcion para crear una barra de estado en al terminal
     Args:
-        tiempo_espera (float): _description_
+        tiempo_espera (float): tiempo de espera para la barra de estado
     """
     for _ in progressbar.progressbar(range(100)):
         time.sleep(tiempo_espera)
