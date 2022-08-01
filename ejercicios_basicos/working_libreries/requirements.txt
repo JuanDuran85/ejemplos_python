@@ -10,3 +10,4 @@ icecream
 pycrypto
 eyeD3
 psutil
+httpx
