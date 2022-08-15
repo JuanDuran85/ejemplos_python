@@ -42,14 +42,12 @@ boton_siguiente = driver.find_element(by=By.CLASS_NAME, value="form__btn")
 password_in.send_keys(pass_in_user)
 boton_siguiente.click()
 
-
 boton_siguiente = driver.find_element(by=By.ID, value="toggle-aside-my-account")
 boton_siguiente.click()
 
-aside_menu = driver.find_element(by=By.CLASS_NAME, value="btn-secondary")
-aside = Select(aside_menu)
-WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".btn-secondary")))
-aside.select_by_visible_text('Cerrar Sesión')
+sleep(4)
+driver.find_element(by=By.LINK_TEXT, value="Cerrar Sesión").click()
+
 
 
 
