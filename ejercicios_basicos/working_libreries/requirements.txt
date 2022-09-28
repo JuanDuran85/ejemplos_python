@@ -11,3 +11,4 @@ pycrypto
 eyeD3
 psutil
 httpx
+phonenumbers
