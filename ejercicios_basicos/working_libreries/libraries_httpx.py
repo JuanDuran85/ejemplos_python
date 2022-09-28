@@ -88,6 +88,7 @@ async def send_info_to_api(client, url_final: str):
         print(f"ERROR_GET_DATA: {str(e)}")
         raise e
 print("\n--------------------------------------------------------\n")
+
 if __name__ == '__main__':
     locations: list[str] = ["Chile","Venezuela","Argentina","Brazil","Canada"]
     asyncio.run(weather_async(locations))
