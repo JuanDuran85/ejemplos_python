@@ -4,10 +4,11 @@
 
 """
 
+
 import datetime
 
 today: datetime.date = datetime.date.today()
-print(str(today))
+print(today)
 print(repr(today))
 
 # fecha y hora
