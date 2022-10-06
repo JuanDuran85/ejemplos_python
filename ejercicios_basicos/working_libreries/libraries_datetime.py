@@ -5,6 +5,7 @@
 """
 
 
+
 import datetime
 
 today: datetime.date = datetime.date.today()
@@ -40,3 +41,10 @@ print(f"{now.strftime('Today is the %d of the month %m of %y')}")
 
 # Deleted dates
 print(f"7 days pass: {now - datetime.timedelta(days=7)}")
+
+# -----------------------------------------------------------------------------------------------
+
+time_utc: datetime = datetime.datetime.now(datetime.timezone.utc)
+print(time_utc)
+time_utc_minus: str = (time_utc - datetime.timedelta(seconds=600)).strftime("%H:%M:%S")
+print(time_utc_minus)
