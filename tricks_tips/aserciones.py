@@ -7,13 +7,13 @@
 """
 
 # Division entre cero
-def division_zero(a:int, b:int) -> int:
+def division_zero(a:int, b:int) -> float:
     # se asegura que el valor de b no sea cero para poder continuar
     assert b != 0, 'Division entre cero'
     return (a/b)
 
 def calculo_promedio(calificaciones: list) -> None:
-    assert len(calificaciones) != 0, 'Debe existir calificaciones'
+    assert calificaciones, 'Debe existir calificaciones'
     print(f"El promedio de calificaciones es: {sum(calificaciones)/len(calificaciones)}")
     
 def aplicar_descuento(producto: dict,descuento: float) -> None:
