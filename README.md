@@ -159,3 +159,9 @@ Ejemplos de programacion con Python
   pyinstaller --onefile --windowed --icon=icon.ico nombre_archivo.py
   ```
   En el caso de Mac o linux no usar --windowed
+
+## Using diagrams library
+- You need to install:
+  ```bash
+  sudo apt install graphviz
+  ```
