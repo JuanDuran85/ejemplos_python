@@ -12,3 +12,4 @@ eyeD3
 psutil
 httpx
 phonenumbers
+diagrams
