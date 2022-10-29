@@ -50,7 +50,7 @@ for contador_index in ['nombre', 'edad', 'ciudad']:
 # Se puede crear una tabla indexada a partir de una lista con multiples diccionarios
 #
 
-data_mock: list = [
+data_mock: list[dict] = [
     {
         'id': 1,
         'first_name': 'Denna',
@@ -237,10 +237,12 @@ data_table_by_country: dict[str,list] = {}
 for data_obj in data_mock:
     data_from_country: list = []
     country_obj: str = str(data_obj['country'])
+    
     if (not data_table_by_country.get(country_obj)):
         data_table_by_country.setdefault(country_obj, [data_obj])
-    else:
-        data_from_country = data_table_by_country.get(country_obj) or []
-        data_from_country.append(data_obj)
-        data_table_by_country[country_obj] = data_from_country
+
+    data_from_country = data_table_by_country.get(country_obj) or []
+    data_from_country.append(data_obj)
+    data_table_by_country[country_obj] = data_from_country
+    
 print(data_table_by_country)

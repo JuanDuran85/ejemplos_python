@@ -9,7 +9,7 @@ def asteriscos(funcion_a_ejecutar) -> None:
         print("*"*30)
         funcion_a_ejecutar(*args, **kwargs)
         print("*"*30)
-    return poner_asteriscos
+    return poner_asteriscos  # type: ignore
 
 @asteriscos
 def imprimir_texto(texto: str) -> None:

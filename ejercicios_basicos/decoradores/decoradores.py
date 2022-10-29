@@ -11,6 +11,9 @@
 # 3. Funcion decorada (c)
 
 
+import time
+
+
 def funcion_decorador_a(funcion_a_decorar_b):
     def funcion_decorada_c(*args, **kwargs):
         print("Hola soy la funcion decorada")
@@ -77,10 +80,10 @@ print(mensaje())
 # decoradores, funciones con varios argumentos
 
 def decorador_argumentos(function_in):
-    def envolt_function(*args: tuple, **kwargs: dict) -> str:
+    def envolt_function(*args: tuple[str], **kwargs: dict) -> str:
         list_in: list = []
         for value in args:
-            list_in.append(value.upper())
+            list_in.append(value.upper())  # type: ignore
         return function_in(*list_in, **kwargs)
     return envolt_function
 
@@ -106,3 +109,29 @@ def mensaje_with_html(text_in: str) -> str:
     return text_in
 
 print(mensaje_with_html('Mensaje con HTML'))
+
+
+
+#----------------------------------------------------------------
+# decoradores
+
+def retry(exception, max_tries=5):
+    def retry_decorator(func):
+        def _wrapper(*args, **kwargs):
+            tries = 0
+            while True:
+                try:
+                    return func(*args, **kwargs)
+                except exception as error:
+                    tries += 1
+                    if tries <= max_tries:
+                        time.sleep(10)
+                    else:
+                        raise error
+        return _wrapper
+    return retry_decorator
+
+@retry(Exception)
+def may_fail():
+    print("Ejecutando funcion fail")
+    return mensaje_with_html("Nuevo mennsaje HTML")
