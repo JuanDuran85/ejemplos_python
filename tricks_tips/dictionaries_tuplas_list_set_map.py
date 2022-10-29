@@ -8,6 +8,8 @@ All examples are from the internet with somes variations, so they are not 100% c
 
 """
 
+
+
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
 ''' Using lists - Can be: ordered, mutable, duplicates'''
@@ -59,15 +61,16 @@ print(f"{ list_number = }")
 
 #---------------------------------------------------------------------------------------
 # Creating Lists with Lists Comprehension
-list_number: list = [i for i in range(0,11)]
+list_number: list = list(range(11))
 print(f"{list_number = }")
 
 # Creating list with range
-list_number: list = list(range(0,11))
+list_number: list = list(range(11))
 print(f"{list_number = }")
 
 # We can also create a list of strings using the same method.
-list_word: list = [("Hi " + name) for name in ['Karl','Alex','John','Mary','Bob']]
+list_word: list = [f"Hi {name}" for name in ['Karl', 'Alex', 'John', 'Mary', 'Bob']]
+
 print(f"{list_word = }")
 
 # ----------------------------------------------------------------------------------------
@@ -116,7 +119,7 @@ print(f"{players.index('Pele') = }")
 ''' Using dictionaries - Can be: ordered, mutable, no duplicate keys'''
 print("\n Using dictionaries \n")
 
-user = {
+user: dict = {
     "name": "Arlene",
     "lastname": "Sipes",
     "age": 40
@@ -134,7 +137,8 @@ print(f"New dictionary {user = }")
 
 # The get() method on dicts has a default value if the key is not found. 
 def greeting(key_user):
-    return "Hi %s!" % user.get(key_user, "there")
+    return f'Hi {user.get(key_user, "there")}!'
+# sourcery skip: dict-assign-update-to-union, remove-redundant-constructor-in-dict-union
 print(f"{greeting('name') = }")
 print(f"{greeting('names') = }")
 
@@ -155,7 +159,7 @@ y = {
 }
 
 # In the first example, the unpacking operator will be used on both dictionaries, overwriting duplicates from left to right.
-z = {**x, **y}
+z = {**x, **y} # or you can use z = x | y
 print("{**x, **y} = ", z)
 w = dict(x, **y)
 print("dict(x, **y) = ", w)
@@ -190,7 +194,7 @@ print(f"{dict_two = }")
 
 # The first method uses dictionary unpacking where the two dictionaries unpack together into result. 
 print("first method")
-result_merge: dict = {**dict_one, **dict_two}
+result_merge: dict = dict_one | dict_two
 print(f"{result_merge = }")
 
 # The second method, we first copy the first dictionary into the result and then update it with the content of the second dictionary. 
@@ -214,7 +218,7 @@ dict_result: dict = dict_one | dict_two
 print(f"{dict_result = }")
 
 # merge two dictionaries in Python 3.8 and below
-dict_result: dict = {**dict_one, **dict_two}
+dict_result: dict = dict_one | dict_two
 print(f"{dict_result = }")
 
 # You can intermix unpacking with explicit keys:
@@ -248,12 +252,12 @@ athlete_times: dict = {
     'Liz':'0:01:10.000000',
 }
 
-time_sorted: dict = {key: value for key,value in sorted(athlete_times.items(), key=lambda item: item[1])}
+time_sorted: dict = dict(sorted(athlete_times.items(), key=lambda item: item[1]))
 print(f"{time_sorted = }")
 
 # -------------------------------------------------------------------------------------
 # using dictionaries and functions to get elements
-products_and_price: dict = {
+products_and_price: dict[str,float] = {
     "fish": 7.99,
     "milk": 3.99,
     "eggs": 2.99,
@@ -263,7 +267,7 @@ products_and_price: dict = {
 }
 
 def find_price(item: str) -> str:
-    price_status: str = products_and_price.get(item, "not found")
+    price_status: str = str(products_and_price.get(item, "not found"))
     return (f"The price for {item} is {price_status}")
 
 first_product: str = find_price("fishing")
@@ -340,9 +344,9 @@ print(f"{exponents = }")
 # use zip to set two lists to a dictionary
 users: list = ["Juan", "Pedro", "Maria"]
 user_visit: list = [354,456,23]
-for user, visits in zip(users, user_visit):
+for user, visits in zip(users, user_visit):  # type: ignore
     print(f"{user = } and {visits = }")
-    
+
 # using zip built-in function to create and unpack dictionaries
 names_users: list = "juan elio maria petra".split()
 ages_users: tuple = (23,34,45,31)
@@ -390,19 +394,15 @@ countries: list = ['Colombia','Chile','Spain','Brazil','Gabon','Indonesia']
 codes: list = ['CO','CL','ES','BR','GA','ID']
 
 # First: Using indexing
-dictionarie_indexing: dict = {}
-for i in range(len(codes)):
-    dictionarie_indexing[codes[i]] = countries[i]
+dictionarie_indexing: dict = {codes[i]: countries[i] for i in range(len(codes))}
 print(f"{dictionarie_indexing = }")
 
 # Second: Using zip
-dictionary_zip: dict = {}
-for code,country in zip(codes,countries):
-    dictionary_zip[code] = country
+dictionary_zip: dict = dict(zip(codes,countries))
 print(f"{dictionary_zip = }") 
 
 # Thirds: Replacing loop with dict comprehension
-dictionary_comprehension: dict = {code: country for code, country in zip(codes, countries)}
+dictionary_comprehension: dict = dict(zip(codes, countries))
 print(f"{dictionary_comprehension = }")
 
 # Fourth: Replace dict comprehension with dict call
@@ -464,18 +464,18 @@ person: list = [
 print(f"{person = }")
 
 # first approach: a new list of sorted dictionaries is returned. A custom key function can be supplied to customize the sort order, and the reverse flag can be set to request the result in descending order.
-person_sort: list = sorted(person, key= lambda item: item.get('id'))
+person_sort: list = sorted(person, key = lambda item: item.get('id'))  # type: ignore
 print(f"{person_sort = }")
 
 # second approach: the return type is None as the changes are in place
-person.sort(key= lambda item: item.get('id'))
+person.sort(key= lambda item: item.get('id'))  # type: ignore
 print(f"{person = }")
 
 # -----------------------------------------------------------------------------------------
 # Sum of Even Numbers In a List using a List Comprehension and SUM() function
 list_number: list = [3,5,6,2,8,9,1,0,6]
 print(f"{list_number = }")
-sum_even_number: int = sum([number for number in list_number if number % 2 == 0])
+sum_even_number: int = sum(number for number in list_number if number % 2 == 0)
 print(f"{sum_even_number = }")
 
 # -----------------------------------------------------------------------------------------

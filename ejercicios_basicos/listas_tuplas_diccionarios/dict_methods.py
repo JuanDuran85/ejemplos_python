@@ -58,7 +58,7 @@ cities: dict = {
     5: "Sao Paulo",
 }
 print(f"Dictionary: {cities}")
-get_value_dict: str or None = cities.get(3)
+get_value_dict: str | None = cities.get(3)
 print(f"{get_value_dict = }")
 
 print(" ")
@@ -121,7 +121,7 @@ food: dict = {
     3: "Pollo",
 }
 print(f"Dictionary: {food}")
-set_default_food_exist: str or None = food.setdefault(2)
+set_default_food_exist: str | None = food.setdefault(2,'Comida')
 print(f"{set_default_food_exist = }")
 set_default_food_noexist: str = food.setdefault(4, "Sopa")
 print(f"{set_default_food_noexist = }")
