@@ -13,3 +13,4 @@ psutil
 httpx
 phonenumbers
 diagrams
+geopy
