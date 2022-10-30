@@ -63,7 +63,7 @@ class Animal: ...
 cat: Animal = Animal()
 print(f"{cat = }")
 setattr(cat, 'name', 'Garfield')
-print(f"{cat.name = }")
+print(f"{cat.name = }")  # type: ignore
 
 # you can delete a object class with __del__ method.
 
@@ -145,12 +145,12 @@ class Hijo(Padre):
 padre: Padre = Padre()
 print(dir(padre))
 # esto imprime para la variable privada: '_Padre__variable_privada', lo cual se denomina 'Name Mangling', para evitar conflictos que se hereden de las clases
-print(f"Variable privada: {padre._Padre__variable_privada}")
+print(f"Variable privada: {padre._Padre__variable_privada}")  # type: ignore
 print(f"metodo privado: {padre.get_metodo_privado()}")
 hijo: Hijo = Hijo()
 print(hijo.get_variable_privada())
 print(hijo.varible_publica)
-print(hijo._Hijo__variable_privada)
+print(hijo._Hijo__variable_privada)  # type: ignore
 
 # ----------------------------------------------------------------------------------------------
 # sobreescritura de metodo call en una clase
@@ -195,12 +195,27 @@ class LengthErrorClase(ExceptionBaseClase):
 def length_string(text_in: str) -> bool:
     if len(text_in) < 3:
         raise LengthErrorClase(f"El largo de la cadena -'{text_in}'- debe ser mayor a 3")
-    else:
-        print("La cadena es valida")
-        return True
+    print("La cadena es valida")
+    return True
     
 try:
-    length_string("Me")    
+    length_string("Mesds")    
 except ExceptionBaseClase as e:
     print(f"{type(e).__name__}, linea: {e.__traceback__.tb_lineno} en {__file__}, siendo el error: {e}")
+    
+# ----------------------------------------------------------------------------------------------
+# Use the simplest possible argumennts for your methods. Becouse you can pass them directly from your entry points (API, Celery jobs, etc), no need form unnecessarily loading of complex objects.
+
+from dataclasses import dataclass
+
+@dataclass
+class User:
+    id: int
+    username: str
+    
+@dataclass
+class Ticket:
+    id: int
+    user_id: int
+    title: str
     

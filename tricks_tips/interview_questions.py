@@ -6,7 +6,7 @@
 # --------------------------------------------------------------------------------------
 # Question 1 - Get missing number in [1...100], create a function and deleted 1 number
 def get_missing_number(list_number: list) -> set:
-    return (set(range(list_number[len(list_number)-1])[1:]) - set(list_number))
+    return set(range(list_number[-1])[1:]) - set(list_number)
 
 list_number_any: list = list(range(1,100))
 list_number_any.remove(45)
