@@ -11,12 +11,12 @@ import requests_cache
 
 try:
     requests_cache.install_cache('cache.db',backends='sqlite',expire_after=10)
-    response_data = requests.get('https://api.github.com/users/juanduran85')
+    response_data: requests.Response = requests.get('https://api.github.com/users/juanduran85')
     print(response_data)
     print(type(response_data))
     result = response_data.json()
     print(result)
-    print(response_data.from_cache)
+    print(response_data.from_cache)  # type: ignore
     for response in result.items():
         print(f"{response}")
 except Exception as e:
