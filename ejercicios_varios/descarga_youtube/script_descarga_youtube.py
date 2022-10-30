@@ -21,7 +21,7 @@ def complete_function(stream,path):
     print("Descarga completada")
 
 link = input("Introduce el link de youtube: ")
-video = YouTube(link, on_progress_callback = progress_function, on_complete_callback = complete_function)
+video = YouTube(link, on_progress_callback = progress_function, on_complete_callback = complete_function)  # type: ignore
 stream = video.streams.get_highest_resolution()
 print(f"Titulo del video: {video.title}")
 print("Descargando video...")
