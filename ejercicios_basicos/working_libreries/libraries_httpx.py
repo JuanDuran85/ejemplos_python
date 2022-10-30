@@ -67,8 +67,8 @@ print("\n-------------------using async client and task-----------------------\n
 # using client and task
 async def weather_async(values_in):    
     try:
-        url_base: str = os.getenv("URL_BASE_WA")
-        api_key: str = os.getenv("API_KEY_WA")
+        url_base: str = str(os.getenv("URL_BASE_WA"))
+        api_key: str = str(os.getenv("API_KEY_WA"))
         async with httpx.AsyncClient() as client:
             task_to_do: list = []
             for index,value in enumerate(values_in):
