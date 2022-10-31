@@ -2,7 +2,7 @@ import json
 from datetime import date, datetime, time
 from typing import Any
 
-def json_serial(objeto_in) -> str:
+def json_serial(objeto_in) -> str| None:
     print(type(objeto_in))
     if isinstance(objeto_in, (datetime, date)):
         return objeto_in.strftime('%Y-%m-%d')
