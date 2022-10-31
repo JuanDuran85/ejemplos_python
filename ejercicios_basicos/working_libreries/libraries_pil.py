@@ -22,10 +22,21 @@ def image_compress():
     image_in.save('co.jpg', 'JPEG', optimize=True, quality=10)
     Image.open('co.jpg')
     print('Fin proceso')
+    
+def img_to_pdf(file_name: list, output: str):
+    images: list = []
+    
+    for file in file_name:
+        img = Image.open(file)
+        img = img.convert('RGB')
+        images.append(img)
+        images[0].save(output, save_all=True, append_images=images[1:])
 
 if __name__ == '__main__':
     path_img: str = '/home/juan/Descargas/programacion/ejemplos_python/Python-logo.png'
     degrees: int = 180
     output_path: str = '/home/juan/Descargas/programacion/ejemplos_python/Python-rotate.png'
+    output_path_pdf: str = '/home/juan/Descargas/programacion/ejemplos_python/python_rotate.pdf'
     rotate(path_img, degrees, output_path)
     image_compress()
+    img_to_pdf([path_img],output_path_pdf)
