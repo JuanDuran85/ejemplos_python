@@ -219,3 +219,11 @@ class Ticket:
     user_id: int
     title: str
     
+USERS: list[User] = [User(id=1, username="ejemplo1234")]
+TICKETS: list[Ticket] = [Ticket(id=1, user_id=1, title="Ejemplo de titulo")]
+
+def list_user_tickets(user_id: int)-> list[Ticket]:
+    return [ticket for ticket in TICKETS if ticket.user_id == user_id]
+
+result:list[Ticket] = list_user_tickets(USERS[0].id)
+print(result)
