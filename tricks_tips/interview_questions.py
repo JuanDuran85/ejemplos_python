@@ -38,3 +38,17 @@ print(f"is_anagram('elvis', 'lives'): {is_anagram('elvis', 'lives')}")
 def is_palindrome(text_in: str) -> bool:
     return text_in == text_in[::-1]
 print(f"is_palindrome('racecar'): {is_palindrome('racecar')}")
+
+# --------------------------------------------------------------------------------------
+# Question 5 - What's the difference between:
+
+x = [i**2 for i in range(10)]
+print(f"{x = }")
+y = (i**2 for i in range(10))
+print(f"{y = }")
+print(next(y))
+print(next(y))
+print(next(y))
+
+# X and Y hace the same values, but, they aren't interchanngeable, becouse Y is a generator
+# ---------------------------------------------------------------------------------------
