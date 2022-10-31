@@ -42,7 +42,7 @@ array_dos: np.ndarray = np.array([8,1,3,5,2])
 # suma
 print(f"{array_uno + array_dos = }")
 # resta
-print(f"{array_uno - array_dos = }")
+print(f"{array_uno - array_dos = }")  # type: ignore
 # multiplicacion
 print(f"{array_uno * array_dos = }")
 # division
@@ -63,7 +63,7 @@ print(f"{array[:] = }")
 array_copia: np.ndarray = array.copy()
 print(f"{array_copia = }")
 # modificando valores de una array por referencia
-array_copia[0:3] = 9
+array_copia[:3] = 9
 print(f"{array_copia = }")
 
 #-----------------------------------------------------------------------------
@@ -126,3 +126,5 @@ print(f"{suma_arrays = }")
 # para mostrar solo los valores maximos entre dos arrays columna a columna
 maximos: np.ndarray = np.maximum(array_uno, array_dos)
 print(f"{maximos = }")
+
+#

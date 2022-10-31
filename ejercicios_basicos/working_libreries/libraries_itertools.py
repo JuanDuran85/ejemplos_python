@@ -144,8 +144,8 @@ print([(len(list(g)),k) for k,g in groupby("AABBBAADDCCDFFDDDFFDCCCBB")])
 
 # -------------------------------------------------------------------------------------
 # you can use product to generate a Multiplication table
-for x,y in product(range(1,4),range(1,11)):
-    print(f"{x} * {y} = {x*y}")
+for x,y in product(range(1,4),range(1,11)):  # type: ignore
+    print(f"{x} * {y} = {x*y}")  # type: ignore
     
 # -------------------------------------------------------------------------------------
 # using accumulate from itertools to sum the values ​​in a list
@@ -161,3 +161,8 @@ latters: str = "ABCDEFG"
 bools: list = [True, False, False,True, True, False, True]
 result_out: list = list(compress(latters, bools))
 print(f"{result_out = }")
+
+# -------------------------------------------------------------------------------------
+# you can use accumulatet to do cumulative computations other than sums
+result_accum: list[int] = list(accumulate(range(0,20,2)))
+print(result_accum)
