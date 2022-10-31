@@ -3,3 +3,5 @@ pandas
 borb
 fpdf
 xlsxwriter
+pdf2docx
+reportlab
