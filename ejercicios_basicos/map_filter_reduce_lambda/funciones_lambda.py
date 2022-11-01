@@ -56,13 +56,13 @@ print(f"{sumar_numeros(5,6) = }")
 print("\n------------------------------------------\n")
 # Lambda function with only 1 argument
 print("Lambda function with only 1 argument")
-result_double: int = lambda x: x*2
-print(f"{result_double(5) = }")
+result_double: int = lambda x: x*2  # type: ignore
+print(f"{result_double(5) = }")  # type: ignore
 
 # Lambda function with multiple arguments
 print("Lambda function with multiple arguments")
-sum_tow_numbers: int = lambda x,y: x+y
-print(f"{sum_tow_numbers(5,6) = }")
+sum_tow_numbers: int = lambda x,y: x+y  # type: ignore
+print(f"{sum_tow_numbers(5,6) = }")  # type: ignore
 
 # Lambda And Map Function
 print("Lambda And Map Function")
@@ -127,7 +127,7 @@ print(f"{lista_ordenada = }")
 # ---------------------------------------------------------------------------------------
 # Con las funciones lambda tambien se puede utilizar closure
 def mostrar(titulo: str):
-    return lambda mensaje: titulo +' '+ mensaje
+    return lambda mensaje: f'{titulo} {mensaje}'
 
 mostrar_sr = mostrar('Sr.')
 print(mostrar_sr('Juan'))

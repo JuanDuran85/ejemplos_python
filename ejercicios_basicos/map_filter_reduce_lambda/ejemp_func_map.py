@@ -71,3 +71,23 @@ lista_numeros: list = [4,7,2,8,4,1,8,9,3,-6,-9]
 print(f"{lista_numeros = }")
 result_lista: list = list(map(lambda x: x**2, lista_numeros))
 print(f"{result_lista = }")
+
+# ----------------------------------------------------------------------------------------
+# The map() function takes a function and a series of arguments, and makes am iterable of results. It can also work on functions with multiple arguments. But, most python people prefer list comprehensions.
+#-----------------------------------------------------------------------------------------
+print('---------------------------------------------------------------------------')
+# map makes an iterator object.
+def square(x: int) -> int:
+    return x**2
+
+# sourcery skip: assign-if-exp
+result_map_one: list[int] = list(map(square, range(10)))
+print(f"{result_map_one = }")
+
+print('---------------------------------------------------------------------------')
+# map can be use with more than one argument
+def stradd(a: str,b: int)-> str:
+    return f"{a}{b}"
+
+result_map_two: list[str] = list(map(stradd,"ABCDEFGHIJ",range(10)))
+print(f"{result_map_two = }")

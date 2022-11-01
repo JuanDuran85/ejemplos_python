@@ -109,3 +109,16 @@ print(f"{matrix_transpose = }")
 file_name: list = ["a.pdf","b.xls","c.pdf","d.ppt","e.txt"]
 pdf_list: list = [files for files in file_name if files.endswith(".pdf")]
 print(pdf_list)
+
+# ------------------------------------------------------------------------------------
+# using list comprehension with zip function, you can use a function with multiple arguments to do whatever you need. In this case, we can create a function that concatenates two parameters in one string and make a list with the result of the process.
+
+def str_add(a_in: str, b_in: int) -> str:
+    return f"{a_in}{b_in}"
+
+result_list_two: list[str] = [str_add(x,y) for x,y in zip("ABCDEFGHIJ", range(10))]
+print(f"{result_list_two =}")
+
+# or do it in the same list comprehension
+result_list_three: list[str] = [f"{x}{y}" for x,y in zip("ABCDEFGHIJ", range(10))]
+print(f"{result_list_three =}")
