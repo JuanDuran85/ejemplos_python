@@ -133,5 +133,14 @@ mostrar_sr = mostrar('Sr.')
 print(mostrar_sr('Juan'))
 
 # -----------------------------------------------------------------------------------------
+# You can set a default argument to be a lambda function. For example, when a function can have some pre- or post-processing.
+# -----------------------------------------------------------------------------------------
+def print_after(to_print: str | int, f=(lambda x: x))-> None:
+    print(f(to_print))
+
+print_after(3)
+print_after(3, lambda num: 5 * num + 1)  # type: ignore
+# -----------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------
 
 
