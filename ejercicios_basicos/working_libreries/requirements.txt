@@ -16,3 +16,4 @@ diagrams
 geopy
 langdetect
 pyautogui
+tqdm
