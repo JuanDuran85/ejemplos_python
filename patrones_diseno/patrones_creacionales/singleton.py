@@ -8,7 +8,7 @@ class SingletonPattern():
     
     @staticmethod
     def singleton(cls):
-        instance = dict()
+        instance = {}
         def wrapper(*args, **kwargs):
             if cls not in instance:
                 instance[cls] = cls(*args, **kwargs)
