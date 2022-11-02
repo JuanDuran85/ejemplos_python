@@ -3,10 +3,11 @@
     Using functools library
     Using reduce function
     Using singledispatch
-
+    Using cache
+    
 """
-
-from functools import reduce, singledispatch
+from datetime import datetime
+from functools import reduce, singledispatch, cache
 
 print('-----------------------------------------------------------')
 # Print Fibonacci Sequence Upto N Terms: A Fibonacci sequence is a series of numbers where each term is the sum of the two preceding ones, starting from 0 and 1. You can print the Fibonacci series up to n terms using the lambda function.
@@ -59,4 +60,24 @@ add_func(1,2)
 add_func('Python','functools')
 add_func([1,2,3],[4,5,6])
 
+print('-----------------------------------------------------------')
+
+#----------------------------------------------------------------------------------------------
+# cache
+#---------------------------------------------------------------------------------------------
+print('-----------------------------------------------------------')
+'''
+Cache: Returns the same as lru_cache(maxsize=None), creating a thin wrapper around a dictionary lookup for the function arguments. Because it never needs to evict old values, this is smaller and faster than lru_cache() with a size limit.
+'''
+@cache
+def fibonacci_with_cache(num_one):
+    if num_one in (0,1): return 1
+    else: return fibonacci_with_cache(num_one - 1) + fibonacci_with_cache(num_one - 2)
+
+
+start_time = datetime.now()
+result_cache = fibonacci_with_cache(100)
+print(result_cache)
+end_time = datetime.now()
+print(f"Total time 1: {(end_time - start_time)}")
 print('-----------------------------------------------------------')
