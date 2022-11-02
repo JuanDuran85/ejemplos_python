@@ -122,3 +122,19 @@ print(f"{result_list_two =}")
 # or do it in the same list comprehension
 result_list_three: list[str] = [f"{x}{y}" for x,y in zip("ABCDEFGHIJ", range(10))]
 print(f"{result_list_three =}")
+
+
+"""----------------------------------------------------------------------------------------"""
+#--------------------------------------------------------------------------------------------
+# Using the walrus operator we can use an intermediate variable, calling a principal function one once time, and all inside a list comprehension.
+#--------------------------------------------------------------------------------------------
+"""----------------------------------------------------------------------------------------"""
+def double(n: int) -> int:
+    return n*2
+
+numbers: list[int] = list(range(17))
+result_list_one: list[int] = [n_doubled for n in numbers if (n_doubled := double(n)) <= 20]
+print(f"{result_list_one = }")
+
+"""----------------------------------------------------------------------------------------"""
+"""----------------------------------------------------------------------------------------"""

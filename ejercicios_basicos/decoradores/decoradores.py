@@ -110,10 +110,8 @@ def mensaje_with_html(text_in: str) -> str:
 
 print(mensaje_with_html('Mensaje con HTML'))
 
-
-
 #----------------------------------------------------------------
-# decoradores
+# decoradores con valores por defecto
 
 def retry(exception, max_tries=5):
     def retry_decorator(func):
@@ -135,3 +133,26 @@ def retry(exception, max_tries=5):
 def may_fail():
     print("Ejecutando funcion fail")
     return mensaje_with_html("Nuevo mennsaje HTML")
+
+#----------------------------------------------------------------
+# decoradores con dos parametros
+
+
+def info(arg1, arg2):
+    print(f"Decorator arg1 = {str(arg1)}")
+    print(f"Decorator arg2 = {str(arg2)}")
+
+    def the_real_decorator(function_in):
+        def wrapper(*args, **kwargs):
+            print(f"Function: {function_in.__name__}, args: {args}, kwargs: {kwargs}")
+            return function_in(*args, **kwargs)
+
+        return wrapper
+
+    return the_real_decorator
+
+@info(3,'Python')
+def doubler_num(number):
+    return number * 2
+
+print(doubler_num(7))

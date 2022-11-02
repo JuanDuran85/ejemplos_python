@@ -97,3 +97,32 @@ print(dir(persona1))
 # tiene el metodo repr sobre escrito
 codigo_repr = inspect.getsource(persona1.__repr__)
 print(codigo_repr)
+
+#-----------------------------------------------------------------------------------
+# class decorator with arguments. Using a class like decorator on a function
+#-----------------------------------------------------------------------------------
+class decorator_with_arguments:
+    def __init__(self,arg1,arg2):
+        print('In __init__ class')
+        self.arg1 = arg1
+        self.arg2 = arg2
+        print(f"Decorator args: {arg1} |-| {arg2}")
+        
+    def __call__(self,func_in):
+        print("In __call__ class")
+        def wrapper(*args, **kwargs):
+            print("In wrapper method")
+            new_args = args[0] + 5
+            return func_in(new_args)
+        return wrapper
+
+@decorator_with_arguments(3,'Python')
+def doubler_fn(number_in):
+    return number_in * 2
+
+print(doubler_fn(5))
+
+#-----------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------
+
+#-----------------------------------------------------------------------------------
