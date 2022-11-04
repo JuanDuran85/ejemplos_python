@@ -166,3 +166,15 @@ print(f"{result_out = }")
 # you can use accumulatet to do cumulative computations other than sums
 result_accum: list[int] = list(accumulate(range(0,20,2)))
 print(result_accum)
+
+# -------------------------------------------------------------------------------------
+# You can use product and starmap to find annd create all the possible combinations
+# -------------------------------------------------------------------------------------
+first_names: list[str] = ["Maria","Petra"]
+last_names: list[str] = ["Gonzalez","Perez"]
+
+result_full_names: list[str] = list(starmap(lambda x, y: f"{x} {y}", product(first_names, last_names)))
+print(result_full_names)
+
+# -------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------
