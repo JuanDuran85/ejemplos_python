@@ -18,3 +18,4 @@ langdetect
 pyautogui
 tqdm
 pywhatkit
+sympy
