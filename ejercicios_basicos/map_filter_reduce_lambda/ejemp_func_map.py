@@ -91,3 +91,13 @@ def stradd(a: str,b: int)-> str:
 
 result_map_two: list[str] = list(map(stradd,"ABCDEFGHIJ",range(10)))
 print(f"{result_map_two = }")
+
+print('---------------------------------------------------------------------------')
+# map can take multiple iterables, and it fetches an argument from each iterable
+# in this case, you can verify is each letter appear in the respective word. 
+
+words: list[str] = ["texto 1", "texto 1", "texto 1", "texto 1"]
+letters: list[str] = ["a","e","i","o"]
+
+result_letters: list[bool] = list(map(lambda x_l,y_w: x_l in y_w,letters,words))
+print(f"{result_letters = }")

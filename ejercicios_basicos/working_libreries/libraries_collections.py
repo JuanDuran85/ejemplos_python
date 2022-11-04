@@ -142,10 +142,10 @@ print(f"{ordered_dict = }")
 # Using defaultdict with lambda function to generate a default value
 
 default_dict: defaultdict = defaultdict(lambda: 'Error Key - Not Found')
-default_dict['a'] = 3
-default_dict['c'] = 6
-default_dict['f'] = 1
-default_dict['w'] = -9
+default_dict['a'] = 3   # type: ignore
+default_dict['c'] = 6   # type: ignore
+default_dict['f'] = 1   # type: ignore
+default_dict['w'] = -9  # type: ignore
 print(default_dict.items())
 print(default_dict['a'])
 print(default_dict['z'])
@@ -182,3 +182,12 @@ print(f"{combinational_dict}")
 
 # search starts from left to right
 print(f"{combinational_dict['one'] = }")
+
+# -------------------------------------------------------------------------------------
+# You can use Counter methods to create a dict with the counts of numbers
+# -------------------------------------------------------------------------------------
+list_num: list[int] = [5,6,2,5,6,7,6,7,2,1,2,7,1,6,5]
+cuenta:Counter[int] = Counter(list_num)
+print(dict(cuenta))
+# -------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------
