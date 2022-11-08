@@ -7,7 +7,7 @@ Define how data should be in pure, canonical Python; validate it with pydantic.
 
 """
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ValidationError
 from datetime import datetime
 
 #-----------------------------------------------------------------------------
@@ -36,4 +36,7 @@ print(user_one.dict())
 #-----------------------------------------------------------------------------
 #-----------------------------------------------------------------------------
 
-
+try:
+    User(first_in='broken', languages=[1, 2, 'not number'])  # type: ignore
+except ValidationError as e:
+    print(e.json())
