@@ -13,6 +13,7 @@ All examples are from the internet with somes variations, so they are not 100% c
 """----------------------------------------------------------------------------------------"""
 """----------------------------------------------------------------------------------------"""
 ''' Using lists - Can be: ordered, mutable, duplicates'''
+
 print("\n Using lists \n")
 n_values_in_list = ["", 0, None, -3, 5, [], 1, {}, 7.5]
 n_values_in_list_two = range(0,10,2)
@@ -486,6 +487,5 @@ print(f"{list_a = }")
 print(f"{list_b = }")
 merge_dict_final: dict = dict(zip(list_a, list_b))
 print(f"{merge_dict_final = }")
-
-
 """----------------------------------------------------------------------------------------"""
+

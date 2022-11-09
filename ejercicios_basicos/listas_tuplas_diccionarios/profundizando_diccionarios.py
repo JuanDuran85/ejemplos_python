@@ -240,7 +240,8 @@ for data_obj in data_mock:
     
     if (not data_table_by_country.get(country_obj)):
         data_table_by_country.setdefault(country_obj, [data_obj])
-
+        continue
+    
     data_from_country = data_table_by_country.get(country_obj) or []
     data_from_country.append(data_obj)
     data_table_by_country[country_obj] = data_from_country

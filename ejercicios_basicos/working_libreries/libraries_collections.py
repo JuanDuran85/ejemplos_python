@@ -118,7 +118,7 @@ print(f"{countries = }")
 print(f"{countries['CN'] = }")
 
 # -------------------------------------------------------------------------------------
-# Using dOrderedDict: OrderedDict is commonly used whenever we want to keep the order in which the items are inserted into our dictionary.
+# Using OrderedDict: OrderedDict is commonly used whenever we want to keep the order in which the items are inserted into our dictionary.
 
 ordered_dict: OrderedDict = OrderedDict()
 ordered_dict['red'] = 0
