@@ -1,3 +1,4 @@
+# sourcery skip: dict-assign-update-to-union
 """_summary_
 
     Python Dictionary Methods.

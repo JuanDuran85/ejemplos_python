@@ -2,16 +2,9 @@
 from dataclasses import dataclass
 
 
-@dataclass
-class KeysGeneral:
-    """_summary_
-        Type class interface.
-    """
-    key_1: str
-    key_2: str
-    key_3: int
-    key_4: str
-    key_5: str
+#--------------------------------------------------------------------------------------
+# 
+#--------------------------------------------------------------------------------------
 
 list_of_tuplas: list[tuple] = [
     ('6', "2022-11-24", 111, 'abc_1', "12:00"),  # type: ignore
@@ -43,4 +36,30 @@ for data_obj in list_of_tuplas:
     data_from_country.append(second_value)
     data_table_by_country[first_value] = data_from_country
     
-print(data_table_by_country)
+#print(data_table_by_country)
+#--------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------
+
+
+#--------------------------------------------------------------------------------------
+# 
+#--------------------------------------------------------------------------------------
+
+@dataclass
+class KeysGeneral:
+    """_summary_
+        Type class interface.
+    """
+    key_1: str
+    key_2: str
+    key_3: int
+    key_4: str
+    key_5: str
+    
+keys_lists: list[str] = ["key_1","key_2","key_3","key_4","key_5"]
+    
+list_of_dicts = [dict(zip(keys_lists,values_tuple)) for values_tuple in list_of_tuplas]
+print(list_of_dicts)
+    
+#--------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------
