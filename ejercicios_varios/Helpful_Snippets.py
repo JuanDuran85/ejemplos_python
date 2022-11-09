@@ -57,7 +57,7 @@ def chunk(list, size):
 #  by using filter().
 
 def compact(lst):
-    return list(filter(None, lst))
+    return list(filter(None, lst))  # type: ignore
 
 compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]
 
@@ -101,10 +101,10 @@ decapitalize('FooBar') # 'fooBar'
 
 #14. Flatten /The following methods flatten a potentially deep list using recursion.
 
-def spread(arg):
+def spread(arg):  # type: ignore
     ret = []
     for i in arg:
-        if isinstance(i, list):
+        if isinstance(i, list):  # type: ignore
             ret.extend(i)
         else:
             ret.append(i)
@@ -112,7 +112,7 @@ def spread(arg):
 
 def deep_flatten(xs):
     flat_list = []
-    [flat_list.extend(deep_flatten(x)) for x in xs] if isinstance(xs, list) else flat_list.append(xs)
+    [flat_list.extend(deep_flatten(x)) for x in xs] if isinstance(xs, list) else flat_list.append(xs)  # type: ignore
     return flat_list
 
 
@@ -124,8 +124,8 @@ deep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]
 def difference(a, b):
     set_a = set(a)
     set_b = set(b)
-    comparison = set_a.difference(set_b)
-    return list(comparison)
+    comparison = set_a.difference(set_b)  # type: ignore
+    return list(comparison)  # type: ignore
 
 
 difference([1,2,3], [1,2,4]) # [3]
@@ -272,7 +272,7 @@ print(foo) # [1, 4, 3, 2] ,  [1, 2, 4, 3], etc
 def spread(arg):
     ret = []
     for i in arg:
-        if isinstance(i, list):
+        if isinstance(i, list):  # type: ignore
             ret.extend(i)
         else:
             ret.append(i)

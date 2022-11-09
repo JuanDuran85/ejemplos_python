@@ -49,7 +49,7 @@ for key,value in enumerate(lista_numeros):
 numeros: list = [3,67,-3,7,-87,0,-9]
 for index,item in enumerate(numeros):
     if item < 0:
-        print(f"El valor es: {item}")
+        print(f"El valor es: {item} para la posicion {index}")
         
         
 # usando el operador walrus en un ciclo for
