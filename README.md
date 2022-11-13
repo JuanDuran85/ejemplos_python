@@ -56,6 +56,10 @@ Ejemplos de programacion con Python
   ```bash
     python -m http.server 8000
   ```
+- Identifica cual proceso se esta ejecutando en un puerto en especifico
+  ```bash
+    $ netstat -nlp | grep XXXX
+  ```
 
 ## Generar documentacion por la terminar
 - Utilizando pydoc
