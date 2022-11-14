@@ -15,6 +15,7 @@ def show_product(id: str = ''):
         product_find = get_one_product_by_id(int(id))
         return render_template('products/show.html',product=product_find)
     except Exception as e:
+        print(e)
         raise e
 
 @product.route('/filter/<id>')
@@ -23,6 +24,7 @@ def filter(id: str = ''):
         product_find = get_one_product_by_id(int(id))
         return render_template('products/filter.html',product=product_find)
     except Exception as e:
+        print(e)
         raise e
     
 # you can use blueprint to create your own filters to.
