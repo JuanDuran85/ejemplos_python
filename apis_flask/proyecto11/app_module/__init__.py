@@ -6,6 +6,7 @@ app = Flask(__name__)
 app.register_blueprint(product)
 
 # you can create your own personal filter here o implementing in blueprint to use
-@app.template_filter()
+@app.template_filter('reverse_to_do')
 def reverse(s):
-    pass    
+    print(s)
+    return s[::-1]    

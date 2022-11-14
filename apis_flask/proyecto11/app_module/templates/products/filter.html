@@ -24,8 +24,10 @@
               <h5 class="card-title">Name: {{product['name']}}</h5>
               <p class="card-text">Category: {{product['category']}}.</p>
               <p class="card-text">Price: <small class="text-muted">{{product['price'] | default('Sin precio disponible', True) | float}}</small></p>
+              <p class="card-text">Total Price: <small class="text-muted">{{product['price'] | iva}}</small></p>
               <p class="card-text">Stock: <small class="text-muted">{{product['stock'] | default('Agotado - En camino',True)}}</small></p>
               <p class="card-text">Descripcion del producto: {{product['description'] | truncate(40)}}</p>
+              <p class="card-text">Reverse: {{[1,5,7,3,4,7] | reverse_to_do}}</p>
             </div>
           </div>
         </div>

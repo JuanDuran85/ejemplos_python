@@ -24,3 +24,8 @@ def filter(id: str = ''):
         return render_template('products/filter.html',product=product_find)
     except Exception as e:
         raise e
+    
+# you can use blueprint to create your own filters to.
+@product.app_template_filter('iva')
+def iva_filter(price_in: float = 0)-> float:
+    return (price_in * .20) + price_in if price_in else 0.0
