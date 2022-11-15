@@ -16,7 +16,7 @@
     <h3 class="text-center my-5">Productos disponibles</h3>
     <section class="container">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-            {% for key,product in products.items() %}
+            {% for key,product in products.items() if product['price'] %}
                 <div class="col">
                     <div class="card">
                         <img src="{{product['image']}}" class="card-img-top img-fluid" alt="{{key}}">

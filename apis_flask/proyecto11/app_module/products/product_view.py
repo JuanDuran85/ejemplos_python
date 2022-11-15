@@ -6,20 +6,20 @@ product = Blueprint('product', __name__)
 
 @product.route('/')
 @product.route('/home')
-def product_function():
+def product_function() -> str:
     return render_template('products/index.html',products=PRODUCTS)
 
 @product.route('/product/<id>')
-def show_product(id: str = ''):
+def show_product(id: str = '') -> str:
     try:
-        product_find = get_one_product_by_id(int(id))
+        product_find: dict[int,dict] = get_one_product_by_id(int(id))
         return render_template('products/show.html',product=product_find)
     except Exception as e:
         print(e)
         raise e
 
 @product.route('/filter/<id>')
-def filter(id: str = ''):
+def filter(id: str = '') -> str:
     try:
         product_find = get_one_product_by_id(int(id))
         return render_template('products/filter.html',product=product_find)

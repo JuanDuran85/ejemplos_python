@@ -14,7 +14,7 @@
               <h5 class="card-title">Name: {{product['name']}}</h5>
               <p class="card-text">Category: {{product['category']}}.</p>
               <p class="card-text">Price: 
-                {% if product['price'] %}
+                {% if (product['price'] and product['price'] >= 350500) %}
                   <em class="bg-danger text-light">{{product['price']}}</em>
                   {% else %}
                   <em class="bg-light text-primary">{{product['price']}}</em>
