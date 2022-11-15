@@ -1,0 +1,30 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Producto {{product['category']}}{% endblock %}  
+
+{% block container %}
+<h1>Producto:</h1>
+    <div class="card mb-3 text-center" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{product['image']}}" class="img-fluid" alt="{{product['price']}}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Name: {{product['name']}}</h5>
+              <p class="card-text">Category: {{product['category']}}.</p>
+              <p class="card-text">Price: 
+                {% if (product['price'] and product['price'] >= 350500) %}
+                  <em class="bg-danger text-light">{{product['price']}}</em>
+                  {% else %}
+                  <em class="bg-light text-primary">{{product['price']}}</em>
+                {% endif %}  
+              </p>
+              <p class="card-text">Stock: {{product['stock']}}</p>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock %}
+
+

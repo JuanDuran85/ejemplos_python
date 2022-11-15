@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+    />
+    <title>Filters</title>
+</head>
+<body>
+    <h1>Producto:</h1>
+    <div class="card mb-3 text-center" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{product['image']}}" class="img-fluid" alt="{{product['price']}}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Name: {{product['name']}}</h5>
+              <p class="card-text">Category: {{product['category']}}.</p>
+              <p class="card-text">Price: <small class="text-muted">{{product['price'] | default('Sin precio disponible', True) | float}}</small></p>
+              <p class="card-text">Total Price: <small class="text-muted">{{product['price'] | iva}}</small></p>
+              <p class="card-text">Stock: <small class="text-muted">{{product['stock'] | default('Agotado - En camino',True)}}</small></p>
+              <p class="card-text">Descripcion del producto: {{product['description'] | truncate(40)}}</p>
+              <p class="card-text">Reverse: {{[1,5,7,3,4,7] | reverse_to_do}}</p>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
