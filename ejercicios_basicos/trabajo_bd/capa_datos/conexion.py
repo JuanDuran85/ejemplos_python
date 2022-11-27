@@ -51,8 +51,8 @@ class Conexion:
 
     @classmethod
     def cerrar(cls):
-        cls.__cursor.close()
-        cls.__conexion.close()
+        cls.__cursor.close() # type: ignore
+        cls.__conexion.close() # type: ignore
 
 if __name__ == '__main__':
     conexion = Conexion.obtener_conexion()

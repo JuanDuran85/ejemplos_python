@@ -66,7 +66,7 @@ print(f"{factorial_numero(5) = }")
 # ---------------------------------------------------------------------------------
 # con una funcion recursiva, imprimir de forma descendente los numeros desde el mayor numero ingresado hasta 1. Si son valores negativos, no se debe imprimir nada.
 
-def imprimir_numero(numero: int) -> str:
+def imprimir_numero(numero: int) -> str:  # type: ignore
     if numero > 0:
         print(numero)
         return imprimir_numero(numero - 1)

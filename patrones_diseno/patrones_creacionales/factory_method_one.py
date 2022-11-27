@@ -92,7 +92,7 @@ class LoggerFactoryImpl(LoggerFactory):
                 'e': LoggerEmail
             }
 
-            return options.get(type)()
+            return options.get(type)() #type: ignore
         except Exception as e:
             print(f"Error al ingresar la opcion: {e}")
             raise e
