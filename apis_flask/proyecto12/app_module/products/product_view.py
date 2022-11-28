@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template
 from app_module.products.utilities.generals_functions import get_one_product_by_id
 from app_module.products.models.products_model import PRODUCTS
+from app_module.products.models.product import Product
 
 product = Blueprint('product', __name__)
 
