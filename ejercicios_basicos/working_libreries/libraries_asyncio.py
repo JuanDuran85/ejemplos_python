@@ -7,7 +7,7 @@
 import asyncio
 from typing import Generator
 
-async def numbers(numbers)-> Generator[int, None, None]:
+async def numbers(numbers)-> Generator[int, None, None]: # type: ignore   
     for i in range(numbers):
         yield i
         await asyncio.sleep(0.5)
