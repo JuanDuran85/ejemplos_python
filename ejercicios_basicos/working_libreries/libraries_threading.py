@@ -9,7 +9,7 @@
 from threading import Thread
 
 def worker(command: list) -> None:
-    for i in range(command):
+    for i in range(command): # type: ignore        
         print(f"Thread {i} - funcionando")
 
 new_hilo: Thread = Thread(target=worker, args=(10,))
