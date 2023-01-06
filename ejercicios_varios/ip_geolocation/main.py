@@ -5,8 +5,8 @@ load_dotenv()
 
 async def get_ip_location(ip_to_find:str):
     try:
-        url_base: str = os.getenv("URL")
-        api_key: str =os.getenv("API_KEY")
+        url_base: str | None = os.getenv("URL")
+        api_key: str | None = os.getenv("API_KEY")
         ip_address: str = f"ip_address={ip_to_find if len(ip_to_find)>1 else ''}"
         async with httpx.AsyncClient() as client:
             response_api: httpx.Response = await client.get(f"{url_base}?api_key={api_key}&{ip_address}")

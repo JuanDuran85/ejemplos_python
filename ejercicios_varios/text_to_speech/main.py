@@ -6,8 +6,8 @@ import os
 load_dotenv()
 
 async def main(text_in: str):
-    api_key: str = os.getenv('API_KEY')
-    url_base: str = os.getenv('URL')
+    api_key: str | None = os.getenv('API_KEY')
+    url_base: str | None = os.getenv('URL')
     try:
         async with httpx.AsyncClient() as client:
             url_final: str = f"{url_base}?key={api_key}&h1=en-us&v=Amy&src={text_in}"

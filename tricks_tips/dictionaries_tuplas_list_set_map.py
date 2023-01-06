@@ -76,7 +76,7 @@ print(f"{list_word = }")
 
 # ----------------------------------------------------------------------------------------
 # if you need to flatten a list
-list_of_list: list = [["a","b","c"],["d","e","f"],["g","h","i"]]
+list_of_list: list = [["a","b","c"],["d","e","f"],["g","h","i"]] # ["a","b","c","d","e","f"]
 print(f"{list_of_list = }")
 flatten_list: list = [item for sublist in list_of_list for item in sublist]
 print(f"{flatten_list = }")

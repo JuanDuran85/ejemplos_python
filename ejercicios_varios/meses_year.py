@@ -1,5 +1,5 @@
 # meses del año con solo if-else
-mensaje = "Introduce un mes (1-12): ";
+mensaje = "Introduce un mes (1-12): "
 mes = int(input(mensaje))
 
 if mes == 1:

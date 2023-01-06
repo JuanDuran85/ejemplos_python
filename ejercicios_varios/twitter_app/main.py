@@ -8,32 +8,53 @@ headers = {
 }
 url: str = os.getenv('URL_BASE') or ""
 
-async def main(name_user_in: str):
+async def main(name_user_in: str) -> dict | None:
+    """_summary_
+
+    Args:
+        name_user_in (str): _description_
+
+    Returns:
+        _type_: _description_
+    """
     try:
         url_final: str = f"{url}users/by?usernames={name_user_in}&user.fields=created_at&expansions=pinned_tweet_id&tweet.fields=author_id,created_at"
         async with httpx.AsyncClient() as client:
             response_api: httpx.Response = await get_data_from_api(client, url_final) # type: ignore
-            if response_api.status_code == 200:        
-                result_json = response_api.json()
-                print(json.dumps(result_json, indent=4, sort_keys=True))
-                return result_json
-            return None
+            return response_api.json() if response_api.status_code == 200 else None
     except Exception as e:
         print(f"ERROR_API: {str(e)}")
 
 
-async def get_follow_users(id_user_in: str,mode_find):
+async def get_follow_users(id_user_in: str, mode_find: str = "followers"):
+    """_summary_
+
+    Args:
+        id_user_in (str): _description_
+        mode_find (str, optional): _description_. Defaults to "followers".
+
+    Returns:
+        _type_: _description_
+    """
     try:
         url_final: str = f"{url}users/{id_user_in}/{mode_find}"
         async with httpx.AsyncClient() as client:
             response_api: httpx.Response = await get_data_from_api(client, url_final) # type: ignore            
-            result_json = response_api.json()
-            print(json.dumps(result_json, indent=4, sort_keys=True))
-            return result_json
+            return response_api.json()
     except Exception as e:
         print(f"ERROR_API: {str(e)}")
+
         
 async def get_data_from_api(client,url_final: str):
+    """_summary_
+
+    Args:
+        client (_type_): _description_
+        url_final (str): _description_
+
+    Returns:
+        _type_: _description_
+    """
     try:
         return await client.get(url_final, headers=headers)
     except Exception as e:
@@ -45,8 +66,14 @@ if __name__ == '__main__':
     
     if not info_user.get("errors") : # type: ignore
         id_user: str = info_user["data"][0]["id"] # type: ignore
-        followers = asyncio.run(get_follow_users(id_user,"followers"))
-        following = asyncio.run(get_follow_users(id_user,"following"))
+        followers: dict | None = asyncio.run(get_follow_users(id_user,"followers"))
+        following: dict | None = asyncio.run(get_follow_users(id_user,"following"))
+        
+        print(json.dumps(followers, indent=4, sort_keys=True))
+        print(json.dumps(following, indent=4, sort_keys=True))
+        
+        data_followers = followers
+        
     else:
         print("El usuario no existe")
                     
