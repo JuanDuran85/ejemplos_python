@@ -30,7 +30,7 @@ print("---------------------------")
 codigo = int(input("Ingresa el codigo de acceso: "))
 clave = int(input("Ingresa la clave de acceso: "))
 
-while not (codigo == 1234 and clave == 5000):
+while codigo != 1234 or clave != 5000:
   print("Acceso denegado")
   codigo = int(input("Ingresa el codigo de acceso: "))
   clave = int(input("Ingresa la clave de acceso: "))

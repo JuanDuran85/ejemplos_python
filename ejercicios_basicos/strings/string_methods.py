@@ -78,7 +78,7 @@ print(f"{text_any} --> e - {e_count}")
 print(" ")
 print("encode: Return encoded version of string. Optional parameter encoding & errors specify encoding to use and error method".center(100, "-"))
 text_any: str = "Mr Stær"
-new_text = text_any.encode('ascii', 'ignore')
+new_text = text_any.encode('ascii', 'ignore') # type: ignore
 print(f"{text_any} --> {new_text}")
 
 print(" ")
@@ -90,8 +90,8 @@ print(f"{name_text} --> {end_found}")
 print(" ")
 print("expandtabs: Set tab size of string to specified number of whitespaces. Default is 8".center(100, "-"))
 text_any: str = "H\tT\tM\tL\tO\tK"
-result_text: str = text_any.expandtabs(3)
-print(f"{text_any} --> {result_text}")
+result_text_four: str = text_any.expandtabs(3)
+print(f"{text_any} --> {result_text_four}")
 
 print(" ")
 print("find: Return position of value if found in string.".center(100, "-"))
@@ -127,8 +127,8 @@ print(f"{new_text} --> {result_search}")
 print(" ")
 print("isalnum: Return true if all string characters are alphanumeric".center(100, "-"))
 game: str = "Cyberpunk2077"
-result: bool = game.isalnum()
-print(f"{game} --> {result}")
+result_isalnum: bool = game.isalnum()
+print(f"{game} --> {result_isalnum}")
 
 print(" ")
 print("isalpha: Return true if all string characters are in alphabet".center(100, "-"))
@@ -203,8 +203,8 @@ print(f"{title_text} --> {is_title}")
 print(" ")
 print("join: Join iterable elements to end of stiring".center(100, "-"))
 cadena_uno: tuple = ("texto 1", "texto 2", "texto 3")
-result_text: str = "__".join(cadena_uno)
-print(f"{cadena_uno} --> {result_text}")
+result_text_four: str = "__".join(cadena_uno)
+print(f"{cadena_uno} --> {result_text_four}")
 
 print(" ")
 print("ljust: Return string left justified".center(100, "-"))
@@ -222,8 +222,8 @@ print(f"{text_any} --> {lower_text}")
 print(" ")
 print("lstrip: Same as strip but only leading chars".center(100, "-"))
 text_any: str = "   Python 3.10          "
-result_text: str = text_any.lstrip()
-print(f"{text_any} --> {result_text}")
+result_text__five: str = text_any.lstrip()
+print(f"{text_any} --> {result_text__five}")
 
 print(" ")
 print("maketrans: Return translation table that can be used with translate()".center(100, "-"))
@@ -235,15 +235,15 @@ print(" ")
 print("partition: Return tuple with string parted in 3 parts".center(100, "-"))
 print("Middle part is specified string. If not found, entire string stored in first part of tuple".center(100, "-"))
 text_any: str = "Program Language Python 3.10"
-result_text: tuple = text_any.partition('Language')
-print(f"{text_any} --> {result_text}")
+result_text_two: tuple = text_any.partition('Language')
+print(f"{text_any} --> {result_text_two}")
 
 print(" ")
 print("replace: Return string where one value is replaced with another".center(100, "-"))
 print("Optional parameter specifies how many occurrences to replace".center(100, "-"))
 text_any: str = "Texto que esta estatico una vez"
-result_text: str = text_any.replace('estatico', 'remplazado')
-print(f"{text_any} --> {result_text}")
+result_text_three: str = text_any.replace('estatico', 'remplazado')
+print(f"{text_any} --> {result_text_three}")
 
 print(" ")
 print("rfind: Same as find but searches for last occurrence of string".center(100, "-"))
@@ -273,7 +273,7 @@ print(f"{text_any} --> {r_partition}")
 print(" ")
 print("rsplit: Same as split but starts from the right".center(100, "-"))
 text_any: str = "One for you and one for me"
-result_text = text_any.rsplit('for')
+result_text: list[str] = text_any.rsplit('for')
 print(f"{text_any} --> {result_text}")
 
 print(" ")
