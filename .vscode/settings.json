@@ -1,6 +1,8 @@
 {
-    "python.analysis.typeCheckingMode": "basic",
-    "python.analysis.extraPaths": [
-        "./ejercicios_varios/descarga_youtube"
-    ]
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.extraPaths": ["./ejercicios_varios/descarga_youtube"],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "python.formatting.provider": "none"
 }
