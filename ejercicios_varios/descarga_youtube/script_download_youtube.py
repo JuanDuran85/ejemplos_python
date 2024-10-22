@@ -2,7 +2,6 @@ from pytubefix import YouTube
 from pytubefix.cli import on_progress
 
 CONT = 0
-VALOR_INICIO = 0
 
 
 def complete_function(stream_in, path):
@@ -16,7 +15,7 @@ def complete_function(stream_in, path):
     print("")
     print("-------------------------------------")
     print(f"Total del Tamaño del video descargado: {valor:.2f} MB")
-    print(f"Ubicacion: {path}")
+    print(f"Ubicación: {path}")
     print("Fin de la descarga")
 
 
@@ -24,7 +23,7 @@ URL = input("Introduce el link de youtube: ")
 vide_yt = YouTube(URL, on_progress_callback=on_progress,  # type: ignore
                   on_complete_callback=complete_function)
 print(vide_yt.title)
-print(f"Titulo del video: {vide_yt.title}")
+print(f"Título del video: {vide_yt.title}")
 print("Descargando video...")
 stream = vide_yt.streams.get_highest_resolution()
 # type: ignore

@@ -5,6 +5,19 @@ VALOR_INICIO = 0
 
 
 def progress_function(_, file_handle, bytes_remaining):
+    """Callback function to track the progress of a YouTube video download.
+
+    This function is a callback for the `on_progress` argument of the YouTube
+    constructor. It prints the current size of the video being downloaded and
+    the percentage of the video that has been downloaded.
+
+    Parameters:
+        _ (str): A string indicating the stream being downloaded. This is
+            ignored.
+        file_handle (TextIOWrapper): A file handle for the output file. This is
+            ignored.
+        bytes_remaining (int): The number of bytes remaining to be downloaded.
+    """
     global CONT
     global VALOR_INICIO
     global stream
@@ -18,6 +31,12 @@ def progress_function(_, file_handle, bytes_remaining):
 
 
 def complete_function(stream, path):
+    """_summary_
+
+    Args:
+        stream (_type_): _description_
+        path (_type_): _description_
+    """
     valor = (stream.filesize)/1e6
     print(f"Total del Tamaño del video descargado: {valor:.2f} MB")
     print(f"Ubicacion: {path}")
