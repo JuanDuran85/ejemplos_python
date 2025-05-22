@@ -28,6 +28,8 @@ print(fecha_hora.hour)
 print(fecha_hora.minute)
 # segundos
 print(fecha_hora.second)
+# day of week
+print(fecha_hora.weekday())
 
 # -----------------------------------------------------------------------------------------------
 now: datetime = datetime.datetime.now()

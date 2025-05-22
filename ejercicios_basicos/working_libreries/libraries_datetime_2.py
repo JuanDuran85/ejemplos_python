@@ -1,9 +1,16 @@
+"""_summary_
 
+"""
 import datetime
 
-full_date_hour: datetime = datetime.datetime.now() - datetime.timedelta(  # type: ignore
-        days=14
-)  # type: ignore
-only_date_pass: str = f"{full_date_hour.strftime('%Y-%m-%d')}"  # type: ignore
+full_date_hour: datetime.datetime = datetime.datetime.now() - \
+    datetime.timedelta(days=14)
+only_date_pass: str = f"{full_date_hour.strftime('%Y-%m-%d')}"
 
-print(f" Date to delete: {only_date_pass}") 
+print(f" Date to delete: {only_date_pass}")
+
+print("--------------------------------------------------------------")
+print("Using datetime library with timedelta and datetime.now")
+print(datetime.datetime.now().date() + datetime.timedelta(days=3))
+print(datetime.date(2025, 5, 23))
+print(datetime.date(2025, 5, 23) + datetime.timedelta(days=3))
