@@ -3,6 +3,14 @@
     
     You can use the dataclasses library to implement type anotations
 
+    eq=True: Automatically generates an __eq__ method to compare instances of this class for equality.
+
+    frozen=True: Disables the possibility of modifying the attributes of instances of this class. 
+    That is, it makes the instances immutable (they cannot be modified after creation), similar to a tuple.
+
+    order=True: Automatically generates an __lt__ method to compare instances of this class by order.
+
+
 """
 
 
