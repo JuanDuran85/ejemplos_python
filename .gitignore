@@ -5,6 +5,7 @@ __pycache__/
 
 entorno-virtual
 virtual_10
+.vscode
 
 # C extensions
 *.so

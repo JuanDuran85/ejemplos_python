@@ -4,51 +4,46 @@ Tips and tricks for using string, conditions, loop, others.
 
 All the examples are in the same file, but they are separated with a mark
 
-All examples are from the internet with somes variations, so they are not 100% correct. Thanks to the authors.
+All examples are from the internet with some variations, so they are not 100% correct. Thanks to the authors.
+
+Using string methods
 
 """
 
-"""----------------------------------------------------------------------------------------"""
-"""----------------------------------------------------------------------------------------"""
-''' Using string methods'''
-
 from typing import Literal
-
-
 print("\n Using count \n")
-letters_any = "aaabbbcccdddeeffffff"
-print(f"{letters_any = }")
+LETTERS_ANY = "aaabbbcccdddeeffffff"
+print(f"{LETTERS_ANY=}")
 
 # if you need to count any letter in a string you can use count method
-print(f"{letters_any.count('a') = }")
-print(f"{letters_any.count('f') = }")
-print(f"{letters_any.count('d') = }")
+print(f"{LETTERS_ANY.count('a')=}")
+print(f"{LETTERS_ANY.count('f')=}")
+print(f"{LETTERS_ANY.count('d')=}")
 
 # if you want to print a list in one row, use 'join' and list comprehension
-row_list: list = ["1","elio","developer","python"]
-print(f"{ ','.join(str(x) for x in row_list)  = }")
+row_list: list = ["1", "elio", "developer", "python"]
+print(f"{','.join(str(x) for x in row_list)=}")
 # if you want to print a list in one row, use print with * and sep arguments
 print(*row_list, sep=',')
 
 # If you need to print a string n times
-print("This is a separator","-"*50)
+print("This is a separator", "-"*50)
 
-"""----------------------------------------------------------------------------------------"""
-"""----------------------------------------------------------------------------------------"""
-''' Diferent ways to test multiple flags at once in Python'''
+print("----------------------------------------------------------------------------------------")
+print("Different ways to test multiple flags at once in Python")
 
-print("\n Diferent ways to test multiple flags at once\n")
+print("\n Different ways to test multiple flags at once\n")
 
 x, y, z = 0, 0, 0
 
-if x==1 or y==1 or z==1:
+if x == 1 or y == 1 or z == 1:
     print("True")
 else:
     print("False")
-    
-if 1 in (x,y,z):
+
+if 1 in (x, y, z):
     print("True")
-else: 
+else:
     print("False")
 
 # These only test for truthiness, not for equality.
@@ -56,31 +51,51 @@ if x or y or z:
     print("True")
 else:
     print("False")
-    
-if any((x,y,z)):
+
+if any((x, y, z)):
     print("True")
 else:
     print("False")
-    
+
 # use the all function if you need to test true on all elements of a tuple
-if all((x,y,z)):
+if all((x, y, z)):
     print("All True")
-    
+
 # Check if these strings only contain alphabetic characters
 print("\n Check if these strings only contain alphabetic characters\n")
 print(all(char.isalnum() for char in "textovario"))
 print(all(char.isalnum() for char in "texto vario con espacio"))
 
 # if you want to return a binary string "Unicode code point for all characters strings"
-def make_bitseq(character_in: str) -> str:
+
+
+def make_bit_seq(character_in: str) -> str:
+    """
+    Converts a string of ASCII characters into a binary string representation.
+
+    Each character in the input string is converted to its Unicode code point,
+    and then formatted as an 8-bit binary number. The function raises a ValueError
+    if the input string contains non-ASCII characters.
+
+    Args:
+        character_in (str): A string of ASCII characters to be converted.
+
+    Returns:
+        str: A binary string representation of the input characters.
+
+    Raises:
+        ValueError: If the input string contains non-ASCII characters.
+    """
+
     if not character_in.isascii():
         raise ValueError("Only ascii characters are allowed")
     return "".join(f"{ord(i):08b}" for i in character_in)
 
-print(make_bitseq("bits"))
-print(make_bitseq("TRICKS"))
-print(make_bitseq("lower caps"))
-print(make_bitseq("$25.43"))
+
+print(make_bit_seq("bits"))
+print(make_bit_seq("TRICKS"))
+print(make_bit_seq("lower caps"))
+print(make_bit_seq("$25.43"))
 
 # if you need to get the position of a character in a string you can use for loop to get it in three different options
 i: int = 0
@@ -90,24 +105,24 @@ s: str = 'abc'
 for c in s:
     print(f"{i}: {c}")
     i += 1
-    
+
 # option 2
-for i,c in enumerate(s):
+for i, c in enumerate(s):
     print(f"{i}: {c}")
 
-i = 0    
+i = 0
 # option 3
-for key,value in enumerate(s, start=1):
+for key, value in enumerate(s, start=1):
     print(f"{key}: {value}")
-    
+
 # You can use zfill to add zeros to the left of a string
-print(f"{'293'.zfill(10) = }")
+print(f"{'293'.zfill(10)=}")
 
 # use rjust to add a character to the right of a string. Return a right-justified string of length width.
-print(f"{'Juan'.rjust(10,'*') = }")
+print(f"{'Juan'.rjust(10, '*')=}")
 
 # Use sep in the print function to separate the string
-print("123","345","654", sep="-")
+print("123", "345", "654", sep="-")
 
 # -------------------------------------------------------------------------------
 # Finding Substring in List of Strings
@@ -119,7 +134,9 @@ records: list = [
     "Steve Jobs, Apple"
 ]
 
-# If we need to find substrings inside a list of strings (can also be applied on larger strings rather than just lists), we can use the find() method which returns -1 if the value is not present in the string, or returns the first occurrence. 
+# If we need to find substrings inside a list of strings (can also be applied on larger strings rather than just lists),
+# we can use the find() method which returns -1 if the value is not present in the string,
+# or returns the first occurrence.
 
 name: str = "Vani"
 for record in records:
@@ -136,12 +153,14 @@ for record in records:
 # --------------------------------------------------------------------------------
 # FizzBuzz One-Liner in Python: The FizzBuzz challenge is a classic challenge that's used as an interview screening device for computer programmers. You can solve the FizzBuzz challenge in just one line of code
 
-[print("Fizz"*(i%3==0)+"Buzz"*(i%5==0) or i) for i in range(1,20)]
+[print("Fizz"*(i % 3 == 0)+"Buzz"*(i % 5 == 0) or i) for i in range(1, 20)]
 
 # --------------------------------------------------------------------------------------
 # Conditional Expressions: The conditional expression’s value is set to expr2 if the outcome is true. The conditional expression’s value is set to expr3 if the outcome is false.
 
 # Instead or this... for example:
+
+
 def is_even(num: int) -> None:
     if num % 2 == 0:
         print(f"{num} is even")
@@ -149,13 +168,18 @@ def is_even(num: int) -> None:
         print(f"{num} is odd")
 
 # use this way
+
+
 def is_even_one(num: int) -> None:
     print(f"{num} is even" if num % 2 == 0 else f"{num} is odd")
 
 # or use this way
+
+
 def is_even_two(num: int) -> None:
     print(f"{num} is even") if num % 2 == 0 else print(f"{num} is odd")
-    
+
+
 is_even(5)
 is_even_two(5)
 is_even_two(5)
@@ -168,7 +192,7 @@ if 25 < num < 150:
 
 # is you want to initialize a variable with a value in one line, you can use the following way:
 initial_num: int = 100
-final_num: Literal[21, 42] = 21 if initial_num<2 else 42
+final_num: Literal[21, 42] = 21 if initial_num < 2 else 42
 print(f"{final_num}")
 
 # elif in one line
@@ -179,27 +203,29 @@ print("hello") if final_num > 42 else print("no")
 
 # While Loop with if else
 count_number: int = 0
-while count_number<10: count_number+=1; print(count_number) if count_number!=5 else print("-Five-")
+while count_number < 10:
+    count_number += 1
+    print(count_number) if count_number != 5 else print("-Five-")
 
 
 # Nested For Loops in one line
 iter1: list = [1, 2, 3, 4]
 iter2: list = ['a', 'b', 'c']
-[print(x,y) for x in iter1 for y in iter2]
+[print(x, y) for x in iter1 for y in iter2]
 
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 # Swapping Two Variables
 a: int = 4
 b: int = -23
-a,b = b,a
+a, b = b, a
 print(f"{a} {b}")
 
 # Multiple Variable Assignments
-a, b, c = 3,5,'Python'
+a, b, c = 3, 5, 'Python'
 print(f"{a} {b} {c}")
 
 # you cab use * to assign variables from a list
-a, b, *c = [1,2,3,4,5,6,7]
+a, b, *c = [1, 2, 3, 4, 5, 6, 7]
 print(f"{a} {b} {c}")
 
 
@@ -211,10 +237,13 @@ print(f"{result_text[2]}" if len(result_text) > 1 else None)
 
 # ------------------------------------------------------------------------------
 # using all to Return True if bool(x) is True for all values x in the iterable. If the iterable is empty, return True.
-def contains_only_vowels(word:str) -> bool:
+
+
+def contains_only_vowels(word: str) -> bool:
     word = word.lower()
     vowels = 'aeiou'
     return all(c in vowels for c in word)
+
 
 print(contains_only_vowels('Python'))
 print(contains_only_vowels('Juan'))
@@ -245,6 +274,4 @@ n = 100000000000
 print(f"{n:,}")
 
 # -----------------------------------------------------------------------------------
-# 
-
-
+#
