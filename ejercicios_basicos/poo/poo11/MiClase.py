@@ -7,7 +7,7 @@ class MiClase:
     def __init__(self, variable_instancia):
         self.variable_instancia = variable_instancia
 
-    # metodos estaticos. Se asocia con la clase y no con los objetos. No accede a las varibales de la instancia 
+    # metodos estaticos. Se asocia con la clase y no con los objetos. No accede a las varibales de la instancia
     @staticmethod
     def metodo_estatico():
         print(f"Accediendo a varibale de clase desde el metodo estatico: {MiClase.variable_clase}")
@@ -27,6 +27,7 @@ class MiClase:
         print(f"Accediendo a varibale de clase desde el metodo de instancia: {self.variable_clase}")
         print(f"Accediendo al metodo de clase desde el metodo de instancia: {self.metodo_clase}")
         print(f"Accediendo al metodo estatico desde el metodo de instancia: {self.metodo_estatico}")
+
 
 # para acceder a la variable de clase, no es necesario crear una instancia de la clase
 print(MiClase.variable_clase)
@@ -58,11 +59,11 @@ MiClase.metodo_clase()
 # modificando el valor de la variable de clase desde una instancia
 miClase2.variable_clase = "variable de clase modificada desde instancia"
 
-print(f"{miClase2.variable_clase = }")
-print(f"{MiClase.variable_clase = }")
+print(f"{miClase2.variable_clase=}")
+print(f"{MiClase.variable_clase=}")
 
 # para imprimir la variable de clase desde la instancia, se debe utilizar __class__
-print(f"{miClase2.__class__.variable_clase = }")
+print(f"{miClase2.__class__.variable_clase=}")
 
 
 # ----------------------------------------------------------------------------------------
@@ -70,10 +71,11 @@ print(f"{miClase2.__class__.variable_clase = }")
 
 class ContadorObjetoErroneo:
     numero_instancia: int = 0
-    
+
     def __init__(self) -> None:
         # al utilizar el mismo nombre que la variable de clase, se genera el solapamiento de variables al crear las instancias
         self.numero_instancia += 1
+
 
 print("Contador de Instancias errorneo")
 print("Se llama directamente la variable de clase antes de crear una instancia")
@@ -87,15 +89,17 @@ print(ContadorObjetoErroneo().numero_instancia)
 # ----------------------------------------------------------------------------------------
 # contador de instancias con variable de clase correcto
 
+
 class ContadorObjetoCorrecto:
     numero_instancia: int = 0
-    
+
     def __init__(self) -> None:
         # existen dos maneras de acceder a la variable de clase
         # 1. ContadorObjetoCorrecto.numero_instancia
         # 2. self.__class__.numero_instancia
         ContadorObjetoCorrecto.numero_instancia += 1
-        
+
+
 print("\nContador de Instancias correcto")
 print("Se llama directamente la variable de clase antes de crear una instancia")
 print(ContadorObjetoCorrecto.numero_instancia)
@@ -107,14 +111,17 @@ print(ContadorObjetoCorrecto().numero_instancia)
 # ----------------------------------------------------------------------------------------
 # metodos de clase, instancia y static
 print("\n\r\t")
+
+
 class ClasePrincipal:
     """sumary_line: Clase Principal
     Keyword arguments: None
     Return: None
     Description: Static, class and instance methods
     """
-    
+
     ''' este metodo recibe el paremtro de self, ya que es un metodo de instancias y recibe la instancia que se va a ejecutar en el momento que se llama el metodo '''
+
     def metodo_instancia(self) -> tuple:
         # retornamos una tupla de valores
         return "Metodo de Instancia Ejecutado... ", self, self.__class__.__name__
@@ -123,14 +130,12 @@ class ClasePrincipal:
     @classmethod
     def metodo_de_clase(cls) -> tuple:
         return "Metodo de clase Ejecutado... ", cls, cls.__name__
-    
-    
+
     '''  Metodo estatico, se usa el decorador de staticmethod, no reciben ningun parametro y no tienen acceso ni a la informacion de la instancia ni de la clase'''
     @staticmethod
     def metodo_estatico() -> str:
         return "Metodo Estatico Ejecutado... "
-    
-    
+
 
 # Caso 1: Ejecutamos el metodo de instancia de manera implicita como normalmente se hace
 objeto_uno: ClasePrincipal = ClasePrincipal()
