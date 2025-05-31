@@ -66,7 +66,7 @@ print(f"{text_any} --> {new_text}")
 print(" ")
 print("center: Returns centred string using optional value as fill character. Space (" ") is default".center(100, "-"))
 name: str = "Vani"
-new_name: str = name.center(9,"_")
+new_name: str = name.center(9, "_")
 print(f"{name} --> {new_name}")
 
 print(" ")
@@ -78,7 +78,7 @@ print(f"{text_any} --> e - {e_count}")
 print(" ")
 print("encode: Return encoded version of string. Optional parameter encoding & errors specify encoding to use and error method".center(100, "-"))
 text_any: str = "Mr Stær"
-new_text = text_any.encode('ascii', 'ignore') # type: ignore
+new_text = text_any.encode('ascii', 'ignore')  # type: ignore
 print(f"{text_any} --> {new_text}")
 
 print(" ")
@@ -103,9 +103,9 @@ print(f"{text_new} --> {result_search}")
 print(" ")
 print("format: Format values in string".center(100, "-"))
 text_new: str = "Python {} The {}".format("is", "best")
-print(f"{text_new = }")
+print(f"{text_new=}")
 text_new: str = "Python {1} The {0}".format("best", "is")
-print(f"{text_new = }")
+print(f"{text_new=}")
 
 
 print(" ")
@@ -115,7 +115,7 @@ values_to_use: dict = {
     'b': 'like'
 }
 text_new: str = "I {b} {a}".format_map(values_to_use)
-print(f"{text_new = }")
+print(f"{text_new=}")
 
 print(" ")
 print("index: Return position of value if found in string.".center(100, "-"))
@@ -190,7 +190,7 @@ print(" ")
 print("isupper: Return true if all characters are upper case".center(100, "-"))
 text_any: str = "TODO EL TEXTO EN MAYUSCULAS"
 is_upper: bool = text_any.isupper()
-print(f"{text_any} --> {is_upper}") 
+print(f"{text_any} --> {is_upper}")
 
 print(" ")
 print("istitle: Return true if string follows rules of a title".center(100, "-"))
@@ -228,7 +228,7 @@ print(f"{text_any} --> {result_text__five}")
 print(" ")
 print("maketrans: Return translation table that can be used with translate()".center(100, "-"))
 text_any: str = "Harry Cotter"
-result_change:dict = text_any.maketrans("C", "P")
+result_change: dict = text_any.maketrans("C", "P")
 print(f"{text_any} --> {text_any.translate(result_change)}")
 
 print(" ")
@@ -248,7 +248,7 @@ print(f"{text_any} --> {result_text_three}")
 print(" ")
 print("rfind: Same as find but searches for last occurrence of string".center(100, "-"))
 text_any: str = "Texto que se usa para busqueda con rfind"
-result_search: int = text_any.rfind('busqueda')
+result_search: int = text_any.rfind('xxx')
 print(f"{text_any} --> {result_search}")
 
 print(" ")
@@ -286,7 +286,7 @@ print(" ")
 print("split: Split string at whitespace and return list".center(100, "-"))
 print("2 optional params allow you to specify separator and how many splits to do.".center(100, "-"))
 text_any: str = "No! No! No! No! No! No! No!"
-result_split: list = text_any.split('! ',3)
+result_split: list = text_any.split('! ', 3)
 print(f"{text_any} --> {result_split}")
 
 print(" ")
@@ -350,5 +350,3 @@ print("removesuffix: Return string without specified suffix. Only Python 3.9+.".
 name_text: str = "Aeron"
 new_name = name_text.removesuffix("on")
 print(f"{name_text} --> {new_name}")
-
-
