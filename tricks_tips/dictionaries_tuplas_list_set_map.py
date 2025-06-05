@@ -529,3 +529,16 @@ print(f"{list_a=}")
 print(f"{list_b=}")
 merge_dict_final: dict = dict(zip(list_a, list_b))
 print(f"{merge_dict_final=}")
+
+
+print("------------------------------------------------------------------------")
+print("------------------------------------------------------------------------")
+print("Deleting Multiple Elements from a List")
+print("Using del, is a keyword used to remove values from a list.")
+
+list_number_ii: list[int] = [3, 5, 6, 3, 2, 7, 8]
+del list_number_ii[1::2]
+print(f"{list_number_ii=}")
+
+print("------------------------------------------------------------------------")
+print("------------------------------------------------------------------------")
