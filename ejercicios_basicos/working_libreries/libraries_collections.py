@@ -23,14 +23,19 @@ dict class. It overrides one method and adds one writable instance variable.
 
 from collections import OrderedDict, namedtuple, Counter, ChainMap, defaultdict
 
-Car = namedtuple('Car', 'mileage color mark')
+LINES = "---------------------------------------------------------------------\r\n"
+
+print(LINES)
+print(LINES)
+print("Using namedtuple")
+Car: type = namedtuple('Car', 'mileage color mark')
 
 my_car = Car(80, 'Red', 'Audi')
 print(f"{my_car=}")
 print(f"{my_car.color=} , {my_car.mark=}")
 
 Person = namedtuple('Person', ['name', 'last_name', 'age'])
-person_one: Person = Person('Maria', 'Petronila', '24')
+person_one: Person = Person('Maria', 'Perez', '24')
 print(f"{person_one=}")
 print(f"{person_one[0]=}")
 print(f"{person_one[1]=}")
@@ -46,14 +51,31 @@ print(*person_one)
 
 
 class SubPerson(Person):
+    """ 
+    Subclass of Person that adds a method to return the full name in uppercase.
+
+    Methods
+    -------
+    upper_case() -> str
+    Returns the name and last name in uppercase letters.
+    """
+
     def upper_case(self) -> str:
+        """
+        Returns the name and last name in uppercase letters.
+
+        Returns
+        -------
+        str
+            The name and last name in uppercase letters.
+        """
         return f"{self.name.upper()} {self.last_name.upper()}"
 
 
 person_two: SubPerson = SubPerson("Juan", "Perez", "25")
 print(person_two.upper_case())
 
-# other way to create extendsion of namedtuple classes
+# other way to create extension of namedtuple classes
 SubPersonThree = namedtuple('SubPersonThree', Person._fields + ('email',))
 person_three: SubPersonThree = SubPersonThree("Li", "Xi", "45", "lixi@email.com")
 print(f"{person_three}")
@@ -64,9 +86,13 @@ print(f"{dict_person_three=}")
 
 # -------------------------------------------------------------------------------------
 
+print(LINES)
+print(LINES)
+print("Using Counter")
+
 # Using Counter
 
-count_in_string: Counter = Counter('paralelepipedo')
+count_in_string: Counter = Counter('paraparaparadise')
 print(f"{count_in_string=}")
 print(f"{count_in_string['p']=}")
 print(f"{sorted(count_in_string.elements())=}")
@@ -80,13 +106,17 @@ print(f"{count_in_dict['red']=}")
 count_in_keyword_args: Counter = Counter(a=4, b=2, c=0, d=-2)
 print(f"{sorted(count_in_keyword_args.elements())=}")
 
-conteador_numeros_lista: Counter = Counter([1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 5, 5, 5, 6, 7, 8, 9, 9, 9])
-print(f"{conteador_numeros_lista=}")
-print(f"{conteador_numeros_lista.most_common(1)=}")
-print(f"{conteador_numeros_lista.most_common(2)=}")
+list_number_content: Counter = Counter([1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 5, 5, 5, 6, 7, 8, 9, 9, 9])
+print(f"{list_number_content=}")
+print(f"{list_number_content.most_common(1)=}")
+print(f"{list_number_content.most_common(2)=}")
 
 # -------------------------------------------------------------------------------------
-# Using ChainMap: Using ChainMap spares us from using a lot of conditional statements to check if a key is present in each of the dictionaries.
+print(LINES)
+print(LINES)
+print("Using ChainMap")
+# Using ChainMap: Using ChainMap spares us from using a lot of conditional statements
+# to check if a key is present in each of the dictionaries.
 
 car_parts: dict = {
     'hood': 500,
@@ -111,13 +141,16 @@ print(f"{car_pricing=}")
 print(f"{car_pricing['A/C']=}")
 
 # -------------------------------------------------------------------------------------
+print(LINES)
+print(LINES)
+print("Using defaultdict")
 # Using defaultdict
 
 data: str = """Tim,ID
 Sara,BR
 Thelma,CN
 Chris,RU
-Fina,ID
+Finn,ID
 Juliana,SE
 Roberto,CN
 Mario,PL
@@ -130,8 +163,24 @@ for line in data.splitlines():
 print(f"{countries=}")
 print(f"{countries['CN']=}")
 
+# Using defaultdict from collections eliminates the need for explicit key-checking,
+# making the code cleaner and more efficient.
+
+shopping_cart = defaultdict(list)
+shopping_cart['fruits'].append("pear")
+shopping_cart['fruits'].append("banana")
+print(f"{shopping_cart=}")
+print(f"{shopping_cart['fruits']=}")
+
+# Using defaultdict you don’t have to check whether the key corresponding to your list already exists,
+# or otherwise create the list from scratch
+
 # -------------------------------------------------------------------------------------
-# Using OrderedDict: OrderedDict is commonly used whenever we want to keep the order in which the items are inserted into our dictionary.
+print(LINES)
+print(LINES)
+print("Using OrderedDict")
+# Using OrderedDict: OrderedDict is commonly used whenever we want to keep the order
+# in which the items are inserted into our dictionary.
 
 ordered_dict: OrderedDict = OrderedDict()
 ordered_dict['red'] = 0
@@ -152,6 +201,9 @@ print(f"{pop_item_dict=}")
 print(f"{ordered_dict=}")
 
 # -------------------------------------------------------------------------------------
+print(LINES)
+print(LINES)
+print("Using defaultdict with lambda function")
 # Using defaultdict with lambda function to generate a default value
 
 default_dict: defaultdict = defaultdict(lambda: 'Error Key - Not Found')
@@ -164,6 +216,7 @@ print(default_dict['a'])
 print(default_dict['z'])
 
 # -------------------------------------------------------------------------------------
+
 # Using defaultdict with lambda function to generate a default value in a list
 
 default_dict_list: defaultdict = defaultdict(list)
@@ -176,6 +229,10 @@ print(default_dict_list.keys())
 print(default_dict_list.values())
 
 # -------------------------------------------------------------------------------------
+print(LINES)
+print(LINES)
+print("Using ChainMap to search data in multiple dictionaries as a single dictionary")
+
 # Searching data in multiple dictionaries as a single dictionary
 
 dict_one: dict = {
@@ -190,17 +247,21 @@ dict_two: dict = {
     'six': 6
 }
 
-combinational_dict: ChainMap = ChainMap(dict_one, dict_two)
-print(f"{combinational_dict}")
+combination_dict: ChainMap = ChainMap(dict_one, dict_two)
+print(f"{combination_dict}")
 
 # search starts from left to right
-print(f"{combinational_dict['one']=}")
+print(f"{combination_dict['one']=}")
 
+
+print(LINES)
+print(LINES)
+print("Using Counter")
 # -------------------------------------------------------------------------------------
 # You can use Counter methods to create a dict with the counts of numbers
 # -------------------------------------------------------------------------------------
 list_num: list[int] = [5, 6, 2, 5, 6, 7, 6, 7, 2, 1, 2, 7, 1, 6, 5]
-cuenta: Counter[int] = Counter(list_num)
-print(dict(cuenta))
+count_numbers: Counter[int] = Counter(list_num)
+print(dict(count_numbers))
 # -------------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------------

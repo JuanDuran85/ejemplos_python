@@ -1,3 +1,10 @@
+# !/usr/bin/python3
+# flake8: noqa: E501
+# pylint: disable=line-too-long
+# pylint: disable=C0103
+# working with while loop
+
+
 """[summary]
 
 Tips and tricks for using string, conditions, loop, others.
@@ -11,6 +18,11 @@ Using string methods
 """
 
 from typing import Literal
+
+
+LINES = "---------------------------------------------------------------------\r"
+
+
 print("\n Using count \n")
 LETTERS_ANY = "aaabbbcccdddeeffffff"
 print(f"{LETTERS_ANY=}")
@@ -29,7 +41,7 @@ print(*row_list, sep=',')
 # If you need to print a string n times
 print("This is a separator", "-"*50)
 
-print("----------------------------------------------------------------------------------------")
+print(LINES)
 print("Different ways to test multiple flags at once in Python")
 
 print("\n Different ways to test multiple flags at once\n")
@@ -64,7 +76,7 @@ if all((x, y, z)):
 # Check if these strings only contain alphabetic characters
 print("\n Check if these strings only contain alphabetic characters\n")
 print(all(char.isalnum() for char in "textovario"))
-print(all(char.isalnum() for char in "texto vario con espacio"))
+print(all(char.isalnum() for char in "spaces are not allowed"))
 
 # if you want to return a binary string "Unicode code point for all characters strings"
 
@@ -162,6 +174,15 @@ for record in records:
 
 
 def is_even(num: int) -> None:
+    """
+    Checks if a number is even or odd.
+
+    Args:
+        num (int): The number to be checked.
+
+    Returns:
+        None
+    """
     if num % 2 == 0:
         print(f"{num} is even")
     else:
@@ -185,7 +206,7 @@ is_even_two(5)
 is_even_two(5)
 
 # ----------------------------------------------------------------------
-# Comparison Operator: you can use one line comparation withy logical operator. For example:
+# Comparison Operator: you can use one line comparator withy logical operator. For example:
 num: int = 100
 if 25 < num < 150:
     print(f"{num} is between 25 and 150")
@@ -240,6 +261,19 @@ print(f"{result_text[2]}" if len(result_text) > 1 else None)
 
 
 def contains_only_vowels(word: str) -> bool:
+    """
+    Checks if a given word contains only vowel characters.
+
+    The function converts the input word to lowercase and verifies that
+    each character in the word is a vowel ('a', 'e', 'i', 'o', 'u').
+
+    Args:
+        word (str): The word to be checked.
+
+    Returns:
+        bool: True if the word contains only vowels, False otherwise.
+    """
+
     word = word.lower()
     vowels = 'aeiou'
     return all(c in vowels for c in word)
@@ -251,12 +285,12 @@ print(contains_only_vowels('AEI'))
 
 # -----------------------------------------------------------------------------------
 # if you want to split a string and join it back
-my_string: str = "Esto es una cadena de texto"
-print(f"Cadena de texto original sin modificar: {my_string}")
+my_string: str = "This is a tex string"
+print(f"String original text without modification: {my_string}")
 my_string_list: list = my_string.split()
 my_string_new_list: list = [text.title() for text in my_string_list]
 final_my_string: str = " ".join(my_string_new_list)
-print(f"Cadena de texto modificada: {final_my_string}")
+print(f"Modified text from string: {final_my_string}")
 
 # -----------------------------------------------------------------------------------
 # two different ways to print a list in one line
@@ -275,3 +309,20 @@ print(f"{n:,}")
 
 # -----------------------------------------------------------------------------------
 #
+
+print(LINES)
+print(LINES)
+
+print("Using the Walrus Operator for Smarter Code")
+# The Problem
+# You need to use a variable inside a conditional only once, but you haven’t quite defined it yet!
+# The walrus operator (:=) allows us to compute and check a value in a single step.
+
+calories: list[int] = [464, 678, 323, 221, 876, 174, 265, 985]
+
+if (total_calories := sum(calories)) > 2000:
+    avg_calories = total_calories / len(calories)
+    print(f"Average calories per day: {avg_calories}")
+
+print(LINES)
+print(LINES)

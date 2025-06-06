@@ -8,6 +8,7 @@ All examples are from the internet with some variations,
 so they are not 100% correct. Thanks to the authors.
 
 """
+LINES = "---------------------------------------------------------------------\r\n"
 
 print("Using lists - Can be: ordered, mutable, duplicates")
 
@@ -110,8 +111,8 @@ print(f"{list_values_a=}")
 print(f"Most frequent value: {max(set(list_values_a), key=list_values_a.count)}")
 
 
-print("------------------------------------------------------------------------")
-print("------------------------------------------------------------------------")
+print(LINES)
+print(LINES)
 print(" Using tuples - Can be: ordered, immutable, duplicates")
 print("\n Using tuples \n")
 players = ("Messi", "Ronaldo", "Neymar", "Suarez", "Pele", "Maradona", "Pirlo", "Ribery", "Bale")
@@ -120,8 +121,8 @@ print(f"{players=}")
 # If you need yo get the first index of a given value inside a tuple, you can use the index method.
 print(f"{players.index('Pele')=}")
 
-print("------------------------------------------------------------------------")
-print("------------------------------------------------------------------------")
+print(LINES)
+print(LINES)
 print(" Using dictionaries - Can be: ordered, mutable, no duplicate keys")
 print("\n Using dictionaries \n")
 
@@ -324,8 +325,8 @@ dict_result_squere: dict = {x: x*x for x in range(10)}
 print(f"{dict_result_squere=}")
 
 
-print("------------------------------------------------------------------------")
-print("------------------------------------------------------------------------")
+print(LINES)
+print(LINES)
 print(" Using set - Can be: unordered, mutable, no duplicates ")
 print("\n Using set \n")
 people_a = {'Shanna', 'Cara', 'Bessie', 'Antonio', 'Jordy'}
@@ -342,8 +343,8 @@ print(f"{people_a.intersection(people_b)=}")
 # use method .union to get a new set containing all the elements from both sets
 print(f"{people_a.union(people_b)=}")
 
-print("------------------------------------------------------------------------")
-print("------------------------------------------------------------------------")
+print(LINES)
+print(LINES)
 print("\n Using map \n")
 # Mapping Lists or TypeCasting Whole List
 
@@ -353,8 +354,8 @@ list_number_float: list = list(map(float, ['1', '2', '3']))
 print(f"{list_number_float=}")
 
 
-print("------------------------------------------------------------------------")
-print("------------------------------------------------------------------------")
+print(LINES)
+print(LINES)
 print("\n Using zip \n")
 list_numbers = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 print(f"{list_numbers=}")
@@ -395,8 +396,8 @@ print(f"{dict_result=}")
 result_list: list = list(zip(*dict_result.items()))
 print(f"{result_list=}")
 
-print("------------------------------------------------------------------------")
-print("------------------------------------------------------------------------")
+print(LINES)
+print(LINES)
 print("\n Convention of lists, tuples, dictionaries, set, map, zip \n")
 print("\n Convention of lists, tuples, dictionaries, set, map \n")
 
@@ -531,8 +532,8 @@ merge_dict_final: dict = dict(zip(list_a, list_b))
 print(f"{merge_dict_final=}")
 
 
-print("------------------------------------------------------------------------")
-print("------------------------------------------------------------------------")
+print(LINES)
+print(LINES)
 print("Deleting Multiple Elements from a List")
 print("Using del, is a keyword used to remove values from a list.")
 
@@ -540,5 +541,17 @@ list_number_ii: list[int] = [3, 5, 6, 3, 2, 7, 8]
 del list_number_ii[1::2]
 print(f"{list_number_ii=}")
 
-print("------------------------------------------------------------------------")
-print("------------------------------------------------------------------------")
+print(LINES)
+print(LINES)
+
+print(LINES)
+print(LINES)
+print("Deleting Multiple Elements from a List")
+print("Using del, is a keyword used to remove values from a list.")
+
+list_number_ii: list[int] = [3, 5, 6, 3, 2, 7, 8]
+del list_number_ii[1::2]
+print(f"{list_number_ii=}")
+
+print(LINES)
+print(LINES)
