@@ -1,130 +1,177 @@
-# trabajando con la libreria numpy
+# !/usr/bin/python3
+# flake8: noqa: E501
+# pylint: disable=line-too-long
+# pylint: disable=C0103
+
+"""_summary_
+"""
+
+# working with the numpy library
 
 import numpy as np
 
-some_list = [1,2,3,4,5,6,7,8,9,10]
+LINES = "---------------------------------------------------------------------\r"
+
+some_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(type(some_list))
 
 some_array = np.array(some_list)
 print(type(some_array))
 
-# el metodo cumsum suma y acumula los valores presentes en una lista
-# the cumsum method sums and accumulates the values ​​present in a list
-rest_sum = list(np.cumsum(range(0,10,2)))
-print(f"{rest_sum = }")
+# the cumsum method sums and accumulates the values present in a list
+rest_sum = list(np.cumsum(range(0, 10, 2)))
+print(f"{rest_sum=}")
 
-# Creando un array con ceros
-print(f"{np.zeros(4) = }")
-# creando un array con unos
-print(f"{np.ones(4) = }")
-# creando un array de elementos
-print(f"{np.arange(0,10,2) = }")
-print(f"{np.arange(2,20,3) = }")
-# creando un array a partir de otra
-lista_nuermos_uno: list = [3,56,5,2]
-array_uno: np.ndarray = np.array(lista_nuermos_uno)
-print(f"{array_uno = }")
-# creando un array a partir de dos listas
-lista_nuermos_uno: list = [3,56,5,2]
-lista_nuermos_dos: list = [8,6,3,1]
-lista_doble: tuple= (lista_nuermos_uno, lista_nuermos_dos)
-print(f"{lista_doble = }")
-array_doble: np.ndarray = np.array(lista_doble)
-print(f"{array_doble = }")
-# para mostrar la forma que tiene un array en numpy
-print(f"{array_doble.shape = }")
-# para ver el tipo de dato que tiene el array
-print(f"{array_doble.dtype = }")
+# -----------------------------------------------------------------------------
+print(LINES)
+# Creating an array with zeros
+print(f"{np.zeros(4)=}")
+# creating an array with ones
+print(f"{np.ones(4)=}")
+# creating an array of elements
+print(f"{np.arange(0, 10, 2)=}")
+print(f"{np.arange(2, 20, 3)=}")
+# creating an array from another
+numbers_list_one: list = [3, 56, 5, 2]
+array_one: np.ndarray = np.array(numbers_list_one)
+print(f"{array_one=}")
+# creating an array from two lists
+numbers_list_one: list = [3, 56, 5, 2]
+numbers_list_two: list = [8, 6, 3, 1]
+double_list: tuple = (numbers_list_one, numbers_list_two)
+print(f"{double_list=}")
+array_double: np.ndarray = np.array(double_list)
+print(f"{array_double=}")
+# to show the shape of an array in numpy
+print(f"{array_double.shape=}")
+# to see the data type of the array
+print(f"{array_double.dtype=}")
 
-# operaciones con array en numpy
-array_uno: np.ndarray = np.array([1,2,3,4,5])
-array_dos: np.ndarray = np.array([8,1,3,5,2])
-# suma
-print(f"{array_uno + array_dos = }")
-# resta
-print(f"{array_uno - array_dos = }")  # type: ignore
-# multiplicacion
-print(f"{array_uno * array_dos = }")
+# -----------------------------------------------------------------------------
+print(LINES)
+# operations with arrays in numpy
+array_one: np.ndarray = np.array([1, 2, 3, 4, 5])
+array_five: np.ndarray = np.array([8, 1, 3, 5, 2])
+# sum
+print(f"{array_one + array_five=}")
+# subtraction
+print(f"{array_one - array_five=}")  # type: ignore
+# multiplication
+print(f"{array_one * array_five=}")
 # division
-print(f"{array_uno / array_dos = }")
-# potencia
-print(f"{array_uno ** 2 = }")
+print(f"{array_one / array_five=}")
+# exponentiation
+print(f"{array_one ** 2=}")
 
-#-----------------------------------------------------------------------------
-print("---------------------------------------------------------------------\r\n")
-# indexacion con arrays en numpy
-array: np.ndarray = np.arange(0,11)
-print(f"{array = }")
-# posicion inicial hasta una final
-print(f"{array[2:5] = }")
-# mostrar el array original y completo con :
-print(f"{array[:] = }")
-# creando una copia del array sin problemas de mutacion
-array_copia: np.ndarray = array.copy()
-print(f"{array_copia = }")
-# modificando valores de una array por referencia
-array_copia[:3] = 9
-print(f"{array_copia = }")
+# -----------------------------------------------------------------------------
+print(LINES)
+# indexing with arrays in numpy
+array: np.ndarray = np.arange(0, 11)
+print(f"{array=}")
+# initial position to a final position
+print(f"{array[2:5]=}")
+# show the original and complete array with :
+print(f"{array[:]=}")
+# creating a copy of the array without mutation problems
+array_copy: np.ndarray = array.copy()
+print(f"{array_copy=}")
+# modifying values of an array by reference
+array_copy[:3] = 9
+print(f"{array_copy=}")
 
-#-----------------------------------------------------------------------------
-print("\r\n---------------------------------------------------------------------\r\n")
-# matrices y acceso a sus elementos en numpy
-array_matriz: np.ndarray = np.array([[1,2,3],[4,5,6],[7,8,9]])
-print(f"{array_matriz = }")
-print(f"{array_matriz[0,2] = }")
-# creando una matriz con 3 filas y 5 columnas mediante el metodo reshape
-matriz_uno = np.arange(15).reshape(3,5)
-print(f"{matriz_uno = }")
-# matrices transpuestas
-matriz_traspuesta = matriz_uno.T
-print(f"{matriz_traspuesta = }")
+# -----------------------------------------------------------------------------
+print(LINES)
+# matrices and access to their elements in numpy
+array_matrix: np.ndarray = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(f"{array_matrix=}")
+print(f"{array_matrix[0, 2]=}")
+# creating a matrix with 3 rows and 5 columns using the reshape method
+matrix_one = np.arange(15).reshape(3, 5)
+print(f"{matrix_one=}")
+# transposed matrices
+transposed_matrix = matrix_one.T
+print(f"{transposed_matrix=}")
 
-#-----------------------------------------------------------------------------
-print("\r\n---------------------------------------------------------------------\r\n")
-# entrada y salida de arrays en numpy
-array_uno: np.ndarray = np.arange(6)
-print(f"{array_uno = }")
-# salvando un array en numpy como archivo binario
-np.save("array_uno_salvado", array_uno)
-# cargando un array salvado en numpy
-array_salvado: np.ndarray = np.load("array_uno_salvado.npy")
-print(f"{array_salvado = }")
-# salvando dos arreglos al mismo tiempo como binario
-array_uno: np.ndarray = np.arange(6)
-print(f"{array_uno = }")
-array_dos: np.ndarray = np.arange(5,11)
-print(f"{array_dos = }")
-np.savez("array_dos_salvado", x=array_uno, y=array_dos)
-# recuperando arrays salvados
-savados_dos: np.ndarray = np.load("array_dos_salvado.npz")
-print(f"{savados_dos['x'] = }")
-print(f"{savados_dos['y'] = }")
-# salvando arreglos como ficheros de texto
-np.savetxt("array_savado_texto.txt", array_uno,delimiter=",")
-# recuperando el archivo de texto guardado
-array_texto = np.loadtxt("array_savado_texto.txt", delimiter=",")
-print(f"{array_texto = }")
+# -----------------------------------------------------------------------------
+print(LINES)
+# input and output of arrays in numpy
+array_one: np.ndarray = np.arange(6)
+print(f"{array_one=}")
+# saving an array in numpy as a binary file
+np.save("array_one_saved", array_one)
+# loading a saved array in numpy
+saved_array: np.ndarray = np.load("array_one_saved.npy")
+print(f"{saved_array=}")
+# saving two arrays at the same time as binary
+array_one: np.ndarray = np.arange(6)
+print(f"{array_one=}")
+array_four: np.ndarray = np.arange(5, 11)
+print(f"{array_four=}")
+np.savez("array_four_saved", x=array_one, y=array_four)
+# recovering saved arrays
+saved_two: np.ndarray = np.load("array_four_saved.npz")
+print(f"{saved_two['x']=}")
+print(f"{saved_two['y']=}")
+# saving arrays as text files
+np.savetxt("array_saved_text.txt", array_one, delimiter=",")
+# recovering the saved text file
+array_text = np.loadtxt("array_saved_text.txt", delimiter=",")
+print(f"{array_text=}")
 
-print("--------------------------------------------------------------------")
-# funciones en arrays
-# retornando al raiz cuadrada de cada uno de los elementos de un arreglo
-array_nuevo: np.ndarray = np.arange(5)
-print(f"{array_nuevo = }")
-print(f"{array_nuevo ** 0.5 = }")
-print(f"{np.sqrt(array_nuevo) = }")
+# -----------------------------------------------------------------------------
+print(LINES)
+# functions in arrays
+# returning the square root of each element in an array
+new_array: np.ndarray = np.arange(5)
+print(f"{new_array=}")
+print(f"{new_array ** 0.5=}")
+print(f"{np.sqrt(new_array)=}")
 
-# creando array de forma aleatoria
-array_random: np.ndarray = np.random.rand((5))
-print(f"{array_random = }")
+# -----------------------------------------------------------------------------
+print(LINES)
+# creating an array randomly
+random_array: np.ndarray = np.random.rand((5))
+print(f"{random_array=}")
 
-# se pueden sumar dos arreglos con add de numpy
-array_uno: np.ndarray = np.array([1,2,3,4,5])
-array_dos: np.ndarray = np.array([4,6,1,2,9])
-print(f"{array_uno + array_dos = }")
-suma_arrays: np.ndarray = np.add(array_uno, array_dos)
-print(f"{suma_arrays = }")
-# para mostrar solo los valores maximos entre dos arrays columna a columna
-maximos: np.ndarray = np.maximum(array_uno, array_dos)
-print(f"{maximos = }")
+# -----------------------------------------------------------------------------
+print(LINES)
+# two arrays can be added using numpy's add function
+array_one: np.ndarray = np.array([1, 2, 3, 4, 5])
+array_three: np.ndarray = np.array([4, 6, 1, 2, 9])
+print(f"{array_one + array_three=}")
+sum_arrays: np.ndarray = np.add(array_one, array_three)
+print(f"{sum_arrays=}")
+# to show only the maximum values between two arrays column by column
+max_values: np.ndarray = np.maximum(array_one, array_three)
+print(f"{max_values=}")
 
-#
+# -----------------------------------------------------------------------------
+print(LINES)
+# using zeros, mean and std to normalize an array
+# function that normalizes the data by subtracting the mean and dividing by the std.
+# And by default, it just returns an array with a single zero element
+# You should use is None, which checks for identity rather than value equality.
+
+
+def normalize_fn(data: np.ndarray | None = None):
+    """
+    Normalizes the input data array by subtracting the mean and dividing by the standard deviation.
+
+    Parameters:
+    data (np.ndarray | None): The input data array to be normalized. If None, returns an array with a single zero element.
+
+    Returns:
+    np.ndarray: The normalized data array, or an array with a single zero element if the input is None.
+    """
+
+    if data is None:
+        return np.zeros(1)
+    return (data - np.mean(data) / np.std(data))
+
+
+array_one: np.ndarray = np.array([1, 2, 3, 4, 5])
+array_two: np.ndarray | None = None
+print(f"{normalize_fn(array_one)=}")
+print(f"{normalize_fn(array_two)=}")
+
+print(LINES)

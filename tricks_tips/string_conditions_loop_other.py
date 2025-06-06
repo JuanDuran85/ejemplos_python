@@ -326,3 +326,32 @@ if (total_calories := sum(calories)) > 2000:
 
 print(LINES)
 print(LINES)
+
+
+# -----------------------------------------------------------------------------------
+print("Using Immutable Defaults to Avoid Silent Bugs")
+# -----------------------------------------------------------------------------------
+# use None as the default argument, and initialize a new list inside the function.
+
+
+def record_loss(loss: str, loss_history: list[str] | None = None):
+    """Record a loss in a list of losses.
+
+    Args:
+        loss: The loss to record.
+        loss_history: The list of losses to append to. If None, a new list is created.
+
+    Returns:
+        The list of losses with the new loss appended.
+    """
+    if loss_history is None:
+        loss_history = []
+    loss_history.append(loss)
+    return loss_history
+
+
+print(record_loss("Loss 1"))
+print(record_loss("Loss 2", ["loss 345"]))
+
+print(LINES)
+print(LINES)
