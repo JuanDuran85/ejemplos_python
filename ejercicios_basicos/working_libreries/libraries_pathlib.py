@@ -6,6 +6,9 @@
 """_summary_
 
     Working with Pathlib.
+    Using pathlib makes path manipulation more readable and platform-independent,
+    and it offers a more object-oriented approach.
+    The pathlib expressions are more object-oriented and readable.
 
 """
 
@@ -33,3 +36,26 @@ filepath: Path = base_path / file_name
 print(filepath)
 
 print(LINES)
+print("using Path to get absolute path")
+abs_path: Path = Path(".\\ejemplos_python\\README.md").absolute()
+print(abs_path)
+
+print(LINES)
+print("using Path to get current path")
+current_file_path: Path = Path(__file__).resolve()
+print(current_file_path)
+
+print(LINES)
+print("using Path to get parent path")
+parent_path: Path = Path(__file__).parent
+print(parent_path)
+
+print(LINES)
+print("using Path to get name")
+file_name: str = Path(__file__).name
+print(file_name)
+
+print(LINES)
+print("Join path components and normalize (remove redundant separators)")
+cleaned_path = Path("\\first_path").joinpath("\\second_path", "file.txt").resolve()
+print(cleaned_path)
