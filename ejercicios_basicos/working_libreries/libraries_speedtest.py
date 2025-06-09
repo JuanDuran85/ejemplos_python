@@ -21,7 +21,7 @@ def get_internet_speed() -> dict[str, float | int]:
         upload speed in Mbps, and ping in ms.
     """
 
-    st = speedtest.Speedtest()
+    st: speedtest.Speedtest = speedtest.Speedtest()
     download_fn: float = st.download() / 1024 / 1024
     upload_fn: float = st.upload() / 1024 / 1024
     ping_fn: int = st.results.ping

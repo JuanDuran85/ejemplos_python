@@ -173,7 +173,26 @@ print(f"{shopping_cart=}")
 print(f"{shopping_cart['fruits']=}")
 
 # Using defaultdict you don’t have to check whether the key corresponding to your list already exists,
-# or otherwise create the list from scratch
+# or otherwise create the list from scratch.
+
+# Use "defaultdict" from collections to automatically create entries for missing keys,
+# unlike dict, which throws a KeyError.
+employees: list[tuple[str, str]] = [
+    ('John', 'Manager'),
+    ('Alice', 'Developer'),
+    ('Bob', 'Manager'),
+    ('Eve', 'Developer'),
+    ('Charlie', 'Manager'),
+    ('Dave', 'Developer'),
+    ('Frank', 'Manager'),
+    ('Grace', 'Developer')
+]
+
+hr_groups: defaultdict = defaultdict(list)
+for name, group in employees:
+    hr_groups[group].append(name)
+
+print(dict(hr_groups))
 
 # -------------------------------------------------------------------------------------
 print(LINES)
