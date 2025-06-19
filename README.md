@@ -61,7 +61,7 @@ Ejemplos de programacion con Python
     $ netstat -nlp | grep XXXX
   ```
 
-## Generar documentacion por la terminar
+## Generar documentacion por la terminal
 - Utilizando pydoc
   ```bash
    pydoc ruta_archivo.py
