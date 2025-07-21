@@ -8,11 +8,16 @@
     Using Parsy Library
 
     pip install parsy
+    
+    Parsy lets you compose parsers in a readable, testable way.
+    
+    With this library, you can get the following benefits:
+    - No more cryptic regex maintenance
+    - Composable and testable parsing logic
+    - Can build full interpreters
 """
 
 from parsy import string, regex
-
-# Parsy lets you compose parsers in a readable, testable way.
 
 integer = regex(r'-?\d+').map(int)
 comma = string(',')
