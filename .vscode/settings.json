@@ -34,5 +34,6 @@
     "Usuario",
     "Vani",
     "WRONLY"
-  ]
+  ],
+  "codium.codeCompletion.enable": true
 }
