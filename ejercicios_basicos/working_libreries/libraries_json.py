@@ -1,3 +1,8 @@
+# !/usr/bin/python3
+# flake8: noqa: E501
+# pylint: disable=line-too-long
+# pylint: disable=C0103
+
 """_summary_
 
     Trabajando con la libreria json de python
@@ -17,7 +22,7 @@ tabla_datos = {
 # el metodo dumps convierte un diccionario en una cadena de texto json
 json_string = json.dumps(tabla_datos)
 print(json_string)
-print(type (json_string))
+print(type(json_string))
 
 datos_nuevos = """
 {"abc": "123", "def": "456"}
@@ -41,18 +46,21 @@ with open("/home/juan/Descargas/programacion/ejemplos_python/people.json") as js
         print(keys)
         values = x.values()
         print(values)
-        
+
 # Creating a json file
+
+
 def create_json_file(path: str, obj: dict) -> None:
-    with open(path,'w') as json_file:
-        json.dump(obj,json_file)
-        
+    with open(path, 'w') as json_file:
+        json.dump(obj, json_file)
+
+
 if __name__ == '__main__':
     object_to_file: dict = {
         "menu": {
-            "id":"file",
-            "value":"File",
-            "popup":{
+            "id": "file",
+            "value": "File",
+            "popup": {
                 "menuitem": [
                     {"value": "New", "onclick": "CreateNewDoc()"},
                     {"value": "Open", "onclick": "OpenDoc()"},
@@ -61,4 +69,4 @@ if __name__ == '__main__':
             }
         }
     }
-    create_json_file('test.json',object_to_file)
+    create_json_file('test.json', object_to_file)

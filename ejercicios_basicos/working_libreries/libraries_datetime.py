@@ -4,8 +4,6 @@
 
 """
 
-
-
 import datetime
 
 today: datetime.date = datetime.date.today()

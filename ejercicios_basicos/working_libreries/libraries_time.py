@@ -8,12 +8,12 @@
 
 from time import sleep, time
 
-lista = [3,4,8,2,1,9,7,5,6]
+lista = [3, 4, 8, 2, 1, 9, 7, 5, 6]
 
 for item in lista:
     print(item)
     sleep(1)
-    
+
 # ------------------------------------------------------------------
 print("Calculating Execution Time")
 start_time: float = time()
@@ -29,6 +29,8 @@ print(f"\nTime taken to execute the code is {time_taken} seconds")
 
 # ------------------------------------------------------------------
 # Countdown Timer
+
+
 def countdown(time_number):
     while time_number:
         mins, secs = divmod(time_number, 60)
@@ -37,6 +39,7 @@ def countdown(time_number):
         sleep(1)
         time_number -= 1
     print("Time's up!")
+
 
 time_input = input("Enter the time in seconds: ")
 countdown(int(time_input))
