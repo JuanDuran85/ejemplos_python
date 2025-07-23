@@ -37,7 +37,8 @@
     "textovario",
     "Usuario",
     "Vani",
-    "WRONLY"
+    "WRONLY",
+    "Zboncak"
   ],
   "codium.codeCompletion.enable": true
 }

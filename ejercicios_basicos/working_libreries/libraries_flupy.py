@@ -24,3 +24,22 @@ result = (
 )
 
 print(result)
+
+customers = [
+    {"customer_id": 1, "name": "John Doe", "email": "jdoe@google.com", "signup_year": 2019, "active": True},
+    {"customer_id": 2, "name": "Jane Smith", "email": "jsmith@hotmail.com", "signup_year": 2020, "active": False},
+    {"customer_id": 3, "name": "Robert Zboncak", "email": "robert@yahoo.com", "signup_year": 2021, "active": True},
+    {"customer_id": 4, "name": "Anna Johnson", "email": "anna@google.com", "signup_year": 2022, "active": True},
+]
+
+pipeline_output = (
+    flu(customers)
+    .filter(lambda x: x["active"])
+    .map_item('email') # type: ignore
+    .map(lambda x: x.partition('@')[2])
+    .group_by()
+    .map(lambda x: (x[0], x[1].count()))
+    .collect()
+)
+
+print(pipeline_output)
