@@ -1,10 +1,14 @@
+# !/usr/bin/python3
+# flake8: noqa: E501
+# pylint: disable=line-too-long
+# pylint: disable=C0103
+
 """_summary_
 
     Working with bcrypt library
 
 """
 
-from typing import Literal
 import bcrypt
 
 # Hashing passwords - Hashing passwords or any other string is incredibly simple using the bcrypt.hashpw() function.
