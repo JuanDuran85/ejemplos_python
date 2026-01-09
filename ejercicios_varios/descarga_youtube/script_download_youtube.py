@@ -1,3 +1,7 @@
+'''
+Docstring for script_download_youtube
+'''
+
 from pytubefix import YouTube
 from pytubefix.cli import on_progress
 
@@ -28,5 +32,5 @@ print("Descargando video...")
 stream = vide_yt.streams.get_highest_resolution()
 # type: ignore
 stream.download(  # type: ignore
-    output_path="/Users/juanduran/Documents/codigos_cursos/videos_cursos"
+    output_path="C:\\Users\\duran\\Downloads"
 )
